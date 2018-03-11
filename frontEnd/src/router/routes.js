@@ -4,7 +4,9 @@
  */
 
 const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/ErrorPage')
-const Home = () => import(/* webpackChunkName: "home" */ '@/pages/Home')
+const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Guide')
+const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Login')
+const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay')
 
 /* routes config */
 const routes = [
@@ -30,9 +32,17 @@ const routes = [
     }
   }, {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'Guide',
+    component: Guide,
     meta: {}
+  }, {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  }, {
+    path: '/roleplay',
+    name: 'Roleplay',
+    component: Roleplay
   }
 ]
 

@@ -1,32 +1,24 @@
 <template>
   <div>
-    <app-header />
+    <app-header :active="'roleplay'" />
+    <div>角色扮演</div>
   </div>
 </template>
-
 <script>
 import AppHeader from '@/components/AppHeader'
-export default{
-  name: '',
+export default {
   components: {
     AppHeader
   },
-  mixins: {},
   props: {},
   data () {
     return {}
   },
   computed: {},
-  watch: {},
-  created () {},
   mounted () {},
-  methods: {}
+  methods () {}
 }
 </script>
+<style lang="scss">
 
-<style lang='scss'>
-.logo {
-  width: 120px;
-  height: 120px;
-}
 </style>
