@@ -61,6 +61,7 @@ h3,
 span {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  color: #606266;
 }
 /* 滚动条整体部分 */
 
@@ -77,5 +78,8 @@ span {
     border-radius: 8px;
     background-color: #999;
   }
+}
+ul {
+  list-style: none;
 }
 </style>
