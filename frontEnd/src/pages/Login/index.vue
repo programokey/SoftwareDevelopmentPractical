@@ -5,7 +5,7 @@
       <p class="login-tip">请输入账号密码登陆我们的系统</p>
       <div class="login-form">
         <el-input class="login-input" v-model="account" placeholder="请输入账号"></el-input>
-        <el-input class="login-input" v-model="password" placeholder="请输入密码"></el-input>
+        <el-input type="password" class="login-input" v-model="password" placeholder="请输入密码"></el-input>
         <el-button class="login-button">登陆</el-button>
       </div>
     </div>
@@ -23,7 +23,7 @@ export default {
   },
   computed: {},
   mounted () {},
-  methods () {}
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>
@@ -35,16 +35,16 @@ export default {
   &-title {
     position: absolute;
     top: 70px;
-    left: 60px;
+    left: 70px;
     font-size: 80px;
     color: #fff;
   }
   &-wrap {
     position: absolute;
     right: 10%;
-    top: 50%;
+    top: 45%;
     box-sizing: border-box;
-    width: 400px;
+    width: 350px;
     padding: 20px 30px;
     border-radius: 30px;
     background: #fff;

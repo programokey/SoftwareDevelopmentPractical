@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>角色扮演</div>
+    <div>测试</div>
   </div>
 </template>
 <script>

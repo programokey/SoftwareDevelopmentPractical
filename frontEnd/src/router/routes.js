@@ -7,7 +7,8 @@ const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/Erro
 const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Guide')
 const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Login')
 const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay')
-
+const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/CaseStudy')
+const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Examination')
 /* routes config */
 const routes = [
   {
@@ -17,7 +18,7 @@ const routes = [
     props: {
       error: {
         statusCode: 'Error',
-        message: '这个页面不见鸟'
+        message: '这个页面出现了错误'
       }
     }
   }, {
@@ -27,7 +28,7 @@ const routes = [
     props: {
       error: {
         statusCode: 404,
-        message: '这个页面不见鸟'
+        message: '这个页面不存在'
       }
     }
   }, {
@@ -43,6 +44,14 @@ const routes = [
     path: '/roleplay',
     name: 'Roleplay',
     component: Roleplay
+  }, {
+    path: '/learn',
+    name: 'CaseStudy',
+    component: CaseStudy
+  }, {
+    path: '/test',
+    name: 'Examination',
+    component: Examination
   }
 ]
 

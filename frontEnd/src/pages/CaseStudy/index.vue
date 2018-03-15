@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>角色扮演</div>
+    <div>病例学习</div>
   </div>
 </template>
 <script>

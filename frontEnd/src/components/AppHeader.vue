@@ -1,7 +1,8 @@
 <template>
   <header class="header">
+    <p class="header-title">模拟宠物医院</p>
+    <!-- @click="$router.push('/')" -->
     <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect" router>
-      <p class="header-title">模拟宠物医院</p>
 
       <el-menu-item index="test">在线测试</el-menu-item>
       <!-- <el-submenu index="2">
@@ -23,18 +24,25 @@ export default{
   components: {},
   mixins: {},
   props: {
-    active: ''
   },
   data () {
     return {
     }
   },
   computed: {
-
+    active () {
+      let path = this.$route.path
+      if (path === '/') {
+        return path
+      } else {
+        return this.$route.path.substr(1)
+      }
+    }
   },
   watch: {},
   created () {},
-  mounted () {},
+  mounted () {
+  },
   methods: {
     handleSelect (key, keyPath) {
       console.log(key, keyPath)
@@ -45,8 +53,8 @@ export default{
 
 <style lang='scss' scoped>
 .header {
+  // position: relative;
   &-menu {
-    position: relative;
     width: 100%;
   }
   &-title {
@@ -55,6 +63,8 @@ export default{
     color: #606266;
     font-size: 26px;
     line-height: 60px;
+    z-index: 10;
+    // cursor: pointer;
   }
   .el-menu--horizontal > .el-menu-item {
     float: right;
