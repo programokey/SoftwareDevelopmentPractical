@@ -2,11 +2,11 @@
   <div class="login">
     <h1 class="login-title">模拟宠物医院</h1>
     <div class="login-wrap">
-      <p class="login-tip">请输入账号密码登陆我们的系统</p>
+      <p class="login-tip">请输入账号密码登录我们的系统</p>
       <div class="login-form">
         <el-input class="login-input" v-model="account" placeholder="请输入账号"></el-input>
         <el-input type="password" class="login-input" v-model="password" placeholder="请输入密码"></el-input>
-        <el-button class="login-button">登陆</el-button>
+        <el-button class="login-button">登录</el-button>
       </div>
     </div>
   </div>
