@@ -1,12 +1,15 @@
-from flask import Flask, url_for
+from flask import Flask, jsonify, request, abort
+import json
+from hashlib import sha1
 app = Flask(__name__)
 
 @app.route("/")
 def  index():
     return 'Index Page'
 
-@app.route('/hello')
-def hello():
+@app.route('/login', methods=['POST'])
+def login():
+    login_data = request.get_json()
     return 'Hello, World'
 
 
