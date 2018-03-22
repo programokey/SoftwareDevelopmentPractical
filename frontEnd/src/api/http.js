@@ -3,10 +3,11 @@ import qs from 'qs'
 // import { baseUrl } from '@/config/env'
 
 // axios.defaults.baseURL = baseUrl
-
+// axios.defaults.baseURL = 'http://'
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
+    console.log(config)
     return config
   },
   err => {

@@ -31,10 +31,11 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "./../style/vars.scss";
 .hotspot {
   position: absolute;
   font-size: 25px;
-  color: orange;
+  color: $light-yellow;
   cursor: pointer;
   .red {
     color: red;

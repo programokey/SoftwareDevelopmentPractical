@@ -6,12 +6,13 @@
       <div class="login-form">
         <el-input class="login-input" v-model="account" placeholder="请输入账号"></el-input>
         <el-input type="password" class="login-input" v-model="password" placeholder="请输入密码"></el-input>
-        <el-button class="login-button">登录</el-button>
+        <el-button class="login-button" @click="login()">登录</el-button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import sha1 from 'js-sha1'
 export default {
   components: {},
   props: {},
@@ -23,7 +24,18 @@ export default {
   },
   computed: {},
   mounted () {},
-  methods: {}
+  methods: {
+    login () {
+      if (this.account && this.password) {
+        let hash = sha1(`${this.account}_${this.password}`)
+        this.$api.login(this.account, hash).then(res => {
+          console.log(res)
+        })
+      } else {
+        console.log('填写完整信息')
+      }
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

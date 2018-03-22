@@ -9,6 +9,7 @@ const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Login')
 const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay')
 const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/CaseStudy')
 const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Examination')
+const Department = () => import(/* webpackChunkName: "department" */ '@/pages/Department')
 /* routes config */
 const routes = [
   {
@@ -52,6 +53,10 @@ const routes = [
     path: '/test',
     name: 'Examination',
     component: Examination
+  }, {
+    path: '/department/:name',
+    name: 'Department',
+    component: Department
   }
 ]
 
