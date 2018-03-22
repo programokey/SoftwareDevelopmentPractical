@@ -1,0 +1,188 @@
+﻿enum Gender{
+	Male, Female, Unknown
+}
+
+user{
+	id	string;
+	name	string;
+	passwd	string;
+	phoneNumber	string;
+	email	string;
+	gender	Gender;
+	token  string;//only for access control purpose
+}
+
+//only for admin purpose
+UserGroup{
+	group map<user, string>;
+}
+
+Test{
+	testID	int;
+	testName	string;
+	testDescription	string;
+	startTime	datetime;
+	endTime	datetime;
+	duration	datedelta;
+	Problems	map<Problem, point>;
+	confidential	boolean;
+	status		string;//即将开始、 正在进行、已结束
+	creator	user;
+}
+
+Choice{
+	descrptio	string;
+	isAnswer	boolean;//发送给前端时全部为NULL
+}
+
+Problem{
+	ID	int;
+	problem	string;//题目,可以是html文本
+	choices	list<Choice>;//选项, 可以是html文本
+	multipleAnswer	boolean; //True多选 False 单选, 多选漏选得一半的分， 错选不得分
+	creator	user;
+}
+
+Answer{
+	answerID	int;
+	problemID	int;
+	userID		int;
+	choiceID	int;
+}
+
+TestParticipation{
+	user	User;
+	test	Test;
+	beginTime	datetime;
+	answers	list<Answer>; //default NULL
+	score	float;
+}
+
+Department{
+	name	string;
+	location	string;
+	basicStructure	string;
+	function	string;
+	jobs	list<JOb>;
+	equipments	list<Equipment>;
+	diseaseTreated	list<Disease>;
+}
+
+
+Disease{
+	name string;
+	description string;
+	cases list<Case>;
+}
+
+Equipment{
+	name	string;
+	description	string;
+	operateMethod	string;
+	location	string;
+	flow	list<Flow>;
+}
+
+Flow{
+	content	string;//path to picture or video
+	description	string;
+	previous	Flow;//null for head
+	next	Flow;//null for tail
+}
+
+Job{
+	//department	Department;	
+	name			string;
+	description		string;
+	dosAndDonots	string;
+	jobflow list<Flow>;//optional
+}
+
+Role{
+	roleName	string;
+	description	string;
+	jobs	list<JOb>;
+}
+
+
+Medicine{
+	permitNmber	string;
+	name	string;
+	description	string;
+	price	float;
+}
+
+MedicalExamination{
+	name	string;
+	indices	list<NumericalIndex>
+	prices	float;
+}
+
+Opeation{
+	name string;
+	description	string;
+	dosAndDonots string;
+	equipments	list<Equipement>;
+	medicines	list<Medicine>; //放在描述中
+	prices	float;
+	flow	Flow;//optional
+}
+
+NumericalIndex {
+	name	string;
+	unit	string;
+	low		float;
+	high	float;
+}
+
+
+Case{
+	caseID int;
+	doctor string;
+	petType string;
+	petAge string;//要不要表示几个月,但是这样输入更复杂
+	petGender petGender;
+	department	Department;
+	disease	Disease;
+	symptoms	string;
+	
+	medicalExaminations	list<MedicalExamination>
+	medicalExaminationResults list<MedicalExaminationResult>;
+	opeations   list<Opeation>;
+	prescriptions	list<Prescription>;
+	
+	diagnosis	string;
+	treatment	string;
+	
+	expense		float;
+	flow Flow;//optional
+}
+
+Prescription{
+	CaseID	int;
+	medicine	Medicine
+	permitNmber	string;
+	description	string;
+	unit	float;
+};
+
+MedicalExaminationResult{
+	MedicalExaminationResultID	int;
+	MedicalExamination	int;
+	CaseID	int;
+	graph	string;//path to the picture, optional
+	indicesResult	float;
+	//cluster index on (MedicalExamination, CaseID)
+}
+
+HotSpot{
+	x_pos	int;
+	y_pos	int;
+	radius	int;
+	departmentInfo Department;
+}
+
+HospitalGuide{
+	picture	bytes;
+	departments list<Department>;
+}
