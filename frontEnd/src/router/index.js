@@ -13,6 +13,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  // 登录拦截
   next()
 })
 
