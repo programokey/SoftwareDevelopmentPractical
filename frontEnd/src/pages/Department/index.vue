@@ -27,7 +27,7 @@ export default {
         name: '前台',
         basicStructure: '爱丽丝电话立刻返回开始的风格的快速改变的疯狂v不',
         function: '接待客人啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊',
-        roles: ['前台'],
+        roles: ['前台1'],
         equipments: {'1': '桌子', '2': '椅子'}
       }
     }

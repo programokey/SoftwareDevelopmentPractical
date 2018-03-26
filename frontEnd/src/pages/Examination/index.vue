@@ -8,15 +8,13 @@
       <el-table-column prop="endTime" label="结束时间">
       </el-table-column>
       <el-table-column prop="duration" label="考试时间"></el-table-column>
-      <el-table-column prop="state" label="状态" :filters="[{ text: '正在进行', value: '正在进行' }, { text: '即将进行', value: '即将进行' },{text:'已结束',value:'已结束'}]"
-      :filter-method="filterTag"
-      filter-placement="bottom-end"></el-table-column>
+      <el-table-column prop="state" label="状态" :filters="[{ text: '正在进行', value: '正在进行' }, { text: '即将进行', value: '即将进行' },{text:'已结束',value:'已结束'}]" :filter-method="filterTag" filter-placement="bottom-start"></el-table-column>
       <el-table-column>
         <template slot-scope="scope">
-          <el-button v-if="scope.row.state ==='正在进行'" @click.native.prevent="check(scope.row)" type="button" size="mini">
+          <el-button v-if="scope.row.state ==='正在进行'" @click.native.prevent="startTest(scope.row)" type="button" size="mini">
             开始考试
           </el-button>
-          <p v-else-if="scope.row.state ==='已结束'" @click.native.prevent="check(scope.row)">
+          <p v-else-if="scope.row.state ==='已结束'">
             {{`${scope.row.score} 分`}}
           </p>
 
@@ -96,37 +94,31 @@ export default {
         switch (val.state) {
           case 'going':
             val.state = '正在进行'
-            // val.operation = '开始考试'
             break
           case 'coming':
             val.state = '即将进行'
-            // val.operation = ''
             break
           case 'ended':
             val.state = '已结束'
-            // val.operation = val.score + '分'
             break
           default:
             break
         }
       })
     },
-    check (row) {
-      // console.log(index, this.tableData[index])
-      return row.state
-      // if (row.state === '正在进行') { return true } else return false
+    startTest (row) {
+      console.log(row)
     }
   }
 }
 </script>
 <style lang="scss">
-.exam{
-  // padding-left:30px;
-  // padding-right:30px;
-  .el-table{
-    
-    padding:0 30px;
-    
+.exam {
+  .el-table {
+    padding: 0 30px;
+    &::before {
+      height: 0;
+    }
   }
 }
 .el-table .coming-row {

@@ -71,7 +71,7 @@ const routes = [
     name: 'Equipment',
     component: Equipment
   }, {
-    path: '/department/:name/role/:name',
+    path: '/department/:departmentName/role/:roleName',
     name: 'departmentRole',
     component: DepartmentRole
   }

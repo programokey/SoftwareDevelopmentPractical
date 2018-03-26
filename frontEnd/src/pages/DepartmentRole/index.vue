@@ -1,5 +1,10 @@
 <template>
-  <div class="departmentRole">科室角色
+  <div class="departmentRole">
+    <el-breadcrumb class="breadcrumb" separator="/">
+      <el-breadcrumb-item :to="{ path: '/' }">导览</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{path:`/department/${frontUrl}`}">{{frontUrl}}</el-breadcrumb-item>
+      <el-breadcrumb-item>{{currentUrl}}</el-breadcrumb-item>
+    </el-breadcrumb>
     <div class="descrip">{{data.description}}</div>
     <ul class="jobs">
       <li v-for="(item,index) in data.jobs" :key="index">{{item}}</li>
@@ -18,8 +23,16 @@ export default {
       }
     }
   },
-  computed: {},
-  mounted () {},
+  computed: {
+    frontUrl () {
+      return decodeURI(this.$route.fullPath.split('/')[2])
+    },
+    currentUrl () {
+      return decodeURI(this.$route.fullPath.split('/')[4])
+    }
+  },
+  mounted () {
+  },
   methods: {}
 }
 </script>

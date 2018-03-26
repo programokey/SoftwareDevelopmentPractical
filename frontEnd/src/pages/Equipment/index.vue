@@ -1,10 +1,16 @@
 <template>
   <div class="equipment">
-    <div class="name">{{data.name}}</div>
-    <div class="descrip">{{data.description}}</div>
-    <div class="operate">{{data.operateMethod}}</div>
-    <div class="location">{{data.location}}</div>
-    <div class="flow">{{data.flow}}</div>
+    <el-breadcrumb class="breadcrumb" separator="/">
+      <el-breadcrumb-item :to="{ path: '/' }">导览</el-breadcrumb-item>
+      <el-breadcrumb-item>设备</el-breadcrumb-item>
+    </el-breadcrumb>
+    <div>
+      <div class="name">{{data.name}}</div>
+      <div class="descrip">{{data.description}}</div>
+      <div class="operate">{{data.operateMethod}}</div>
+      <div class="location">{{data.location}}</div>
+      <div class="flow">{{data.flow}}</div>
+    </div>
   </div>
 </template>
 <script>
@@ -22,8 +28,13 @@ export default {
       }
     }
   },
-  computed: {},
-  mounted () {},
+  computed: {
+    currentUrl () {
+
+    }
+  },
+  mounted () {
+  },
   methods: {}
 }
 </script>
