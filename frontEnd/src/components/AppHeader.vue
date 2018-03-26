@@ -2,17 +2,17 @@
   <header class="header">
     <p class="header-title">模拟宠物医院</p>
     <!-- @click="$router.push('/')" -->
-    <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect" router>
+    <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect">
 
-      <el-menu-item index="test">在线测试</el-menu-item>
+      <el-menu-item index="/test">在线测试</el-menu-item>
       <!-- <el-submenu index="2">
         <template slot="title">角色扮演</template>
         <el-menu-item index="roleplay">前台</el-menu-item>
         <el-menu-item index="roleplay">医助</el-menu-item>
         <el-menu-item index="roleplay">医师</el-menu-item>
       </el-submenu> -->
-      <el-menu-item index="learn">病例学习</el-menu-item>
-      <el-menu-item index="roleplay">角色扮演</el-menu-item>
+      <el-menu-item index="/learn">病例学习</el-menu-item>
+      <el-menu-item index="/roleplay">角色扮演</el-menu-item>
       <el-menu-item index="/">医院导览</el-menu-item>
     </el-menu>
   </header>
@@ -32,11 +32,11 @@ export default{
   computed: {
     active () {
       let path = this.$route.path
-      if (path === '/') {
-        return path
-      } else {
-        return this.$route.path.substr(1)
-      }
+      return path
+      // if (path === '/') {
+      //   return path
+      // } else {
+      // }
     }
   },
   watch: {},
@@ -45,7 +45,7 @@ export default{
   },
   methods: {
     handleSelect (key, keyPath) {
-      console.log(key, keyPath)
+      this.$router.push(keyPath[0])
     }
   }
 }
