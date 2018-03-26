@@ -54,6 +54,7 @@ export default{
 <style lang='scss' scoped>
 .header {
   // position: relative;
+  z-index: 1000;
   min-width: 1024px;
   &-menu {
     width: 100%;
