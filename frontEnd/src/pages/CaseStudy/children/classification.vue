@@ -1,7 +1,7 @@
 <template>
-  <ul class="classification">
-    <li v-for="(item,index) in classifyList" :key="index">{{item}}</li>
-  </ul>
+  <div class="classification">
+    <a v-for="(item,index) in classifyList" :key="index" :href="`#${item}`">{{item}}</a>
+  </div>
 </template>
 <script>
 export default {
@@ -24,7 +24,8 @@ export default {
   height: 100%;
   overflow-y: scroll !important;
 
-  li {
+  a {
+    display: block;
     margin: 0 10px 30px;
     // margin-bottom: 30px;
     font-size: 20px;
