@@ -21,6 +21,7 @@ export default {
 </script>
 <style lang="scss">
 .casecell {
+  margin-top: 40px;
   .cell {
     &-classify {
       margin-bottom: 20px;

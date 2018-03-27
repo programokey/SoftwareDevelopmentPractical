@@ -7,7 +7,7 @@ import api from './api'
 
 import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
-import './element-variables.scss'
+import './style/element-variables.scss'
 import './style/common.scss'
 import SvgIcon from './svgIcons/template/SvgIcon.vue'
 

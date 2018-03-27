@@ -3,7 +3,7 @@
     <p class="header-title">模拟宠物医院</p>
     <!-- @click="$router.push('/')" -->
     <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect">
-
+      <!-- background-color="#97BDF1" text-color="#fff" active-text-color="#F3DB28" -->
       <el-menu-item index="/test">在线测试</el-menu-item>
       <!-- <el-submenu index="2">
         <template slot="title">角色扮演</template>
