@@ -25,10 +25,10 @@ export default {
   },
   computed: {
     frontUrl () {
-      return decodeURI(this.$route.fullPath.split('/')[2])
+      return decodeURI(this.$route.params.departmentName)
     },
     currentUrl () {
-      return decodeURI(this.$route.fullPath.split('/')[4])
+      return decodeURI(this.$route.params.roleName)
     }
   },
   mounted () {

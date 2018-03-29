@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" v-if="$route.path!=='/login'">
     <p class="header-title">模拟宠物医院</p>
     <!-- @click="$router.push('/')" -->
     <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect">
@@ -62,7 +62,7 @@ export default{
   &-title {
     position: absolute;
     margin-left: 20px;
-    color: #606266;
+    color: $green;
     font-size: 26px;
     line-height: 60px;
     z-index: 10;

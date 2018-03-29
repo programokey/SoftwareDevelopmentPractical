@@ -34,6 +34,7 @@ export default {
             this.$message({message: '密码或用户名错误', type: 'warning'})
           } else {
             this.$message({message: '登录成功', type: 'success'})
+            this.$router.push('/')
           }
         })
       } else {

@@ -82,5 +82,14 @@ li {
 }
 ul {
   list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  transition: background-color, color, 0.3s;
 }
 </style>

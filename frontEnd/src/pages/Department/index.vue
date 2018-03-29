@@ -5,14 +5,25 @@
       <el-breadcrumb-item>{{$route.params.name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="content">
-      <div class="name">科室名：{{info.name}}</div>
-      <div class="structure">基础设施：{{info.basicStructure}}</div>
-      <div class="function">职能：{{info.function}}</div>
-      <ul class="roles">角色：
-        <li class="role" v-for="(role,index) in info.roles" :key="index" @click="$router.push(`/department/${info.name}/role/${role}`)">{{role}}</li>
+      <div class="name">
+        <h2 class="label">科室名：</h2>
+        <p class="info">{{info.name}}</p>
+      </div>
+      <div class="structure">
+        <h2 class="label">基础设施：</h2>
+        <p class="info">{{info.basicStructure}}</p>
+      </div>
+      <div class="function">
+        <h2 class="label">职能：</h2>
+        <p class="info">{{info.function}}</p>
+      </div>
+      <ul class="roles">
+        <h2 class="label">角色：</h2>
+        <li class="role info" v-for="(role,index) in info.roles" :key="index" @click="$router.push(`/department/${info.name}/role/${role}`)">{{role}}</li>
       </ul>
-      <ul class="equipments">设备：
-        <li class="equipment" v-for="(equipment,index) in info.equipments" :key="index" @click="$router.push(`/equipment/${index}`)">{{equipment}}</li>
+      <ul class="equipments">
+        <h2 class="label">设备：</h2>
+        <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index" @click="$router.push(`/equipment/${index}`)">{{equipment}}</li>
       </ul>
     </div>
   </div>
@@ -33,11 +44,42 @@ export default {
     }
   },
   computed: {},
-  mounted () {},
+  mounted () {
+
+  },
   methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-
+.content {
+  margin: 50px 0 0 150px;
+  .label {
+    color: $green;
+    // margin-bottom: 10px;
+  }
+  & > div {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  & > ul {
+    margin-top: 20px;
+    .label {
+      margin-bottom: 10px;
+    }
+    li {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  }
+  .name {
+    .info {
+      font-size: 30px;
+    }
+  }
+}
+// .inActive {
+//   cursor: pointer;
+// }
 </style>

@@ -2,10 +2,9 @@ import http from './http'
 const foo = () => {
   return http.post('url', {})
 }
-const getDepartmentInfo = (name) => {
-  return http.post('/department/getDepartmentInfo', {
-    name: name
-  })
+const getDepartmentList = () => {
+  console.log('aaaa')
+  return http.get('/department')
 }
 const login = (name, hash) => {
   return http.post('/login', {
@@ -15,6 +14,6 @@ const login = (name, hash) => {
 }
 export default {
   foo,
-  getDepartmentInfo,
+  getDepartmentList,
   login
 }

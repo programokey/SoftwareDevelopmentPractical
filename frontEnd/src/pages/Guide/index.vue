@@ -57,16 +57,17 @@ export default{
   computed: {},
   watch: {},
   created () {},
-  mounted () {},
+  mounted () {
+    this.$api.getDepartmentList().then(res => {
+      console.log(res)
+    })
+  },
   methods: {
     mouseen (val) {
       this.isHover = val
     },
     mousele () {
       this.isHover = -1
-    },
-    hoverActive (val) {
-
     }
   }
 }
