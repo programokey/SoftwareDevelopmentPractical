@@ -33,14 +33,14 @@ def get_department_info(departmentName):
     else:
         return  redirect('/login')
 
-@app('/department/<departmentName>/roles/<roleName>')
+@app('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
 def get_department_role_job(departmentName, roleName):
     '''
     :param departmentName:
     :param roleName:
-    :return: the jobs the
+    :return: the jobs the role should do in the department
     '''
-    pass
+    return ""
 
 
 @app.route('/api/equipment/<equipmentId>', methods=['GET', 'POST'])
