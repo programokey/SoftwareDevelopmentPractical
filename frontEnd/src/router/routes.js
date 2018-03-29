@@ -10,6 +10,10 @@ const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Rolepl
 const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/CaseStudy')
 const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Examination')
 const Department = () => import(/* webpackChunkName: "department" */ '@/pages/Department')
+const Equipment = () => import(/* webpackChunkName: "equipment" */ '@/pages/Equipment')
+const DepartmentRole = () => import(/* webpackChunkName: "departmentRole" */ '@/pages/DepartmentRole')
+const Disease = () => import(/* webpackChunkName: "disease" */ '@/pages/Disease')
+
 /* routes config */
 const routes = [
   {
@@ -57,6 +61,24 @@ const routes = [
     path: '/department/:name',
     name: 'Department',
     component: Department
+    // children: [
+    //   {
+    //     path: '/department/:name/role/:name',
+    //     component: DepartmentRole
+    //   }
+    // ]
+  }, {
+    path: '/equipment/:id',
+    name: 'Equipment',
+    component: Equipment
+  }, {
+    path: '/department/:departmentName/role/:roleName',
+    name: 'departmentRole',
+    component: DepartmentRole
+  }, {
+    path: '/case/:caseName',
+    name: 'disease',
+    component: Disease
   }
 ]
 

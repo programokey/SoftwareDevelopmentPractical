@@ -1,17 +1,45 @@
 <template>
-  <div>
-    <div>病例学习</div>
-  </div>
+  <el-row class="case" :gutter="20">
+    <el-col :span="20" class="case-left">
+      <el-input class="case-search" placeholder="请输入搜索内容" prefix-icon="el-icon-search" v-model="search">
+      </el-input>
+      <div class="case-cell-wrap">
+        <case-cell v-for="(item,index) in caseList" :key="index" :title="index" :data="item" />
+      </div>
+    </el-col>
+    <el-col :span="4" class="case-right">
+      <classification :classifyList="Object.keys(caseList)" />
+    </el-col>
+  </el-row>
 </template>
 <script>
-import AppHeader from '@/components/AppHeader'
+import Classification from './children/classification'
+import CaseCell from './children/caseCell'
 export default {
   components: {
-    AppHeader
+    Classification, CaseCell
   },
   props: {},
   data () {
-    return {}
+    return {
+      search: '',
+      caseList: {
+        '分类1': ['病病病病1', '病病病2', '病3', '病病1', '病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3', '病1', '病病病病病2', '病3', '病1', '病2', '病3'],
+        '分类2': ['病1', '病2', '病3', '病病', '病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3', '病1', '病2', '病病病3', '病1', '病2', '病3'],
+        '分类3': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类4': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类5': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类6': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类7': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类8': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类9': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类10': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类11': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类12': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类13': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3'],
+        '分类14': ['病1', '病2', '病3', '病1', '病2', '病3', '病病1', '病2', '病3', '病1', '病病病2', '病3', '病1', '病2', '病3', '病1', '病2', '病3']
+      }
+    }
   },
   computed: {},
   mounted () {},
@@ -19,5 +47,31 @@ export default {
 }
 </script>
 <style lang="scss">
-
+.case {
+  padding-left: 40px !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  &-left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // padding-left: 40px !important;
+  }
+  &-right {
+    height: 100%;
+    padding-right: 0 !important;
+  }
+  &-search {
+    margin: 30px 20px 0 0;
+    // padding: 0 20px;
+    width: auto;
+  }
+  &-cell {
+    &-wrap {
+      overflow-y: scroll;
+      flex: 1;
+    }
+  }
+}
 </style>

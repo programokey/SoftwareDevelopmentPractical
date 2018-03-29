@@ -73,7 +73,6 @@ export default{
 </script>
 
 <style lang='scss' scoped>
-@import "./../../style/vars.scss";
 .guide {
   // position:relative;
   // overflow:hidden;

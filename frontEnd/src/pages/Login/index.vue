@@ -30,9 +30,14 @@ export default {
         let hash = sha1(`${this.account}_${this.password}`)
         this.$api.login(this.account, hash).then(res => {
           console.log(res)
+          if (res.code !== 1000) {
+            this.$message({message: '密码或用户名错误', type: 'warning'})
+          } else {
+            this.$message({message: '登录成功', type: 'success'})
+          }
         })
       } else {
-        console.log('填写完整信息')
+        this.$message({message: '填写完整信息', type: 'warning'})
       }
     }
   }
