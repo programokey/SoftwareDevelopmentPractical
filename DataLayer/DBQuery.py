@@ -27,7 +27,7 @@ def get_user(user):
 def get_departments():
     try:
         if redis_conn.exists('departments'):
-            return redis_conn.get('departments')
+            return redis_conn.get('departments').decode('utf8')
 
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital', charset='utf8') as cur:
             cur.execute('select name, x_pos, y_pos from Department')
@@ -49,19 +49,18 @@ def get_departments():
 
 
 def get_department_info(departmentName):
+    assert isinstance(departmentName, str)
     try:
         if redis_conn.exists('department_info_%s'%departmentName):
-            return redis_conn.get('department_info_%s'%departmentName)
+            return redis_conn.get('department_info_%s'%departmentName).decode('utf8')
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital', charset='utf8') as cur:
-            cur.execute('select name, location, basicStructure, function from Department')
+            cur.execute('select name, location, basicStructure, function from Department where name = %s', (departmentName, ))
             res = cur.fetchone()
-            if len(res) != 1:
+            if res is None:
                 return json.dumps({
-                    "code": 404,
-                    "data": "Department %s does not exists!"%departmentName
-                })
-
-            res = res[0]
+                                        "code": 404,
+                                        "data": "Department %s does not exists!"%departmentName
+                                    })
             department_info = {
                                     "code": 1000,
                                     "data": {
@@ -74,11 +73,11 @@ def get_department_info(departmentName):
                                     }
                         }
             cur.execute('select role from DepartmentRole where department = %s', (departmentName,))
-            for item in res:
+            for item in cur.fetchall():
                 department_info["data"][ "roles"].append(item[0])
 
             cur.execute('select id, name from Equipment where department = %s', (departmentName,))
-            for item in res:
+            for item in cur.fetchall():
                 department_info["data"]["equipments"][item[0]] = item[1]
 
             department_info = json.dumps(department_info)
@@ -92,17 +91,26 @@ def get_department_info(departmentName):
 
 def get_equipment(equipmentId):
     try:
-        if redis_conn.exists('equipment_info_%s'%equipmentId):
-            return redis_conn.get('equipment_info_%s'%equipmentId)
+        try:
+            equipmentId = int(equipmentId)
+        except:
+            return json.dumps({
+                "code": 404,
+                "data": "%s  is not a valid equipment ID!" % equipmentId
+            })
+        # if redis_conn.exists('equipment_info_%s'%equipmentId):
+        #     return redis_conn.get('equipment_info_%s'%equipmentId).decode('utf8')
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital', charset='utf8') as cur:
-            cur.execute('select name, description, operationalApproach, location, flowID from Equipment')
+            cur.execute('select name, description, operationalApproach, location, flowID from Equipment where id = %s', (equipmentId, ))
             res = cur.fetchone()
-            if len(res) != 1:
-                return None
+            if res is None:
+                return json.dumps({
+                                        "code": 404,
+                                        "data": "equipment %d does not exists!"%equipmentId
+                                    })
 
-            res = res[0]
             equipment_info = {
-                                 "error_code": 0,
+                                 "error_code": 1000,
                                 "data": {
                                       "name":res[0],
                                      "description":res[1],
@@ -110,30 +118,34 @@ def get_equipment(equipmentId):
                                       "location":res[3]
                                     }
                               }
-            if res[4] is not  None:
-                equipment_info['flow'] = res[4]
+            if res[4] is not None:
+                equipment_info['data']['flow'] = res[4]
 
             equipment_info = json.dumps(equipment_info)
             redis_conn.set('equipment_info_%s'%equipmentId, value=equipment_info)
             return equipment_info
     except:
-        raise Warning('Error during retrieving  equipment %s\'s information'%equipmentId)
+        raise Warning('Error during retrieving equipment %s\'s information'%equipmentId)
 
 def get_department_role_job(departmentName, roleName):
+    assert isinstance(departmentName, str)
+    assert isinstance(roleName, str)
+
     try:
         if redis_conn.exists('department_role_job_%s_%s'%(departmentName, roleName)):
-            return redis_conn.get('department_role_job_%s_%s'%(departmentName, roleName))
+            return redis_conn.get('department_role_job_%s_%s'%(departmentName, roleName)).decode('utf8')
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                              charset='utf8') as cur:
             cur.execute('select job from RoleJob where role = %s and department = %s ', (roleName, departmentName))
             res = cur.fetchall()
+            print(res)
             jobs = {
                 "code": 1000,
                 "data": []
             }
             for item in res:
                 jobs["data"].append(item[0])
-                jobs = json.dumps(jobs)
+            jobs = json.dumps(jobs)
             redis_conn.set('department_role_job_%s_%s'%(departmentName, roleName), value=jobs)
             return jobs
     except:
@@ -143,11 +155,9 @@ def get_department_role_job(departmentName, roleName):
         })
 
 if __name__ == '__main__':
-    with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital', charset='utf8') as cur:
-        cur.execute("insert into Department value('CT', 'gateway', 'funny', 'CT Scan', 332, 332, 0);")
-        cur.execute("insert into Department value('血液科', '二楼楼梯口', '主任: 徳拉古拉·布拉德', '抽血', 233, 233, 0);")
-        cur.execute("insert into Department value('精神科', '地下室车库旁', '科室主任:磁暴步兵杨永信', '你需要被电一下', 123, 123, 0);")
-    print(get_departments())
+    departmentName = '精神科'
+    print(json.loads(get_department_info(departmentName)))
+    pass
 
 '''
 insert into Department value('CT', 'gateway', 'funny', 'CT Scan', 332, 332, 0);
