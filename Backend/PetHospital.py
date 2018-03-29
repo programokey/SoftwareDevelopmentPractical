@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 
-from flask import Flask, jsonify, request, abort, send_file, redirect
+from flask import Flask, jsonify, request, make_response, abort, send_file, redirect
 from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
@@ -17,6 +17,7 @@ CORS(app)
 def index(path):
     return send_file('index.html')
 
+
 @app.route('/department', methods=['GET', 'POST'])
 def get_departments():
     token = request.cookies.get('token')
@@ -25,13 +26,15 @@ def get_departments():
     else:
         return  redirect('/login')
 
+
 @app.route('/department/<departmentName>', methods=['GET', 'POST'])
 def get_department_info(departmentName):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         return DBQuery.get_department_info(departmentName)
     else:
-        return  redirect('/login')
+        return redirect('/login')
+
 
 @app.route('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
 def get_department_role_job(departmentName, roleName):
@@ -40,7 +43,11 @@ def get_department_role_job(departmentName, roleName):
     :param roleName:
     :return: the jobs the role should do in the department
     '''
-    return ""
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_department_role_job(departmentName, roleName)
+    else:
+        return redirect('/login')
 
 
 @app.route('/api/equipment/<equipmentId>', methods=['GET', 'POST'])
@@ -63,7 +70,10 @@ def login():
     if request.method == 'POST':
         user = request.form['name']
         hash = request.form['hash']
-        return validate.login(user, hash)
+        info, token = validate.login(user, hash)
+        response = make_response(info)
+        response.set_cookie('token', token)
+        return response
     else:
         return "Internal Error"
 
