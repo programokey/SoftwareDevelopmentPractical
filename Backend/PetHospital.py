@@ -33,7 +33,7 @@ def get_department_info(departmentName):
     else:
         return  redirect('/login')
 
-@app('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
+@app.route('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
 def get_department_role_job(departmentName, roleName):
     '''
     :param departmentName:
