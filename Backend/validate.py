@@ -38,6 +38,7 @@ def login(user, hash):
 
 def validate(token):
     if redis_conn.exists(token):
+        redis_conn.expire(token, 30*60)
         return token == redis_conn.get(token)
     return False
 

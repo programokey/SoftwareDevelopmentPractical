@@ -1,6 +1,7 @@
-from flask import Flask, jsonify, request, abort, send_file
+from flask import Flask, jsonify, request, abort, send_file, redirect
 from flask_cors import CORS
 import Backend.validate as validate
+import DataLayer.DBQuery as DBQuery
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
@@ -11,9 +12,29 @@ CORS(app)
 def index(path):
     return send_file('index.html')
 
+@app.route('/api/department/<departmentName>', methods=['GET', 'POST'])
+def get_department_info(departmentName):
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_department_info(departmentName)
+    else:
+        return  redirect('/')
+
+@app.route('/api/equipment/<equipmentId>', methods=['GET', 'POST'])
+def get_equipment(equipmentId):
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_departments()
+    else:
+        return redirect('/login')
+
 @app.route('/api/department', methods=['GET', 'POST'])
 def get_departments():
-    pass
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_departments()
+    else:
+        return  redirect('/login')
 
 @app.route('/static/<path1>/<path2>')
 def static_file(path1, path2):
@@ -27,15 +48,6 @@ def login():
         return validate.login(user, hash)
     else:
         return "Internal Error"
-
-
-# @app.route('/login', methods=['POST', 'GET'])
-# # @app.route('/login')
-# def login():
-#     token = ''
-#     login_result = {'code':'403', 'data':{'result':False, 'token':token}}
-#     return sha1('Hello, World'.encode()).hexdigest()
-
 
 @app.route('/user/<username>')
 def show_user_profile(username):
