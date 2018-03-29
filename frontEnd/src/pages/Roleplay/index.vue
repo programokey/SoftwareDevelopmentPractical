@@ -40,9 +40,9 @@ export default {
   data () {
     return {
       roles: [
-        {name: '前台', imgUrl: './../../images/doctor.jpeg'},
-        {name: '医助', imgUrl: './../../images/doctor.jpeg'},
-        {name: '医师', imgUrl: './../../images/doctor.jpeg'}
+        {name: '前台', imgUrl: '/src/images/doctor.jpeg'},
+        {name: '医助', imgUrl: '/src/images/doctor.jpeg'},
+        {name: '医师', imgUrl: '/src/images/doctor.jpeg'}
       ]
     }
   },
