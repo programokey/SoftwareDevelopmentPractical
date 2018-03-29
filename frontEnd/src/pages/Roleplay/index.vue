@@ -29,7 +29,6 @@
       </section>
     </div>
   </div>
-  </div>
 </template>
 <script>
 import AppHeader from '@/components/AppHeader'
