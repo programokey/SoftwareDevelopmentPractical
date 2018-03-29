@@ -9,6 +9,7 @@ mysql_user = cf.get('mysqldb', 'user')
 mysql_passwd = cf.get('mysqldb', 'passwd')
 mysql_host = cf.get('mysqldb', 'host')
 redis_conn = redis.Redis()
+
 def get_user(user):
     assert isinstance(user, str)
     try:
@@ -41,10 +42,10 @@ def get_departments():
             redis_conn.set('departments', value=departments)
             return departments
     except:
-        departments = {
+        return json.dumps({
             "code": 233,
             "data": "Error while get departments list"
-        }
+        })
 
 
 def get_department_info(departmentName):
@@ -71,7 +72,7 @@ def get_department_info(departmentName):
                                       "roles": [],
                                       "equipments": {}
                                     }
-                            }
+                        }
             cur.execute('select role from DepartmentRole where department = %s', (departmentName,))
             for item in res:
                 department_info["data"][ "roles"].append(item[0])
@@ -86,7 +87,7 @@ def get_department_info(departmentName):
     except:
         return json.dumps({
             "code": 200,
-            "data": "Error during getting information of Department %s does not exists!" % departmentName
+            "data": "Error during getting information of Department %s!" % departmentName
         })
 
 def get_equipment(equipmentId):
@@ -118,6 +119,28 @@ def get_equipment(equipmentId):
     except:
         raise Warning('Error during retrieving  equipment %s\'s information'%equipmentId)
 
+def get_department_role_job(departmentName, roleName):
+    try:
+        if redis_conn.exists('department_role_job_%s_%s'%(departmentName, roleName)):
+            return redis_conn.get('department_role_job_%s_%s'%(departmentName, roleName))
+        with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
+                             charset='utf8') as cur:
+            cur.execute('select job from RoleJob where role = %s and department = %s ', (roleName, departmentName))
+            res = cur.fetchall()
+            jobs = {
+                "code": 1000,
+                "data": []
+            }
+            for item in res:
+                jobs["data"].append(item[0])
+                jobs = json.dumps(jobs)
+            redis_conn.set('department_role_job_%s_%s'%(departmentName, roleName), value=jobs)
+            return jobs
+    except:
+        return json.dumps({
+            "code": 404,
+            "data": "Error during getting jobs of Role %s in  Department %s!" %(roleName, departmentName)
+        })
 
 if __name__ == '__main__':
     with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital', charset='utf8') as cur:

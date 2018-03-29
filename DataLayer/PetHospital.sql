@@ -143,7 +143,7 @@ create table Disease(
 	department	varchar(128),
 	description text,
 	primary key (name, diseaseCategory),
-	foreign key (department) references DepartmentRole(department),
+	foreign key (department) references Department(name),
 	foreign key (diseaseCategory) references DiseaseCategory(name)
 );
 
