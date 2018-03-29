@@ -9,7 +9,7 @@ insert into Department value('精神科', '地下室车库旁', '科室主任：
 
 
 insert into Equipment value(0, '电击治疗仪', '精神科', '用于电击小朋友', '', '精神科电击室', NULL);
-insert into Equipment value(1, 'CT机', '精神科', '用于电击小朋友', '', '精神科电击室', NULL);
+insert into Equipment value(1, 'CT机', '精神科', '用于CT检查', '', '精神科电击室', NULL);
 insert into Equipment value(2, '滑机', '精神科', '用于产生滑稽', '', '精神科滑稽室', NULL);
 
 insert into Role value('杨永信', '有一定几率发动闪电攻击');
