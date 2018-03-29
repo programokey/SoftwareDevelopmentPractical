@@ -81,16 +81,6 @@ create table Flow(
 	primary key(id, `order`)
 );
 
-create table Equipment(
-	id int primary key auto_increment,
-	name varchar(128),
-	description text,
-	operationalApproach text,
-	location	varchar(128),
-	flowID	int  default NULL,
-	foreign key (flowID) references Flow(id)
-);
-
 create table Department(
 	name	varchar(128) primary key,
 	location	varchar(128),
@@ -98,6 +88,18 @@ create table Department(
 	function		text,
 	x_pos	int,
 	y_pos	int
+);
+
+create table Equipment(
+	id int primary key auto_increment,
+	name varchar(128),
+	department	varchar(128),
+	description text,
+	operationalApproach text,
+	location	varchar(128),
+	flowID	int  default NULL,
+	foreign key (department) references Department(name),
+	foreign key (flowID) references Flow(id)
 );
 
 create table Job(
@@ -141,7 +143,7 @@ create table Disease(
 	department	varchar(128),
 	description text,
 	primary key (name, diseaseCategory),
-	foreign key (department) references DepartmentRole(department),
+	foreign key (department) references Department(name),
 	foreign key (diseaseCategory) references DiseaseCategory(name)
 );
 
