@@ -1,19 +1,15 @@
 drop schema PetHospital;
-create schema PetHospital;
+create schema PetHospital character set utf8;
 use PetHospital;
+
 create table User(
 	id	varchar(20)	primary key,
 	name	varchar(20),
 	passwd	varchar(64),
 	phoneNumber	varchar(20),
 	email	varchar(20),
-	gender	enum('male', 'female', 'unknown') default 'unknown'
-);
-
-create table UserGroup(
-	id	varchar(20)	primary key,
-	`group` enum('intern', 'admin', 'stuff') default 'intern',
-	foreign key (id) references User(id)
+	gender	enum('male', 'female', 'unknown') default 'unknown',
+	permission enum('intern', 'admin', 'stuff') default 'intern'
 );
 
 create table Test(
@@ -101,8 +97,7 @@ create table Department(
 	basicStructure	text,
 	function		text,
 	x_pos	int,
-	y_pos	int,
-	radius	int
+	y_pos	int
 );
 
 create table Job(

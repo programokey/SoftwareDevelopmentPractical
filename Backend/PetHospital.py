@@ -1,8 +1,7 @@
 from flask import Flask, jsonify, request, abort, send_file
 from flask_cors import CORS
-
-import json
 import Backend.validate as validate
+
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
 
@@ -12,11 +11,15 @@ CORS(app)
 def index(path):
     return send_file('index.html')
 
+@app.route('/api/department', methods=['GET', 'POST'])
+def get_departments():
+    pass
+
 @app.route('/static/<path1>/<path2>')
 def static_file(path1, path2):
     return send_file('static/%s/%s'%(path1, path2))
 
-@app.route('/login', methods=['POST', 'GET'])
+@app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         user = request.form['name']
@@ -24,6 +27,7 @@ def login():
         return validate.login(user, hash)
     else:
         return "Internal Error"
+
 
 # @app.route('/login', methods=['POST', 'GET'])
 # # @app.route('/login')
