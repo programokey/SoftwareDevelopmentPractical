@@ -128,8 +128,8 @@ create table RoleJob(
 	department	varchar(128),
 	job	varchar(128),
 	primary key(role, department, job),
-	foreign key (role) references DepartmentRole(role),
-	foreign key (department) references DepartmentRole(department),
+	foreign key (role, department) references DepartmentRole(role, department),
+	/*foreign key (department) references DepartmentRole(department),*/
 	foreign key (job) references Job(name)
 );
 

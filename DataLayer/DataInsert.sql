@@ -1,6 +1,6 @@
 use PetHospital;
-insert into PetHospital.User value (0, 'test', 'test', '2333', 'test@test.com', 'male', 'intern');
-insert into PetHospital.User value (1, 'test1', '12345677', '021-68512277', 'strongNow@gov.com', 'male', 'intern');
+insert into User value ('0', 'test', 'test', '2333', 'test@test.com', 'male', 'intern');
+insert into User value ('1', 'test1', '12345677', '021-68512277', 'strongNow@gov.com', 'male', 'intern');
 
 
 insert into Department value('CT', 'gateway', 'funny', 'CT Scan', 332, 332);
@@ -8,9 +8,11 @@ insert into Department value('血液科', '二楼楼梯口', '主任: 徳拉古�
 insert into Department value('精神科', '地下室车库旁', '科室主任：磁暴步兵杨永信', '你需要被电一下', 123, 123);
 
 
-insert into Equipment value(0, '电击治疗仪', '精神科', '用于电击小朋友', '', '精神科电击室', NULL);
-insert into Equipment value(1, 'CT机', '精神科', '用于CT检查', '', '精神科电击室', NULL);
-insert into Equipment value(2, '滑机', '精神科', '用于产生滑稽', '', '精神科滑稽室', NULL);
+insert into Equipment value(1, '电击治疗仪', '精神科', '用于电击小朋友', '', '精神科电击室', null);
+insert into Equipment value(2, 'CT机', '精神科', '用于CT检查', '', '精神科电击室', null);
+insert into Equipment value(3, '滑机', '精神科', '用于产生滑稽', '', '精神科滑稽室', null);
+
+
 
 insert into Role value('杨永信', '有一定几率发动闪电攻击');
 insert into Role value('开膛手杰克', '给病患执行腹部手术');
