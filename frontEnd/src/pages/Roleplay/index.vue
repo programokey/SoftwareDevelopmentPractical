@@ -7,12 +7,13 @@
         <div class="container-fluid">
           <div class="row no-gutter">
             <el-row>
-              <el-col :span="8">
+              <!-- v-for 循环显示三个角色 -->
+              <el-col :span="8" v-for="(role,index) in roles" :key="index">
                 <div class="grid-content bg-purple work">
-                  <a href="./../../images/doctor.jpeg" class="work-box"> <img src="./../../images/doctor.jpeg" alt="">
+                  <a @click="$router.push(`/roleplay/${role.name}`)" class="work-box"> <img :src="role.imgUrl" alt="">
                     <div class="overlay">
                       <div class="overlay-caption">
-                        <h5>前台</h5>
+                        <h5>{{role.name}}</h5>
                         <p>
                           <i class="fa fa-search-plus fa-2x"></i>
                         </p>
@@ -21,39 +22,13 @@
                   </a>
                 </div>
               </el-col>
-              <el-col :span="8">
-                <div class="grid-content bg-purple work">
-                  <a href="./../../images/doctor.jpeg" class="work-box"> <img src="./../../images/doctor.jpeg" alt="">
-                    <div class="overlay">
-                      <div class="overlay-caption">
-                        <h5>医助</h5>
-                        <p>
-                          <i class="fa fa-search-plus fa-2x"></i>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </el-col>
-              <el-col :span="8">
-                <div class="grid-content bg-purple-light work">
-                  <a href="./../../images/doctor.jpeg" class="work-box"> <img src="./../../images/doctor.jpeg" alt="">
-                    <div class="overlay">
-                      <div class="overlay-caption">
-                        <h5>医师</h5>
-                        <p>
-                          <i class="fa fa-search-plus fa-2x"></i>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </el-col>
+
             </el-row>
           </div>
         </div>
       </section>
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -64,7 +39,13 @@ export default {
   },
   props: {},
   data () {
-    return {}
+    return {
+      roles: [
+        {name: '前台', imgUrl: './../../images/doctor.jpeg'},
+        {name: '医助', imgUrl: './../../images/doctor.jpeg'},
+        {name: '医师', imgUrl: './../../images/doctor.jpeg'}
+      ]
+    }
   },
   computed: {},
   mounted () {},

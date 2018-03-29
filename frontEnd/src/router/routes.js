@@ -7,6 +7,8 @@ const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/Erro
 const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Guide')
 const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Login')
 const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay')
+const Role = () => import(/* webpackChunkName: "role" */ '@/pages/Role')
+const WorkType = () => import(/* webpackChunkName: "workType" */ '@/pages/WorkType')
 const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/CaseStudy')
 const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Examination')
 const Department = () => import(/* webpackChunkName: "department" */ '@/pages/Department')
@@ -49,6 +51,15 @@ const routes = [
     path: '/roleplay',
     name: 'Roleplay',
     component: Roleplay
+  }, {
+    path: '/roleplay/:name',
+    name: 'Role',
+    component: Role
+  },
+  {
+    path: '/roleplay/:name/:workType',
+    name: 'WorkType',
+    component: WorkType
   }, {
     path: '/learn',
     name: 'CaseStudy',
