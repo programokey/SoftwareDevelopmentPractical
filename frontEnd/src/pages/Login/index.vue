@@ -13,6 +13,7 @@
 </template>
 <script>
 import sha1 from 'js-sha1'
+import Cookie from './../../utils/cookie'
 export default {
   components: {},
   props: {},
@@ -29,10 +30,12 @@ export default {
       if (this.account && this.password) {
         let hash = sha1(`${this.account}_${this.password}`)
         this.$api.login(this.account, hash).then(res => {
-          console.log(res)
           if (res.code !== 1000) {
             this.$message({message: '密码或用户名错误', type: 'warning'})
           } else {
+            let cookie = new Cookie('token')
+            cookie.setCookie(res.data.token, 2)
+
             this.$message({message: '登录成功', type: 'success'})
             this.$router.push('/')
           }
