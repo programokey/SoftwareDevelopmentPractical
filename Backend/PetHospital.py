@@ -1,13 +1,16 @@
+import sys
+sys.path.append("..")
+
 from flask import Flask, jsonify, request, abort, send_file, redirect
 from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
-import sys
+
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
 
-sys.path.append("..")
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
