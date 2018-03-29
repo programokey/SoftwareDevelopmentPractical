@@ -9,7 +9,6 @@ export default {
   props: ['classifyList'],
   data () {
     return {
-      list: ['分类1', '分类2', '分类3', '分类4', '分类5', '分类6', '分类7', '分类8']
     }
   },
   computed: {},
@@ -29,7 +28,7 @@ export default {
     margin: 0 10px 30px;
     // margin-bottom: 30px;
     font-size: 20px;
-    color: $green;
+    color: #fff;
     line-height: 30px;
     cursor: pointer;
   }

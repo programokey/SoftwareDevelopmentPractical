@@ -2,7 +2,7 @@
   <div class="department">
     <el-breadcrumb class="breadcrumb" separator="/">
       <el-breadcrumb-item :to="{ path: '/' }">导览</el-breadcrumb-item>
-      <el-breadcrumb-item>{{$route.params.name}}</el-breadcrumb-item>
+      <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="content">
       <div class="name">
@@ -43,9 +43,15 @@ export default {
       }
     }
   },
-  computed: {},
+  computed: {
+    name () {
+      return this.$route.params.name
+    }
+  },
   mounted () {
-
+    this.$api.getDepartmentInfo(name).then(res => {
+      console.log(res)
+    })
   },
   methods: {}
 }

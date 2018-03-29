@@ -3,8 +3,10 @@ const foo = () => {
   return http.post('url', {})
 }
 const getDepartmentList = () => {
-  console.log('aaaa')
   return http.get('/department')
+}
+const getDepartmentInfo = (val) => {
+  return http.get(`/department/${val}`)
 }
 const login = (name, hash) => {
   return http.post('/login', {
@@ -12,8 +14,10 @@ const login = (name, hash) => {
     hash: hash
   })
 }
+
 export default {
   foo,
   getDepartmentList,
+  getDepartmentInfo,
   login
 }

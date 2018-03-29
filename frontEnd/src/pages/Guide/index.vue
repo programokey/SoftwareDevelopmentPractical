@@ -4,25 +4,13 @@
       <div class="guide-list">
         <p class="guide-title">医院导览</p>
         <ul class="depart">
-          <li class="depart-item" :class="[+isHover===1?'ishover':'']" @mouseenter="mouseen(1)" @mouseleave="mousele()" @click="$router.push(`/department/前台`)">前台</li>
-          <li class="depart-item" :class="[+isHover===2?'ishover':'']" @mouseenter="mouseen(2)" @mouseleave="mousele()">科室2</li>
-          <li class="depart-item" :class="[+isHover===3?'ishover':'']" @mouseenter="mouseen(3)" @mouseleave="mousele()">科室3</li>
-          <li class="depart-item">科室444</li>
-          <li class="depart-item">科室5</li>
-          <li class="depart-item">科室6</li>
-          <li class="depart-item">科室7</li>
-          <li class="depart-item">科室8</li>
-          <li class="depart-item">科室1</li>
-          <li class="depart-item">科室2</li>
-          <li class="depart-item">科室3</li>
-          <li class="depart-item">科室4</li>
-          <li class="depart-item">科室5</li>
+          <li v-for="(item,index) in departments" :key="index" class="depart-item" :class="[isHover===item.name ?'ishover':'']" @mouseenter="mouseen(item.name)" @mouseleave="mousele()" @click="$router.push(`/department/${item.name}`)">{{item.name}}</li>
 
         </ul>
       </div>
       <div class="guide-plan">
         <!-- <i class="el-icon-location hotspot"></i> -->
-        <Hotspot :activeId="isHover" v-for="(item,index) in coors" :coor="item.coor" :uid="item.uid" :key="index" @mouseenter.native="mouseen(item.uid)" @mouseleave.native="mousele()" @click.native="$router.push(`/department/前台`)" />
+        <Hotspot :activeId="isHover" v-for="(item,index) in departments" :pos="item.pos" :uid="item.name" :key="index" @mouseenter.native="mouseen(item.name)" @mouseleave.native="mousele()" @click.native="$router.push(`/department/${item.name}`)" />
         <img class="guide-plan-img" src="./../../../static/plan.jpg">
       </div>
     </div>
@@ -40,18 +28,11 @@ export default{
   props: {},
   data () {
     return {
-      isHover: -1,
-      coors: [{
-        uid: 1,
-        coor: '111,222'
-      }, {
-        uid: 2,
-        coor: '222,111'
-      },
-      {
-        uid: 3,
-        coor: '333,111'
-      }]
+      isHover: '',
+      departments: [
+        {name: 'xxx1', pos: '141,114'},
+        {name: 'xx2', pos: '111,111'}
+      ]
     }
   },
   computed: {},
@@ -59,7 +40,7 @@ export default{
   created () {},
   mounted () {
     this.$api.getDepartmentList().then(res => {
-      console.log(res)
+      // console.log(res)
     })
   },
   methods: {
@@ -67,7 +48,7 @@ export default{
       this.isHover = val
     },
     mousele () {
-      this.isHover = -1
+      this.isHover = ''
     }
   }
 }
