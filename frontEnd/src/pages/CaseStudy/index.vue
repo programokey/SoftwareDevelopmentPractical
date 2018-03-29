@@ -60,6 +60,7 @@ export default {
   }
   &-right {
     height: 100%;
+    background:$green;
     padding-right: 0 !important;
   }
   &-search {

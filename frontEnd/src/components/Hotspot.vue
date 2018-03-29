@@ -6,23 +6,23 @@
 <script>
 export default {
   components: {},
-  props: ['uid', 'coor', 'activeId'],
+  props: ['uid', 'pos', 'activeId'],
   data () {
     return {
       // uid: 1,
-      // coor: '131,123'
+      // pos: '131,123'
       // activeId: 2
     }
   },
   computed: {
     cX () {
-      return +this.coor.split(',')[0] + 'px'
+      return +this.pos.split(',')[0] + 'px'
     },
     cY () {
-      return +this.coor.split(',')[1] + 'px'
+      return +this.pos.split(',')[1] + 'px'
     },
     isHover () {
-      return +this.uid === +this.activeId
+      return this.uid === this.activeId
     }
   },
   mounted () {
@@ -34,11 +34,11 @@ export default {
 @import "./../style/vars.scss";
 .hotspot {
   position: absolute;
-  font-size: 25px;
-  color: $light-yellow;
+  font-size: 35px;
+  color: $green;
   cursor: pointer;
   .red {
-    color: red;
+    color: $yellow;
   }
 }
 </style>

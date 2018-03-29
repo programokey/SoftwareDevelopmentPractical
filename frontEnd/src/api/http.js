@@ -1,13 +1,12 @@
 import axios from 'axios'
 import qs from 'qs'
 // import { baseUrl } from '@/config/env'
-
+import router from '@/router'
 // axios.defaults.baseURL = baseUrl
-axios.defaults.baseURL = 'http://172.30.223.139:5000'
+axios.defaults.baseURL = 'http://106.14.141.233:5000/'
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
-    console.log(config)
     return config
   },
   err => {
@@ -18,6 +17,10 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
   response => {
+    console.log(response)
+    if (response.status === 302) {
+      router.push('/login')
+    }
     return response.data
   },
   error => {
