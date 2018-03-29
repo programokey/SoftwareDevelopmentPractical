@@ -2,10 +2,12 @@ from flask import Flask, jsonify, request, abort, send_file, redirect
 from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
+import sys
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
 
+sys.path.append("..")
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -24,9 +26,11 @@ def get_department_info(departmentName):
 def get_equipment(equipmentId):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
-        return DBQuery.get_departments()
+        res = DBQuery.get_equipment(equipmentId)
+        if res is not  None:
+            return res
     else:
-        return redirect('/login')
+        return "Internal Error"
 
 @app.route('/api/department', methods=['GET', 'POST'])
 def get_departments():
