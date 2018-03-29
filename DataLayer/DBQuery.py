@@ -41,7 +41,10 @@ def get_departments():
             redis_conn.set('departments', value=departments)
             return departments
     except:
-        raise Warning('Error during retrieving Departments information')
+        departments = {
+            "code": 233,
+            "data": "Error while get departments list"
+        }
 
 
 def get_department_info(departmentName):
@@ -52,7 +55,11 @@ def get_department_info(departmentName):
             cur.execute('select name, location, basicStructure, function from Department')
             res = cur.fetchone()
             if len(res) != 1:
-                return None
+                return json.dumps({
+                    "code": 404,
+                    "data": "Department %s does not exists!"%departmentName
+                })
+
             res = res[0]
             department_info = {
                                     "code": 1000,
@@ -77,7 +84,10 @@ def get_department_info(departmentName):
             redis_conn.set('department_info_%s'%departmentName, value=department_info)
             return department_info
     except:
-        raise Warning('Error during retrieving  %s\'s information'%departmentName)
+        return json.dumps({
+            "code": 200,
+            "data": "Error during getting information of Department %s does not exists!" % departmentName
+        })
 
 def get_equipment(equipmentId):
     try:

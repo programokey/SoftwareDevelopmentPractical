@@ -17,13 +17,31 @@ CORS(app)
 def index(path):
     return send_file('index.html')
 
-@app.route('/api/department/<departmentName>', methods=['GET', 'POST'])
+@app.route('/department', methods=['GET', 'POST'])
+def get_departments():
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_departments()
+    else:
+        return  redirect('/login')
+
+@app.route('/department/<departmentName>', methods=['GET', 'POST'])
 def get_department_info(departmentName):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         return DBQuery.get_department_info(departmentName)
     else:
-        return  redirect('/')
+        return  redirect('/login')
+
+@app('/department/<departmentName>/roles/<roleName>')
+def get_department_role_job(departmentName, roleName):
+    '''
+    :param departmentName:
+    :param roleName:
+    :return: the jobs the
+    '''
+    pass
+
 
 @app.route('/api/equipment/<equipmentId>', methods=['GET', 'POST'])
 def get_equipment(equipmentId):
@@ -35,13 +53,6 @@ def get_equipment(equipmentId):
     else:
         return "Internal Error"
 
-@app.route('/api/department', methods=['GET', 'POST'])
-def get_departments():
-    token = request.cookies.get('token')
-    if token is not None and validate.validate(token):
-        return DBQuery.get_departments()
-    else:
-        return  redirect('/login')
 
 @app.route('/static/<path1>/<path2>')
 def static_file(path1, path2):
