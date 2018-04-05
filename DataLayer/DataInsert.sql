@@ -16,7 +16,6 @@ insert into Equipment value(3, '滑机', '精神科', '用于产生滑稽', '', 
 insert into Equipment value(4, '垃机', '精神科', '用于排除垃圾思想', '', '精神科排毒室', 1);
 
 
-
 insert into Role value('杨永信', '有一定几率发动闪电攻击');
 insert into Role value('开膛手杰克', '给病患执行腹部手术');
 insert into Role value('Professor X', 'read patients\' mind');
@@ -24,9 +23,13 @@ insert into Role value('Professor X', 'read patients\' mind');
 insert into DepartmentRole value('精神科', '杨永信');
 insert into DepartmentRole value('精神科', 'Professor X');
 
+insert into Flow value(0, 0, 'Picture', '/flow/1.jpg', '展示Doge图片');
+insert into Flow value(0, 1, 'Video', '/flow/2.avi', '播放Doge视频');
+
 insert into Job value('我觉得你需要被电一下', '判断病患是否需要点击', '注意观察', NULL);
 insert into Job value('十万伏特', '释放10万伏特的电压', '注意接地', NULL);
+insert into Job value('精神污染', '污染患者精神', '每天早晚各一次', NULL);
 
 insert into RoleJob value('杨永信', '精神科', '我觉得你需要被电一下');
 insert into RoleJob value('杨永信', '精神科', '十万伏特');
-
+insert into RoleJob value('Professor X', '精神科', '精神污染');

@@ -138,7 +138,6 @@ def get_department_role_job(departmentName, roleName):
                              charset='utf8') as cur:
             cur.execute('select job from RoleJob where role = %s and department = %s ', (roleName, departmentName))
             res = cur.fetchall()
-            print(res)
             jobs = {
                 "code": 1000,
                 "data": []
@@ -154,10 +153,69 @@ def get_department_role_job(departmentName, roleName):
             "data": "Error during getting jobs of Role %s in  Department %s!" %(roleName, departmentName)
         })
 
+def get_role_job(roleName):
+    assert isinstance(roleName, str)
+
+    try:
+        if redis_conn.exists('role_job_%s'%roleName):
+            return redis_conn.get('role_job_%s'%roleName).decode('utf8')
+        with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
+                             charset='utf8') as cur:
+            cur.execute('select job from RoleJob where role = %s', (roleName,))
+            res = cur.fetchall()
+            jobs = {
+                "code": 1000,
+                "data": []
+            }
+            for item in res:
+                jobs["data"].append(item[0])
+            jobs = json.dumps(jobs)
+            redis_conn.set('role_job_%s'%roleName, value=jobs)
+            return jobs
+    except:
+        return json.dumps({
+            "code": 404,
+            "data": "Error during getting jobs of Role %s!" %roleName
+        })
+
+def get_job_detail(jobName):
+    assert isinstance(jobName, str)
+
+    try:
+        if redis_conn.exists('job_%s' % jobName):
+            return redis_conn.get('job_%s' % jobName).decode('utf8')
+        with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
+                             charset='utf8') as cur:
+            cur.execute('select description, dosAndDonots, jobFlowID from Job where name = %s', (jobName,))
+            res = cur.fetchone()
+            if res is None:
+                return json.dumps({
+                    'code': 404,
+                    'data': 'No such job!'
+                })
+            detail = {
+                        "code": 1000,
+                        "data": {
+                            "description": res[0],
+                            "dosAndDonots": res[1]
+                        }
+                      }
+
+            if res[2] is not  None:
+                detail['data']['jobflow'] = res[2]
+            return json.dumps(detail)
+    except:
+        return json.dumps({
+            "code": 404,
+            "data": "Error during getting details of the jobs %s!" % jobName
+        })
+
 if __name__ == '__main__':
-    departmentName = '精神科'
-    print(json.loads(get_department_info(departmentName)))
-    pass
+    jobName = '我觉得你需要被电一下'
+    print(json.loads(get_job_detail(jobName)))
+
+    jobName = '精神污染'
+    print(json.loads(get_job_detail(jobName)))
 
 '''
 insert into Department value('CT', 'gateway', 'funny', 'CT Scan', 332, 332, 0);
