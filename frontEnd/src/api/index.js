@@ -28,7 +28,47 @@ const getDepartmentRoleJob = (department, role) => {
   return http.get(`/department/${department}/roles/${role}`)
 }
 /* 角色扮演 */
+// 获取角色工作列表
+const getRoleJobList = (role) => {
+  return http.get(`/role/${role}`)
+}
+// 角色工作详情
+const getRoleJobInfo = (role, job) => {
+  return http.get(`/role/${role}/${job}`)
+}
+/* 病例学习 */
+// 病种列表
+const getDisCategoryList = () => {
+  return http.get('/diseases-categories')
+}
+// 病例列表
+const getCaseList = (category) => {
+  return http.get(`/disease/${category}`)
+}
+// 病例单
+const getCaseInfo = (id) => {
+  return http.get(`/case/${id}`)
+}
+// 病例单包含的检查结果
+const getExaminationResult = (id) => {
+  return http.get(`/examinationResult/${id}`)
+}
+// 病例单包含的手术
+const getOperation = (name) => {
+  return http.get(`/operation/${name}`)
+}
 
+/** 测试 */
+// 提交答案 此处用post 先不写
+
+// 获取测试列表
+const getTest = () => {
+  return http.get('/test')
+}
+// 获取试题
+const getTestQuestions = (id) => {
+  return http.get(`/test/id/${id}`)
+}
 export default {
   foo,
   login,
@@ -37,5 +77,14 @@ export default {
   getDepartmentList,
   getDepartmentInfo,
   getEquipment,
-  getDepartmentRoleJob
+  getDepartmentRoleJob,
+  getRoleJobList,
+  getRoleJobInfo,
+  getDisCategoryList,
+  getCaseList,
+  getCaseInfo,
+  getExaminationResult,
+  getOperation,
+  getTest,
+  getTestQuestions
 }

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from DataLayer.DBQuery import get_department_info, get_user, get_department_role_job, get_departments, get_equipment
+from DataLayer.DBQuery import get_department_info, get_user, get_department_role_job, get_departments, get_equipment, get_job_detail, get_medicine, get_flow, get_disease_categories, get_cases, get_prescription
 import json
 import redis
 
@@ -103,3 +103,49 @@ class TestDBQuery(TestCase):
         self.assertEqual(get_department_role_job(departmentName, roleName), expected_result)
         # test get redis cache
         self.assertEqual(get_department_role_job(departmentName, roleName), expected_result)
+
+
+
+
+
+
+    def test_get_job_detail(self):
+        jobName = '我觉得你需要被电一下'
+        print(json.loads(get_job_detail(jobName)))
+
+        jobName = '精神污染'
+        print(json.loads(get_job_detail(jobName)))
+
+    def test_get_flow(self):
+        flowId = 0
+        print(json.loads(get_flow(flowId)))
+
+        flowId = 2333
+        print(json.loads(get_flow(flowId)))
+
+    def test_get_medicine(self):
+        approveNumber = '滑稽准字FDA233'
+        print(json.loads(get_medicine(approveNumber)))
+
+        approveNumber = '滑稽准字FDA2333'
+        print(json.loads(get_medicine(approveNumber)))
+
+        approveNumber = '滑稽准字FFDA2333'
+        print(json.loads(get_medicine(approveNumber)))
+
+    def test_get_disease_categories(self):
+        print(json.loads(get_disease_categories()))
+
+    def test_get_cases(self):
+        diseaseName = '先天性心眼不足'
+        print(json.loads(get_cases(diseaseName)))
+
+        diseaseName = '早上睡不醒'
+        print(json.loads(get_cases(diseaseName)))
+
+    def test_get_prescription(self):
+        id = 1
+        print(json.loads(get_prescription(id)))
+
+        id = 2
+        print(json.loads(get_prescription(id)))

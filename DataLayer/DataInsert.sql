@@ -23,13 +23,46 @@ insert into Role value('Professor X', 'read patients\' mind');
 insert into DepartmentRole value('精神科', '杨永信');
 insert into DepartmentRole value('精神科', 'Professor X');
 
-insert into Flow value(0, 0, 'Picture', '/flow/1.jpg', '展示Doge图片');
-insert into Flow value(0, 1, 'Video', '/flow/2.avi', '播放Doge视频');
+insert into Flow value(0, 0, '/flow/1.jpg', 'Picture',  '展示Doge图片');
+insert into Flow value(0, 1, '/flow/2.avi', 'Video', '播放Doge视频');
 
 insert into Job value('我觉得你需要被电一下', '判断病患是否需要点击', '注意观察', NULL);
 insert into Job value('十万伏特', '释放10万伏特的电压', '注意接地', NULL);
-insert into Job value('精神污染', '污染患者精神', '每天早晚各一次', NULL);
+insert into Job value('精神污染', '污染患者精神', '每天早晚各一次', 0);
 
 insert into RoleJob value('杨永信', '精神科', '我觉得你需要被电一下');
 insert into RoleJob value('杨永信', '精神科', '十万伏特');
 insert into RoleJob value('Professor X', '精神科', '精神污染');
+
+
+insert into Medicine value('滑稽准字FDA233', '伸腿瞪眼丸', '不论男女老幼,疑难杂症,服用此药后,即刻痊愈,只溶在口,不溶在手', 2.33);
+insert into Medicine value('滑稽准字FDA2333', '脑残片', '用于提高智商', 250.0);
+
+
+insert into DiseaseCategory value('缺心眼');
+insert into DiseaseCategory value('嗜睡');
+
+insert into Disease value('先天性心眼不足', '缺心眼', '精神科', '先天不足导致的缺心眼');
+insert into Disease value('早上睡不醒', '嗜睡', '精神科', '人生从来没上午');
+insert into Disease value('上课睡觉', '嗜睡', '精神科', '听取人生经验');
+
+
+insert into `Case` value(1, '杨永信', '哈士奇', '2.333岁', 'unknown', '先天性心眼不足', '时常犯二', '经诊断为典型的先天性缺心眼', '使用脑残片进行药物治疗', 2.333, NULL);
+insert into `Case` value(2, '杨永信', '阿拉斯加', '3岁', 'unknown', '先天性心眼不足', '雪橇三傻', '典型的先天性缺心眼', '使用脑残片进行药物治疗', 2.333, NULL);
+insert into `Case` value(3, 'Professor X', 'Doge', '15个月', '雌性', '早上睡不醒', '早上睡到12点', '经诊断为典型的嗜睡', '使用精神污染进治疗', 23.33, NULL);
+
+
+insert into Prescription value(1, 1, '针对哈士奇先天性心眼不足的药物治疗');
+
+insert into PrescriptionMedicine value(1, '滑稽准字FDA2333', '脑残片', 12);
+insert into PrescriptionMedicine value(1, '滑稽准字FDA233', '伸腿瞪眼丸', 2);
+
+
+insert into Prescription value(2, 1, '针对哈士奇先天性心眼不足的药物治疗的补充');
+
+insert into PrescriptionMedicine value(2, '滑稽准字FDA2333', '脑残片', 12);
+insert into PrescriptionMedicine value(2, '滑稽准字FDA233', '伸腿瞪眼丸', 2);
+
+
+
+
