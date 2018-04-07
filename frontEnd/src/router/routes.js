@@ -16,6 +16,7 @@ const Equipment = () => import(/* webpackChunkName: "equipment" */ '@/pages/Equi
 const DepartmentRole = () => import(/* webpackChunkName: "departmentRole" */ '@/pages/DepartmentRole')
 const Disease = () => import(/* webpackChunkName: "disease" */ '@/pages/Disease')
 const DiseaseCase = () => import(/* webpackChunkName: "diseaseCase" */ '@/pages/DiseaseCase')
+// const Prescription = () => import(/* webpackChunkName: "prescription" */ '@/pages/Prescription')
 /* routes config */
 const routes = [
   {
@@ -82,6 +83,10 @@ const routes = [
     path: '/equipment/:id',
     name: 'Equipment',
     component: Equipment
+  }, {
+    path: '/prescription/:id',
+    name: 'Prescription',
+    component: Prescription
   }, {
     path: '/department/:departmentName/role/:roleName',
     name: 'departmentRole',
