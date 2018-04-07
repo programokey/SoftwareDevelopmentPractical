@@ -40,13 +40,9 @@
           <div>{{form.treatment}}</div>
         </el-collapse-item>
         <el-collapse-item title="处方" name="4">
-<<<<<<< HEAD
           <div>
-            <span class="pres" v-for="(item,index) in form.prescription" :key="index" href="$router.push(`/`)">{{item}}</span>
+            <span class="pres" v-for="(item,index) in form.prescription" :key="index" @click="$router.push(`/prescription/${item}`)">{{item}}</span>
           </div>
-=======
-          <div><a class="pres" v-for="(item,index) in form.prescription" :key="index" @click="$router.push(`/prescription/${item}`)">{{item}}</a></div>
->>>>>>> 5961139a9844064bc295437880b8748d71545d08
         </el-collapse-item>
       </el-collapse>
 
