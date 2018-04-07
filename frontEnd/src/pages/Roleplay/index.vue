@@ -10,7 +10,8 @@
               <!-- v-for 循环显示三个角色 -->
               <el-col :span="8" v-for="(role,index) in roles" :key="index">
                 <div class="grid-content bg-purple work">
-                  <a @click="$router.push(`/roleplay/${role.name}`)" class="work-box"> <img :src="role.imgUrl" alt="">
+                  <a @click="$router.push(`/roleplay/${role.name}`)" class="work-box">
+                    <img :src="role.imgUrl" alt="">
                     <div class="overlay">
                       <div class="overlay-caption">
                         <h5>{{role.name}}</h5>
@@ -40,9 +41,9 @@ export default {
   data () {
     return {
       roles: [
-        {name: '前台', imgUrl: '/src/images/doctor.jpeg'},
-        {name: '医助', imgUrl: '/src/images/doctor.jpeg'},
-        {name: '医师', imgUrl: '/src/images/doctor.jpeg'}
+        {name: '前台', imgUrl: 'static/images/doctor.jpeg'},
+        {name: '医助', imgUrl: 'static/images/doctor.jpeg'},
+        {name: '医师', imgUrl: 'static/images/doctor.jpeg'}
       ]
     }
   },

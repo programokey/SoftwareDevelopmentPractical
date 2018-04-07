@@ -5,7 +5,7 @@
       <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-container>
-      <el-aside width="400px"><img src="./../../images/4.png"  alt=""></el-aside>
+      <el-aside width="400px"><img src="./../../images/4.png" alt=""></el-aside>
       <el-main>
         <div class="inside">
           <div class="content">
@@ -35,7 +35,7 @@
             <span class="arrow"></span>
           </div>
         </div>
-          <!-- </div>
+        <!-- </div>
                 <h3>描述:</h3>
                 <div class="margin"><span class="quote"></span>{{data.description}}”</div>
                 <span class="arrow"></span>
@@ -43,13 +43,10 @@
                 <h3>注意事项:</h3>
                 <div><span class="quote"></span>{{data.dosAndDonots}}”</div>
                 <span class="arrow"></span> -->
-        
-        
 
       </el-main>
     </el-container>
 
-    
   </div>
 </template>
 <script>
@@ -82,62 +79,60 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 //引入
 .inside {
-	border: 1px solid #ddd;
-	padding: 25px 28px 28px;
-	position: relative;
-	margin-left: 10px;
-	background: #FFF;
+  border: 1px solid #ddd;
+  padding: 25px 28px 28px;
+  position: relative;
+  margin-left: 10px;
+  background: #fff;
 }
 
 .arrow {
-	position: absolute;
-	width: 17px;
-	height: 26px;
-	background: url(./../../images/arrow-1.png) 0 0 no-repeat;
-	left: -11px;
-	top: 19px;	
+  position: absolute;
+  width: 17px;
+  height: 26px;
+  background: url(./../../images/arrow-1.png) 0 0 no-repeat;
+  left: -11px;
+  top: 19px;
 }
 //引出
 .content {
   //margin: 50px 0 0 150px;
-  postion:relative;
-  width:100%;
+  postion: relative;
+  width: 100%;
   .label {
-    
-    width:20%;
+    width: 20%;
     color: $green;
-    font-size:1em;
-  
+    font-size: 1em;
+
     // padding-bottom: 1em;
     position: relative;
     // margin-bottom: 10px;
-
   }
   .info {
-  width:80%;
+    width: 80%;
     font-size: 1em;
   }
   & > div {
-    display: flex;
-    align-items: flex-end;
+    // display: flex;
+    // align-items: flex-end;
     margin-top: 20px;
+  }
+  .label {
+    margin-bottom: 10px;
+  }
+  p {
+    margin-right: 150px;
   }
   & > ul {
     margin-top: 20px;
-    .label {
-      margin-bottom: 10px;
-    }
+
     li {
       margin-left: 15px;
       cursor: pointer;
     }
   }
-
-  
-
 }
 // .inActive {
 //   cursor: pointer;
