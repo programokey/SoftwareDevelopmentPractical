@@ -6,7 +6,7 @@
     </el-breadcrumb>
     <div class="content">
       <div class="name">
-        <h2 class="label">科室名：</h2>
+        <!-- <h2 class="label">科室名：</h2> -->
         <p class="info">{{info.name}}</p>
       </div>
       <div class="structure">
@@ -65,15 +65,19 @@ export default {
     // margin-bottom: 10px;
   }
   & > div {
-    display: flex;
-    align-items: flex-end;
+    // display: flex;
+    // align-items: flex-end;
     margin-top: 20px;
+  }
+  .label {
+    margin-bottom: 10px;
+  }
+  p {
+    margin-right: 150px;
   }
   & > ul {
     margin-top: 20px;
-    .label {
-      margin-bottom: 10px;
-    }
+
     li {
       margin-left: 15px;
       cursor: pointer;
