@@ -6,15 +6,21 @@
     <div class="card-overlay">
       <div class="card-content">病例1</div>
     </div> -->
-    <h2 @click="$emit('clickMethod',{id:info.id})">病例{{index}}</h2>
-    <p>{{info.petType}}</p>
-    <p>年龄：{{info.petAge}}岁</p>
+    <div class="card-content" v-if="job">
+      <h2>{{job}}
+      </h2>
+    </div>
+    <div class="card-content" v-else>
+      <h2 @click="$emit('clickMethod',{id:info.id})">病例{{index}}</h2>
+      <p>{{info.petType}}</p>
+      <p>年龄：{{info.petAge}}岁</p>
+    </div>
   </div>
 </template>
 <script>
 export default {
   components: {},
-  props: ['info', 'index'],
+  props: ['info', 'index', 'job'],
   data () {
     return {}
   },
@@ -27,19 +33,22 @@ export default {
 .card {
   // width: 100%;
   // height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 10px;
   width: 300px;
   height: 300px;
   position: relative;
   overflow: hidden;
   background: $green;
-  // border: 1px solid #eee;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  & > * {
-    color: #fff;
+  &-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > * {
+      color: #fff;
+    }
   }
   h2 {
     margin-bottom: 20px;

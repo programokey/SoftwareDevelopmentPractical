@@ -13,7 +13,7 @@
 </template>
 <script>
 import sha1 from 'js-sha1'
-import Cookie from './../../utils/cookie'
+import Cookie from './../../../utils/cookie'
 export default {
   components: {},
   props: {},
@@ -51,7 +51,7 @@ export default {
 .login {
   position: relative;
   height: 100%;
-  background-image: url("./../../../static/login-bg.jpg");
+  background-image: url("./../../../../static/login-bg.jpg");
   background-size: cover;
   &-title {
     position: absolute;

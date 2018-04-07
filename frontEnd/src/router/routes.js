@@ -3,19 +3,19 @@
  * 请指定webpackChunkName，以便打包后生成的chunk带有相对应的名字。
  */
 
-const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/ErrorPage')
-const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Guide')
-const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Login')
-const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay')
-const Role = () => import(/* webpackChunkName: "role" */ '@/pages/Role')
-const WorkType = () => import(/* webpackChunkName: "workType" */ '@/pages/WorkType')
-const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/CaseStudy')
-const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Examination')
-const Department = () => import(/* webpackChunkName: "department" */ '@/pages/Department')
-const Equipment = () => import(/* webpackChunkName: "equipment" */ '@/pages/Equipment')
-const DepartmentRole = () => import(/* webpackChunkName: "departmentRole" */ '@/pages/DepartmentRole')
-const Disease = () => import(/* webpackChunkName: "disease" */ '@/pages/Disease')
-const DiseaseCase = () => import(/* webpackChunkName: "diseaseCase" */ '@/pages/DiseaseCase')
+const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/Other/ErrorPage')
+const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Department/Guide')
+const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Other/Login')
+const Roleplay = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Roleplay/Roleplay')
+const Role = () => import(/* webpackChunkName: "role" */ '@/pages/Roleplay/Role')
+const WorkType = () => import(/* webpackChunkName: "workType" */ '@/pages/Roleplay/WorkType')
+const CaseStudy = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Case/CaseStudy')
+const Examination = () => import(/* webpackChunkName: "roleplay" */ '@/pages/Exam/Examination')
+const Department = () => import(/* webpackChunkName: "department" */ '@/pages/Department/Department')
+const Equipment = () => import(/* webpackChunkName: "equipment" */ '@/pages/Other/Equipment')
+const DepartmentRole = () => import(/* webpackChunkName: "departmentRole" */ '@/pages/Department/DepartmentRole')
+const Disease = () => import(/* webpackChunkName: "disease" */ '@/pages/Case/Disease')
+const DiseaseCase = () => import(/* webpackChunkName: "diseaseCase" */ '@/pages/Case/DiseaseCase')
 /* routes config */
 const routes = [
   {

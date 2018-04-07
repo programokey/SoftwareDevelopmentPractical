@@ -2,7 +2,7 @@
   <div class="case">
     <el-breadcrumb class="breadcrumb" separator="/">
       <el-breadcrumb-item :to="{ path: '/learn' }">病例学习</el-breadcrumb-item>
-      <el-breadcrumb-item>{{diseaseName}}</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: `/case/${diseaseName}` }">{{diseaseName}}</el-breadcrumb-item>
       <el-breadcrumb-item>{{caseId}}</el-breadcrumb-item>
 
     </el-breadcrumb>

@@ -6,9 +6,9 @@
       <el-breadcrumb-item>{{currentUrl}}</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- <div class="descrip">{{data.description}}</div> -->
-    <ul class="jobs">
-      <li v-for="(item,index) in data.jobs" :key="index">{{item}}</li>
-    </ul>
+    <div class="jobs card-container">
+      <m-card v-for="(item,index) in data.jobs" :key="index" :job="item"></m-card>
+    </div>
 
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     return {
       data: {
         // description: 'xxxxxxxxxxxxxxxxxxxxxxxx',
-        jobs: ['a', 'b']
+        jobs: ['a', 'b', 'c', 'd', 'e']
       }
     }
   },
@@ -41,5 +41,7 @@ export default {
 }
 </script>
 <style lang="scss">
-
+.jobs {
+  margin-top: 30px;
+}
 </style>
