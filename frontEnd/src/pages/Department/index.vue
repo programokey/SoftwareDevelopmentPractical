@@ -82,7 +82,7 @@ export default {
     margin-top: 30px;
   }
   .el-aside {
-    margin-left: 20px;
+    margin: 20px 0 0 20px;
     overflow: hidden;
     width: 400px;
     height: 400px;

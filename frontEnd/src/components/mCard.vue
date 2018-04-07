@@ -6,15 +6,15 @@
     <div class="card-overlay">
       <div class="card-content">病例1</div>
     </div> -->
-    <h2>病例1</h2>
-    <p>哈士奇</p>
-    <p>年龄：2岁</p>
+    <h2 @click="$emit('clickMethod',{id:info.id})">病例{{index}}</h2>
+    <p>{{info.petType}}</p>
+    <p>年龄：{{info.petAge}}岁</p>
   </div>
 </template>
 <script>
 export default {
   components: {},
-  props: {},
+  props: ['info', 'index'],
   data () {
     return {}
   },
