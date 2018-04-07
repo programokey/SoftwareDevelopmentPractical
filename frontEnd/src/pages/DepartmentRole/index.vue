@@ -5,20 +5,24 @@
       <el-breadcrumb-item :to="{path:`/department/${frontUrl}`}">{{frontUrl}}</el-breadcrumb-item>
       <el-breadcrumb-item>{{currentUrl}}</el-breadcrumb-item>
     </el-breadcrumb>
-    <div class="descrip">{{data.description}}</div>
+    <!-- <div class="descrip">{{data.description}}</div> -->
     <ul class="jobs">
       <li v-for="(item,index) in data.jobs" :key="index">{{item}}</li>
     </ul>
+
   </div>
 </template>
 <script>
+import MCard from '@/components/MCard'
 export default {
-  components: {},
+  components: {
+    MCard
+  },
   props: {},
   data () {
     return {
       data: {
-        description: 'xxxxxxxxxxxxxxxxxxxxxxxx',
+        // description: 'xxxxxxxxxxxxxxxxxxxxxxxx',
         jobs: ['a', 'b']
       }
     }
