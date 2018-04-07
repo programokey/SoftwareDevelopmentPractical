@@ -63,6 +63,18 @@ insert into Prescription value(2, 1, '针对哈士奇先天性心眼不足的药
 insert into PrescriptionMedicine value(2, '滑稽准字FDA2333', '脑残片', 12);
 insert into PrescriptionMedicine value(2, '滑稽准字FDA233', '伸腿瞪眼丸', 2);
 
+insert into MedicalExamination value('脑部MR', '脑部核磁共振检查, 用于发现脑部疾病', 2333.33);
+
+insert into CaseExamination value(1, 1, '脑部MR', '轻度脑残');
+
+insert into NumericalIndex value(1, '脑部MR', '智商', '', '智商值', 60, 100);
+insert into NumericalIndex value(2, '脑部MR', '脑洞数量', '个', '脑洞数量', 0, 3);
+
+insert into NumericalMedicalExaminationResult value(1, 1, 233);
+insert into NumericalMedicalExaminationResult value(1, 2, 5);
+
+insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky1.jpg', '脑洞过大');
+insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky2.jpg', '');
 
 
 

@@ -375,9 +375,9 @@ def get_examination_result(id):
                 })
             cur.execute(
                 'select name, value, unit, description, low, high value '
-                'from NumericalMedicalExaminationResult natural join NumericalIndex '
-                'where caseExaminationID = %s',
-                (id,))
+                'from NumericalMedicalExaminationResult inner join NumericalIndex '
+                'on NumericalMedicalExaminationResult.type =  NumericalIndex.id '
+                'where NumericalMedicalExaminationResult.caseExaminationID = %s', (id,))
             res = cur.fetchall()
             numerical_result = []
 
@@ -387,22 +387,20 @@ def get_examination_result(id):
                     'value': item[1],
                     'unit': item[2],
                     'description': item[3],
-                    'low':item[4],
+                    'low': item[4],
                     'hig': item[5]
                 })
             data['graphicResult'] = graphic_result
             data['numercalResult'] = numerical_result
             examination_result['data'] = data
             examination_result = json.dumps(examination_result)
-            redis_conn.set('examination_result_%d'%id, value=examination_result)
+            redis_conn.set('examination_result_%d' % id, value=examination_result)
             return examination_result
     except:
         return json.dumps({
             "code": 404,
             "data": "Error during getting disease categories!"
         })
-
-
 
 def get_prescription(id):
     try:
@@ -453,21 +451,24 @@ def get_case_detail(caseId):
 if __name__ == '__main__':
     # with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
     #                      charset='utf8') as cur:
-    #     cur.execute("delete from Prescription")
-    #     cur.execute("delete from PrescriptionMedicine")
+    #     cur.execute("delete from MedicalExamination")
+    #     cur.execute("delete from CaseExamination")
+    #     cur.execute("delete from NumericalIndex")
+    #     cur.execute("delete from NumericalMedicalExaminationResult")
+    #     cur.execute("delete from GraphicMedicalExaminationResult")
     #
-    #     cur.execute("insert into Prescription value(1, 1, '针对哈士奇先天性心眼不足的药物治疗');")
-    #     cur.execute("insert into PrescriptionMedicine value(1, '滑稽准字FDA2333', '脑残片', 12);")
-    #     cur.execute("insert into PrescriptionMedicine value(1, '滑稽准字FDA233', '伸腿瞪眼丸', 2);")
-    #     cur.execute("insert into Prescription value(2, 1, '针对哈士奇先天性心眼不足的药物治疗的补充');")
-    #     cur.execute("insert into PrescriptionMedicine value(2, '滑稽准字FDA2333', '脑残片', 12);")
-    #     cur.execute("insert into PrescriptionMedicine value(2, '滑稽准字FDA233', '伸腿瞪眼丸', 2);")
+    #
+    #     cur.execute("insert into MedicalExamination value('脑部MR', '脑部核磁共振检查, 用于发现脑部疾病', 2333.33);")
+    #     cur.execute("insert into CaseExamination value(1, 1, '脑部MR', '轻度脑残');")
+    #     cur.execute("insert into NumericalIndex value(1, '脑部MR', '智商', '', '智商值', 60, 100);")
+    #     cur.execute("insert into NumericalIndex value(2, '脑部MR', '脑洞数量', '个', '脑洞数量', 0, 3);")
+    #     cur.execute("insert into NumericalMedicalExaminationResult value(1, 1, 233);")
+    #     cur.execute("insert into NumericalMedicalExaminationResult value(1, 2, 5);")
+    #     cur.execute("insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky1.jpg', '脑洞过大');")
+    #     cur.execute("insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky2.jpg', '');")
 
     id = 1
-    print(json.loads(get_prescription(id)))
-
-    id = 2
-    print(json.loads(get_prescription(id)))
+    print(json.loads(get_examination_result(id)))
 
 
 '''
