@@ -15,3 +15,8 @@
 .breadcrumb{
   margin: 10px 0 10px 10px;
 }
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

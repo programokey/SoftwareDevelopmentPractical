@@ -11,7 +11,7 @@
       <div class="guide-plan">
         <!-- <i class="el-icon-location hotspot"></i> -->
         <Hotspot :activeId="isHover" v-for="(item,index) in departments" :pos="item.pos" :uid="item.name" :key="index" @mouseenter.native="mouseen(item.name)" @mouseleave.native="mousele()" @click.native="$router.push(`/department/${item.name}`)" />
-        <img class="guide-plan-img" src="./../../../static/plan.jpg">
+        <img class="guide-plan-img" src="./../../../../static/plan.jpg">
       </div>
     </div>
   </div>

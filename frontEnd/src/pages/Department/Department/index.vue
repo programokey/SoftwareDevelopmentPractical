@@ -5,7 +5,7 @@
       <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-container>
-      <el-aside width="400px"><img class="department-image" src="./../../images/4.png" alt=""></el-aside>
+      <el-aside width="400px"><img class="department-image" src="static/images/4.png" alt=""></el-aside>
       <el-main>
         <div class="inside">
           <div class="content">
@@ -82,7 +82,7 @@ export default {
     margin-top: 30px;
   }
   .el-aside {
-    margin-left: 20px;
+    margin: 20px 0 0 20px;
     overflow: hidden;
     width: 400px;
     height: 400px;
@@ -105,7 +105,7 @@ export default {
   position: absolute;
   width: 17px;
   height: 26px;
-  background: url(./../../images/arrow-1.png) 0 0 no-repeat;
+  background: url(./../../../../static/images/arrow-1.png) 0 0 no-repeat;
   left: -11px;
   top: 19px;
 }
