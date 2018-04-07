@@ -191,6 +191,7 @@ create table OpeationMedicine(-- Medicines used in the opeation
 	opeationName	varchar(128),
 	medicineApprovalNumber	varchar(128),
 	medicineName	varchar(128),-- redundance for performance
+	-- unit	float,
 	primary key (opeationName, medicineApprovalNumber),
 	foreign key (opeationName) references Operation(name),
 	foreign key (medicineApprovalNumber) references Medicine(ApprovalNumber)
