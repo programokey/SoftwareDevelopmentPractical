@@ -1,5 +1,5 @@
 from unittest import TestCase
-from DataLayer.DBQuery import get_department_info, get_user, get_department_role_job, get_departments, get_equipment, get_job_detail, get_medicine, get_flow, get_disease_categories, get_cases, get_prescription
+from DataLayer.DBQuery import *
 import json
 import redis
 
@@ -149,3 +149,15 @@ class TestDBQuery(TestCase):
 
         id = 2
         print(json.loads(get_prescription(id)))
+
+
+    def test_get_operation(self):
+        operationName = '精神污染术'
+        print(json.loads(get_operation(operationName)))
+
+        operationName = '2233'
+        print(json.loads(get_operation(operationName)))
+
+    def test_get_case_detail(selfs):
+        id = 1
+        print(json.loads(get_case_detail(1)))

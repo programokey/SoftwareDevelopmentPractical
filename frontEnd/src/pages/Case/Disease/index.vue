@@ -4,8 +4,8 @@
       <el-breadcrumb-item :to="{ path: '/learn' }">病例学习</el-breadcrumb-item>
       <el-breadcrumb-item>{{diseaseName}}</el-breadcrumb-item>
     </el-breadcrumb>
-    <div class="disease-cases">
-      <m-card class="disease-cases-item" v-for="(item,index) in cases" :key="index" :info="item" :index="index+1" @clickMethod="findCase"></m-card>
+    <div class="disease-cases card-container">
+      <m-card class="disease-cases-item " v-for="(item,index) in cases" :key="index" :info="item" :index="index+1" @clickMethod="findCase"></m-card>
     </div>
   </div>
 </template>
@@ -48,14 +48,7 @@ export default {
 <style lang="scss">
 .disease {
   &-cases {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 85%;
-    margin: 30px auto;
-    &-item {
-      margin: 10px;
-    }
+    margin-top: 30px;
   }
 }
 </style>

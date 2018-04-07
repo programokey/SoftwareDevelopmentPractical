@@ -51,9 +51,9 @@ export default {
 }
 </script>
 <style lang="scss">
-#works {
-  // margin-top: 100px;
-}
+// #works {
+//   // margin-top: 100px;
+// }
 
 /* ------------------------------------------------------------------------------
 	Works

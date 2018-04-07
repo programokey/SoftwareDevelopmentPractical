@@ -77,4 +77,21 @@ insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR
 insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky2.jpg', '');
 
 
+insert into Operation value('精神污染术', '对患者进行精神污染', '需反复治疗', 2333.3);
+
+insert into OpeationEquipment value('精神污染术', 3);
+insert into OpeationEquipment value('精神污染术', 4);
+insert into OpeationMedicine value('精神污染术', '滑稽准字FDA2333', '脑残片');
+insert into OpeationMedicine value('精神污染术', '滑稽准字FDA233', '伸腿瞪眼丸');
+
+
+insert into CaseOperation value(1, 1, '精神污染术');
+
+
+
+
+
+
+
+
 

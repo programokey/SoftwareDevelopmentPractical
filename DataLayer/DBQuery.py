@@ -289,7 +289,6 @@ def get_disease_categories():
             res = cur.fetchall()
             disease_categories = {
                 "code": 1000,
-
             }
             data = {}
             for item in res:
@@ -340,7 +339,7 @@ def get_cases(diseaseName):
     except:
         return json.dumps({
             "code": 404,
-            "data": "Error during getting disease categories!"
+            "data": "Error during getting case of %s!"%diseaseName
         })
 
 def get_examination_result(id):
@@ -399,7 +398,7 @@ def get_examination_result(id):
     except:
         return json.dumps({
             "code": 404,
-            "data": "Error during getting disease categories!"
+            "data": "Error during getting examination result %d!" % id
         })
 
 def get_prescription(id):
@@ -436,39 +435,149 @@ def get_prescription(id):
             data['medicine'] = medicine
             prescription['data'] = data
             prescription = json.dumps(prescription)
-            redis_conn.set('disease_categories', value=prescription)
+            redis_conn.set('prescription_%d'%id, value=prescription)
             return prescription
     except:
         return json.dumps({
             "code": 404,
-            "data": "Error during getting disease categories!"
+            "data": "Error during getting prescription %d!"%id
+        })
+
+def get_operation(operationName):
+    try:
+        if redis_conn.exists('operation_%s'%operationName):
+            return redis_conn.get('operation_%s'%operationName).decode('utf8')
+
+        with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
+                             charset='utf8') as cur:
+            cur.execute('select name, description, dosAndDonots, price from Operation where name = %s',
+                        (operationName,))
+            res = cur.fetchone()
+            if res is None:
+                return json.dumps({
+                    'code': 404,
+                    'data': 'No such operation!'
+                })
+            operation = {
+                "code": 1000,
+                'data': {
+                    'name': res[0],
+                    'description': res[1],
+                    'dosAndDonots': res[2],
+                    'price': res[3],
+                }
+            }
+            cur.execute('select medicineApprovalNumber, medicineName from OpeationMedicine where opeationName = %s',
+                        (operationName,))
+            res = cur.fetchall()
+            medicines = {}
+            for item in res:
+                medicines[item[0]] = item[1]
+            equipments = {}
+            cur.execute('select Equipment.id, Equipment.name '
+                        'from OpeationEquipment inner join Equipment '
+                        'on OpeationEquipment.equipmentID = Equipment.id'
+                        ' where opeationName = %s',
+                        (operationName,))
+            res = cur.fetchall()
+            for item in res:
+                equipments[item[0]] = item[1]
+            operation['data']['medicines'] = medicines
+            operation['data']['equipments'] = equipments
+            operation = json.dumps(operation)
+            redis_conn.set('operation_%s' % operationName, value=operation)
+            return operation
+
+    except:
+        return json.dumps({
+            "code": 404,
+            "data": "Error during getting detail of opetation %s!"%operationName
         })
 
 def get_case_detail(caseId):
-    pass
+    try:
+        if redis_conn.exists('case_%d'%caseId):
+            return redis_conn.get('case_%d'%caseId).decode('utf8')
 
+        with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
+                             charset='utf8') as cur:
+            cur.execute('select doctor, petType, petAge, petGender, '
+                        'disease, symptoms, diagnosis, treatment, expense, flow '
+                        'from `Case` where id = %s',
+                        (caseId,))
+            res = cur.fetchone()
+            if res is None:
+                return json.dumps({
+                    'code': 404,
+                    'data': 'No such case!'
+                })
+            case = {
+                "code": 1000,
+                'data': {
+                    'doctor': res[0],
+                    'petType': res[1],
+                    'petAge': res[2],
+                    'petGender': res[3],
+                    'disease': res[4],
+                    'symptoms': res[5],
+                    'diagnosis': res[6],
+                    'treatment': res[7],
+                    'expense': res[8],
+                }
+            }
+            if res[9] is not None:
+                case['data']['flow'] = res[9]
+
+            cur.execute('select id, examination from CaseExamination where caseId = %s',
+                        (caseId,))
+            res = cur.fetchall()
+            examination = {}
+            for item in res:
+                examination[item[0]] = item[1]
+            cur.execute('select id, operation from CaseOperation where caseId = %s',
+                        (caseId,))
+            res = cur.fetchall()
+            operations = {}
+            for item in res:
+                operations[item[0]] = item[1]
+
+            cur.execute('select id from Prescription where caseId = %s',
+                        (caseId,))
+            res = cur.fetchall()
+            prescriptions = [item[0] for item in res]
+
+            case['data']['examinationResult'] = examination
+            case['data']['operations'] = operations
+            case['data']['prescriptions'] = prescriptions
+
+            case = json.dumps(case)
+            redis_conn.set('case_%d' % caseId, value=case)
+            return case
+    except:
+        return json.dumps({
+            "code": 404,
+            "data": "Error during getting detail of case %d!"%caseId
+        })
 
 if __name__ == '__main__':
     # with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
     #                      charset='utf8') as cur:
-    #     cur.execute("delete from MedicalExamination")
-    #     cur.execute("delete from CaseExamination")
-    #     cur.execute("delete from NumericalIndex")
-    #     cur.execute("delete from NumericalMedicalExaminationResult")
-    #     cur.execute("delete from GraphicMedicalExaminationResult")
-    #
-    #
-    #     cur.execute("insert into MedicalExamination value('脑部MR', '脑部核磁共振检查, 用于发现脑部疾病', 2333.33);")
-    #     cur.execute("insert into CaseExamination value(1, 1, '脑部MR', '轻度脑残');")
-    #     cur.execute("insert into NumericalIndex value(1, '脑部MR', '智商', '', '智商值', 60, 100);")
-    #     cur.execute("insert into NumericalIndex value(2, '脑部MR', '脑洞数量', '个', '脑洞数量', 0, 3);")
-    #     cur.execute("insert into NumericalMedicalExaminationResult value(1, 1, 233);")
-    #     cur.execute("insert into NumericalMedicalExaminationResult value(1, 2, 5);")
-    #     cur.execute("insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky1.jpg', '脑洞过大');")
-    #     cur.execute("insert into GraphicMedicalExaminationResult value(1, '/ExaminationResult/BrainMR/husky2.jpg', '');")
+    #     cur.execute("insert into CaseOperation value(1, 1, '精神污染术');")
 
     id = 1
-    print(json.loads(get_examination_result(id)))
+    print(json.loads(get_case_detail(1)))
+    #     # cur.execute("delete from CaseExamination")
+    #     # cur.execute("delete from NumericalIndex")
+    #     # cur.execute("delete from NumericalMedicalExaminationResult")
+    #     # cur.execute("delete from GraphicMedicalExaminationResult")
+    #
+    #     cur.execute("insert into Operation value('精神污染术', '对患者进行精神污染', '需反复治疗', 2333.3);")
+    #     cur.execute("insert into OpeationEquipment value('精神污染术', 3);")
+    #     cur.execute("insert into OpeationEquipment value('精神污染术', 4);")
+    #     cur.execute("insert into OpeationMedicine value('精神污染术', '滑稽准字FDA2333', '脑残片');")
+    #     cur.execute("insert into OpeationMedicine value('精神污染术', '滑稽准字FDA233', '伸腿瞪眼丸');")
+
+
 
 
 '''
