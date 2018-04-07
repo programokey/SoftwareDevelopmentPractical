@@ -32,6 +32,7 @@ def login(user, hash):
                 (str(random.getrandbits(64)) + user_info['name'] + '_' + user_info['passwd']).encode('utf8')
             ).hexdigest()
             redis_conn.set('token_%s'%token, value=token, ex=60*30) # expired after 30 min without any request
+            redis_conn.set('token_user_%s' % token, value=user, ex=60 * 30)  # expired after 30 min without any request
             return json.dumps({'code': 1000, 'data': {'result': True, 'token': token}}), token
         else:
             return json.dumps({'code': 403, 'data': {'result': False}}), None
@@ -41,6 +42,11 @@ def validate(token):
         redis_conn.expire('token_%s'%token, 30*60)
         return token == redis_conn.get('token_%s'%token).decode('utf8')
     return False
+
+def get_user(token):
+    if redis_conn.exists('token_user_%s' % token):
+        return redis_conn.get('token_user_%s' % token).decode('utf8')
+    return None
 
 if __name__ == '__main__':
     pass

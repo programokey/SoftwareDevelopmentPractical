@@ -3,6 +3,7 @@
  * 请指定webpackChunkName，以便打包后生成的chunk带有相对应的名字。
  */
 
+const Prescription = () => import(/* webpackChunkName: "prescription" */ '@/pages/Case/Prescription')
 const ErrorPage = () => import(/* webpackChunkName: "errorpage" */ '@/pages/Other/ErrorPage')
 const Guide = () => import(/* webpackChunkName: "home" */ '@/pages/Department/Guide')
 const Login = () => import(/* webpackChunkName: "login" */ '@/pages/Other/Login')
@@ -84,6 +85,10 @@ const routes = [
     path: '/equipment/:id',
     name: 'Equipment',
     component: Equipment
+  }, {
+    path: '/prescription/:id',
+    name: 'Prescription',
+    component: Prescription
   }, {
     path: '/department/:departmentName/role/:roleName',
     name: 'departmentRole',

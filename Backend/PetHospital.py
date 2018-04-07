@@ -6,6 +6,8 @@ from flask import Flask, jsonify, request, make_response, abort, send_file, redi
 from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
+import DataLayer.TestQuery as TestQuery
+from  threading import Thread
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
@@ -102,7 +104,7 @@ def get_medicine(approveNumber):
     else:
         return redirect('/login')
 
-@app.route('/api/case>', methods=['GET', 'POST'])
+@app.route('/api/case', methods=['GET', 'POST'])
 def get_disease_categories():
     '''
     :return: all disease categories
@@ -112,7 +114,6 @@ def get_disease_categories():
         return DBQuery.get_disease_categories()
     else:
         return redirect('/login')
-
 
 @app.route('/api/case/disease/<diseaseName>', methods=['GET', 'POST'])
 def get_cases(diseaseName):
@@ -137,6 +138,31 @@ def get_examination_result(id):
         return DBQuery.get_examination_result(id)
     else:
         return redirect('/login')
+
+@app.route('/api/examinationResult/<id>', methods=['GET', 'POST'])
+def get_examination_result(id):
+    '''
+    :param caseId
+    :return: the detail of the case
+    '''
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_examination_result(id)
+    else:
+        return redirect('/login')
+
+@app.route('/api/operation/<operationName>', methods=['GET', 'POST'])
+def get_operation(operationName):
+    '''
+    :param operationName
+    :return: the detail of the operation
+    '''
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        return DBQuery.get_operation(operationName)
+    else:
+        return redirect('/login')
+
 
 @app.route('/api/case/<int:caseId>', methods=['GET', 'POST'])
 def get_case_detail(caseId):
@@ -167,11 +193,41 @@ def get_equipment(equipmentId):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         res = DBQuery.get_equipment(equipmentId)
-        if res is not None:
-            return res
+        return res
     else:
-        return "Internal Error"
+        return redirect('/login')
 
+@app.route('/api/test/id/<id>', methods=['GET', 'POST'])
+def get_test(id):
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        user = validate.get_user(token)
+        if user is not None:
+            res = TestQuery.get_test(id, user)
+            return res
+    return redirect('/login')
+
+@app.route('/api/test', methods=['GET', 'POST'])
+def get_all_test():
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        user, userID = validate.get_user(token)
+        if user is not None:
+            res = TestQuery.get_all_test(userID)
+            return res
+    return redirect('/login')
+
+@app.route('/api/submit', methods=['GET', 'POST'])
+def get_all_test():
+    token = request.cookies.get('token')
+    if token is not None and validate.validate(token):
+        testID = request.form['testId']
+        answer = request.form['answer']
+        user, userID = validate.get_user(token)
+        if user is not None:
+            res = TestQuery.submit(testID, userID, answer)
+            return res
+    return redirect('/login')
 
 @app.route('/static/<path1>/<path2>')
 def static_file(path1, path2):
@@ -205,6 +261,8 @@ def show_post(post_id):
 
 
 if __name__ == '__main__':
+    score_calculation = Thread(target=TestQuery.score_calculate)
+    score_calculation.start()
     app.run(host='0.0.0.0')
 
 '''
