@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <!-- <div class="card-background" :style="`background-image:url('./../../static/images/doctor.jpeg')`">
+    <!-- <div class="card-background" :style="`background-image:url('./../../../static/images/doctor.jpeg')`">
 
     </div>
     <div class="card-overlay">

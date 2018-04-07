@@ -6,9 +6,9 @@
       <el-breadcrumb-item>{{caseId}}</el-breadcrumb-item>
 
     </el-breadcrumb>
-    <div>
-      <el-form ref="form" :model="form" label-width="80px" disabled=true label-position=left>
-    
+    <div class="case-content">
+      <el-form ref="form" :model="form" label-width="80px" :disabled="true" label-position=left>
+
         <el-form-item label="医生">
           <el-input v-model="form.doctor"></el-input>
         </el-form-item>
@@ -27,9 +27,9 @@
         <el-form-item label="病种">
           <el-input v-model="form.disease"></el-input>
         </el-form-item>
-        
+
       </el-form>
-      <el-collapse class='info' v-model="activeNames" @change="handleChange">
+      <el-collapse class='info' v-model="activeNames">
         <el-collapse-item title="症状" name="1">
           <div>{{form.symptom}}</div>
         </el-collapse-item>
@@ -40,12 +40,14 @@
           <div>{{form.treatment}}</div>
         </el-collapse-item>
         <el-collapse-item title="处方" name="4">
-          <div><a class="pres" v-for="(item,index) in form.prescription" :key="index" href="$router.push(`/`)">{{item}}</a></div>
+          <div>
+            <span class="pres" v-for="(item,index) in form.prescription" :key="index" href="$router.push(`/`)">{{item}}</span>
+          </div>
         </el-collapse-item>
       </el-collapse>
-      
+
       <el-button class='left' type="primary" round>流程体验</el-button>
-      
+
     </div>
   </div>
 </template>
@@ -61,7 +63,7 @@ export default {
         petAge: '',
         petGender: '',
         department: '',
-        disease: [],
+        disease: '',
         symptom: '症状',
         // examinationResult: '检查结果',
         diagnosis: '诊断结果',
@@ -69,7 +71,8 @@ export default {
         // operations: '手术详情',
         prescription: ['处方1', '处方2'],
         desc: ''
-      }
+      },
+      activeNames: []
     }
   },
   computed: {
@@ -85,18 +88,21 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.case{
-  display: block;
-  width: 500px;
+.case {
+  &-content {
+    width: 500px;
+
+    margin: 0 auto;
+  }
 }
-.pres{
+.pres {
   margin-right: 10px;
+  cursor: pointer;
 }
-.info{
+.info {
   margin-bottom: 20px;
 }
-.left{
-  float:right;
+.left {
+  float: right;
 }
-
 </style>
