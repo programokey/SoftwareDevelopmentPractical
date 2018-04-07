@@ -1,34 +1,32 @@
 <template>
-  <div>
-    <div>角色扮演</div>
-    <div>
-      <!-- portfolio section -->
-      <section id="works" class="works section no-padding">
-        <div class="container-fluid">
-          <div class="row no-gutter">
-            <el-row>
-              <!-- v-for 循环显示三个角色 -->
-              <el-col :span="8" v-for="(role,index) in roles" :key="index">
-                <div class="grid-content bg-purple work">
-                  <a @click="$router.push(`/roleplay/${role.name}`)" class="work-box">
-                    <img :src="role.imgUrl" alt="">
-                    <div class="overlay">
-                      <div class="overlay-caption">
-                        <h5>{{role.name}}</h5>
-                        <p>
-                          <i class="fa fa-search-plus fa-2x"></i>
-                        </p>
-                      </div>
+  <div class="roleplay">
+    <!-- <div>角色扮演</div> -->
+    <!-- portfolio section -->
+    <section id="works" class="works section no-padding">
+      <div class="container-fluid">
+        <div class="row no-gutter">
+          <el-row>
+            <!-- v-for 循环显示三个角色 -->
+            <el-col :span="8" v-for="(role,index) in roles" :key="index">
+              <div class="grid-content bg-purple work">
+                <a @click="$router.push(`/roleplay/${role.name}`)" class="work-box">
+                  <img :src="role.imgUrl" alt="">
+                  <div class="overlay">
+                    <div class="overlay-caption">
+                      <h5>{{role.name}}</h5>
+                      <p>
+                        <i class="fa fa-search-plus fa-2x"></i>
+                      </p>
                     </div>
-                  </a>
-                </div>
-              </el-col>
+                  </div>
+                </a>
+              </div>
+            </el-col>
 
-            </el-row>
-          </div>
+          </el-row>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -53,7 +51,9 @@ export default {
 }
 </script>
 <style lang="scss">
-/* @import "./../../style/main.css"; */
+#works {
+  // margin-top: 100px;
+}
 
 /* ------------------------------------------------------------------------------
 	Works

@@ -5,24 +5,21 @@
       <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-container>
-      <el-aside width="400px"><img src="./../../images/4.png" alt=""></el-aside>
+      <el-aside width="400px"><img class="department-image" src="./../../images/4.png" alt=""></el-aside>
       <el-main>
         <div class="inside">
           <div class="content">
             <div class="name">
-              <h2 class="label" style="float:left">科室名：</h2>
-              <p class="info" style="float:left">{{info.name}}</p>
-              <div class="clear"></div>
+              <h2 class="label">科室名：</h2>
+              <p class="info">{{info.name}}</p>
             </div>
             <div class="structure">
-              <h2 class="label" style="float:left">基础设施：</h2>
-              <p class="info" style="float:left">{{info.basicStructure}}</p>
-              <div class="clear"></div>
+              <h2 class="label">基础设施：</h2>
+              <p class="info">{{info.basicStructure}}</p>
             </div>
             <div class="function">
-              <h2 class="label" style="float:left">职能：</h2>
-              <p class="info" style="float:left">{{info.function}}</p>
-              <div class="clear"></div>
+              <h2 class="label">职能：</h2>
+              <p class="info">{{info.function}}</p>
             </div>
             <ul class="roles">
               <h2 class="label">角色：</h2>
@@ -32,8 +29,9 @@
               <h2 class="label">设备：</h2>
               <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index" @click="$router.push(`/equipment/${index}`)">{{equipment}}</li>
             </ul>
-            <span class="arrow"></span>
           </div>
+          <span class="arrow"></span>
+
         </div>
         <!-- </div>
                 <h3>描述:</h3>
@@ -79,6 +77,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.department {
+  .el-container {
+    margin-top: 30px;
+  }
+  .el-aside {
+    margin-left: 20px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+  }
+  &-image {
+    width: 100%;
+    height: 100%;
+  }
+}
 //引入
 .inside {
   border: 1px solid #ddd;
@@ -99,7 +112,7 @@ export default {
 //引出
 .content {
   //margin: 50px 0 0 150px;
-  postion: relative;
+  position: relative;
   width: 100%;
   .label {
     width: 20%;
@@ -111,7 +124,7 @@ export default {
     // margin-bottom: 10px;
   }
   .info {
-    width: 80%;
+    // width: 80%;
     font-size: 1em;
   }
   & > div {
@@ -123,7 +136,7 @@ export default {
     margin-bottom: 10px;
   }
   p {
-    margin-right: 150px;
+    // margin-right: 150px;
   }
   & > ul {
     margin-top: 20px;

@@ -5,12 +5,12 @@
       <el-breadcrumb-item>{{$route.params.caseName}}</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="disease-cases">
-
+      <m-card></m-card>
     </div>
   </div>
 </template>
 <script>
-import MCard from '@/components/mCard'
+import MCard from '@/components/MCard'
 export default {
   components: {
     MCard
