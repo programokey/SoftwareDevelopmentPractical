@@ -1,8 +1,8 @@
 <template>
   <el-row class="case" :gutter="20">
     <el-col :span="20" class="case-left">
-      <el-input class="case-search" placeholder="请输入搜索内容" prefix-icon="el-icon-search" v-model="search">
-      </el-input>
+      <!-- <el-input class="case-search" placeholder="请输入搜索内容" prefix-icon="el-icon-search" v-model="search">
+      </el-input> -->
       <div class="case-cell-wrap">
         <case-cell v-for="(item,index) in caseList" :key="index" :title="index" :data="item" />
       </div>
@@ -56,11 +56,12 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    padding-right: 0 !important;
     // padding-left: 40px !important;
   }
   &-right {
     height: 100%;
-    background:$green;
+    background: $green;
     padding-right: 0 !important;
   }
   &-search {

@@ -4,10 +4,10 @@
     <!-- @click="$router.push('/')" -->
     <el-menu :default-active="active" class="header-menu" mode="horizontal" @select="handleSelect">
       <!-- background-color="#97BDF1" text-color="#fff" active-text-color="#F3DB28" -->
-      <el-submenu class="menu-item" index="/1">
+      <!-- <el-submenu class="menu-item" index="/1">
         <template slot="title">个人信息</template>
         <el-menu-item index="/personal">修改密码</el-menu-item>
-      </el-submenu>
+      </el-submenu> -->
 
       <el-menu-item class="menu-item" index="/test">在线测试</el-menu-item>
       <!-- <el-submenu index="2">

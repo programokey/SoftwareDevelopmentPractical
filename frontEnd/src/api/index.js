@@ -59,8 +59,13 @@ const getOperation = (name) => {
 }
 
 /** 测试 */
-// 提交答案 此处用post 先不写
-
+// 提交答案
+const postTestResult = (model) => {
+  return http.post('/test/submit', {
+    testId: model.testId,
+    answer: model.answer
+  })
+}
 // 获取测试列表
 const getTest = () => {
   return http.get('/test')
@@ -86,5 +91,6 @@ export default {
   getExaminationResult,
   getOperation,
   getTest,
-  getTestQuestions
+  getTestQuestions,
+  postTestResult
 }

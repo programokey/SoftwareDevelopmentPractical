@@ -46,7 +46,7 @@
         </el-collapse-item>
       </el-collapse>
 
-      <el-button class='left' type="primary" round>流程体验</el-button>
+      <el-button class='left' type="primary" round @click="getFlow">流程体验</el-button>
 
     </div>
   </div>
@@ -70,7 +70,8 @@ export default {
         treatment: '治疗结果',
         // operations: '手术详情',
         prescription: ['处方1', '处方2'],
-        desc: ''
+        desc: '',
+        flow: 1
       },
       activeNames: []
     }
@@ -84,7 +85,11 @@ export default {
     }
   },
   mounted () {},
-  methods: {}
+  methods: {
+    getFlow () {
+      this.$router.push(`/flow/${this.form.flow}`)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

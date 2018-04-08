@@ -35,7 +35,7 @@
             </div>
           </div>
 
-          <div class="right a-hov" v-if="data.jobflow" @click="$router.push(`/`)">职能流程体验</div>
+          <div class="right a-hov" v-if="data.jobflow" @click="$router.push(`/flow/${data.jobflow}`)">职能流程体验</div>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export default {
       data: {
         description: '工作类别详细描述',
         dosAndDonots: '工作类别注意事项',
-        jobflow: '1'
+        jobflow: 1
       }
     }
   },
