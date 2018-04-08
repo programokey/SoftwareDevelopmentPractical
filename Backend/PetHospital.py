@@ -12,7 +12,6 @@ from  threading import Thread
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
 
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
@@ -78,7 +77,6 @@ def get_job_detail(roleName, jobName):
     else:
         return redirect('/login')
 
-
 @app.route('/api/flow/<int:flowId>', methods=['GET', 'POST'])
 def get_flow(flowId):
     '''
@@ -90,7 +88,6 @@ def get_flow(flowId):
         return DBQuery.get_flow(flowId)
     else:
         return redirect('/login')
-
 
 @app.route('/api/medicine/<approveNumber>', methods=['GET', 'POST'])
 def get_medicine(approveNumber):
@@ -124,18 +121,6 @@ def get_cases(diseaseName):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         return DBQuery.get_cases(diseaseName)
-    else:
-        return redirect('/login')
-
-@app.route('/api/examinationResult/<id>', methods=['GET', 'POST'])
-def get_examination_result(id):
-    '''
-    :param caseId
-    :return: the detail of the case
-    '''
-    token = request.cookies.get('token')
-    if token is not None and validate.validate(token):
-        return DBQuery.get_examination_result(id)
     else:
         return redirect('/login')
 
@@ -218,7 +203,7 @@ def get_all_test():
     return redirect('/login')
 
 @app.route('/api/submit', methods=['GET', 'POST'])
-def get_all_test():
+def submit():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         testID = request.form['testId']
