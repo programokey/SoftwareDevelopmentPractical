@@ -7,7 +7,7 @@ from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
 import DataLayer.TestQuery as TestQuery
-from  threading import Thread
+from threading import Thread
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app)
