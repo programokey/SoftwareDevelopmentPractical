@@ -60,9 +60,7 @@ export default {
   data () {
     return {
       data: {
-        description: '工作类别详细描述',
-        dosAndDonots: '工作类别注意事项',
-        jobflow: 1
+
       }
     }
   },
@@ -76,6 +74,9 @@ export default {
 
   },
   mounted () {
+    this.$api.getRoleJobInfo(this.name, this.workType).then(res => {
+      this.data = res.data
+    })
   },
   methods: {}
 }

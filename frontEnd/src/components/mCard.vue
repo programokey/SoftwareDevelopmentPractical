@@ -7,13 +7,13 @@
       <div class="card-content">病例1</div>
     </div> -->
     <div class="card-content" v-if="job">
-      <h2>{{job}}
+      <h2 @click="clickFunc">{{job}}
       </h2>
     </div>
     <div class="card-content" v-else>
-      <h2 @click="$emit('clickMethod',{id:info.id})">病例{{index}}</h2>
+      <h2 @click="clickFunc">病例{{index}}</h2>
       <p>{{info.petType}}</p>
-      <p>年龄：{{info.petAge}}岁</p>
+      <p>年龄：{{info.petAge}}</p>
     </div>
   </div>
 </template>
@@ -26,7 +26,16 @@ export default {
   },
   computed: {},
   mounted () {},
-  methods: {}
+  methods: {
+    clickFunc () {
+      if (this.job) {
+        console.log('job')
+        this.$emit('clickMethod', {job: this.job})
+      } else {
+        this.$emit('clickMethod', {id: this.info.id})
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

@@ -2,7 +2,7 @@
   <div class="multiple-card">
     <div class="multiple-card-title">{{order}}. {{subject.problem}}</div>
     <el-checkbox-group v-model="checkList" @change="emitChange">
-      <el-checkbox v-for="(item, key, index) in subject.choice" :key="key" :label="key">{{`${String.fromCharCode((65+index))} ${item}`}}</el-checkbox>
+      <el-checkbox v-for="(item, key, index) in subject.choice" :key="key" :label="+key">{{`${String.fromCharCode((65+index))} ${item}`}}</el-checkbox>
 
     </el-checkbox-group>
   </div>

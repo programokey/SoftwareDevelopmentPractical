@@ -1,7 +1,7 @@
 <template>
   <div class="single-card">
     <div class="single-card-title">{{order}}. {{subject.problem}}</div>
-    <el-radio class="single-card-radio" v-for="(choice,key,index) in subject.choice" :key="key" v-model="radio" :label="key" @change="emitChange">{{`${String.fromCharCode((65+index))}`}} {{choice}}</el-radio>
+    <el-radio class="single-card-radio" v-for="(choice,key,index) in subject.choice" :key="key" v-model="radio" :label="+key" @change="emitChange">{{`${String.fromCharCode((65+index))}`}} {{choice}}</el-radio>
   </div>
 </template>
 <script>

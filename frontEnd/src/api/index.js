@@ -9,7 +9,7 @@ const login = (name, hash) => {
   })
 }
 const getFlow = (val) => {
-  return http.get(`flow/${val}`)
+  return http.get(`/flow/${val}`)
 }
 const getMedicineInfo = (val) => {
   return http.get(`/medicine/${val}`)
@@ -43,7 +43,7 @@ const getDisCategoryList = () => {
 }
 // 病例列表
 const getCaseList = (category) => {
-  return http.get(`/disease/${category}`)
+  return http.get(`/case/disease/${category}`)
 }
 // 病例单
 const getCaseInfo = (id) => {

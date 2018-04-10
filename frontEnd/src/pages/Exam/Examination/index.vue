@@ -11,7 +11,7 @@
       <el-table-column prop="state" label="状态" :filters="[{ text: '正在进行', value: '正在进行' }, { text: '即将进行', value: '即将进行' },{text:'已结束',value:'已结束'}]" :filter-method="filterTag" filter-placement="bottom-start"></el-table-column>
       <el-table-column>
         <template slot-scope="scope">
-          <el-button v-if="scope.row.state ==='正在进行'" @click.native.prevent="startTest(scope.row)" type="button" size="mini">
+          <el-button v-if="scope.row.state ==='进行中'" @click.native.prevent="startTest(scope.row)" type="button" size="mini">
             开始考试
           </el-button>
           <p v-else-if="scope.row.state ==='已结束'">
@@ -33,49 +33,19 @@ export default {
   props: {},
   data () {
     return {
-      tableData: [{
-        id: '1',
-        name: '冲刺一卷',
-        startTime: '2018/1/1',
-        endTime: '2019/1/1',
-        duration: 1800000,
-        description: '',
-        state: 'going'
-      }, {
-        id: '1',
-        name: '冲刺一卷',
-        startTime: '2018/1/1',
-        endTime: '2019/1/1',
-        duration: 1800000,
-        description: '',
-        state: 'going'
-      }, {
-        id: '1',
-        name: '冲刺一卷',
-        startTime: '2018/1/1',
-        endTime: '2019/1/1',
-        duration: 1800000,
-        description: '',
-        state: 'coming'
-      }, {
-        id: '1',
-        name: '冲刺一卷',
-        startTime: '2018/1/1',
-        endTime: '2019/1/1',
-        duration: 1800000,
-        description: '',
-        state: 'ended',
-        score: 80
-      }]
+      tableData: []
     }
   },
   computed: {},
   mounted () {
-    this.computeData(this.tableData)
+    this.$api.getTest().then(res => {
+      this.tableData = res.data
+      this.computeData(this.tableData)
+    })
   },
   methods: {
     tableRowClassName ({row, rowIndex}) {
-      if (row.state === '正在进行') {
+      if (row.state === '进行中') {
         return 'going-row'
       } else if (row.state === '即将进行') {
         return 'coming-row'
@@ -90,10 +60,10 @@ export default {
     },
     computeData (data) {
       data.forEach(val => {
-        val.duration = val.duration / 60000 + '分钟'
+        val.duration = val.duration / 60 + '分钟'
         switch (val.state) {
           case 'going':
-            val.state = '正在进行'
+            val.state = '进行中'
             break
           case 'coming':
             val.state = '即将进行'

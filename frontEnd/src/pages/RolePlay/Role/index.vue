@@ -6,10 +6,10 @@
     </el-breadcrumb>
     <div class="role-content">
       <h1>{{name}}</h1>
-      <p>角色的描述啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+      <!-- <p>{{info.description}}</p> -->
       <ul class="workType">
         <h4>角色工作</h4>
-        <li class="job" v-for="(item,index) in data.workType" :key="index" @click="$router.push(`/roleplay/${name}/${item}`)">{{item}}</li>
+        <li class="job" v-for="(item,index) in jobs" :key="index" @click="$router.push(`/roleplay/${name}/${item}`)">{{item}}</li>
       </ul>
     </div>
   </div>
@@ -20,10 +20,7 @@ export default {
   props: {},
   data () {
     return {
-      data: {
-        // name: '前台',
-        workType: ['接待挂号', '病例档案的合理保存']
-      }
+      jobs: []
     }
   },
   computed: {
@@ -32,6 +29,10 @@ export default {
     }
   },
   mounted () {
+    this.$api.getRoleJobList(this.name).then(res => {
+      console.log(res)
+      this.jobs = res.data
+    })
   },
   methods: {}
 }

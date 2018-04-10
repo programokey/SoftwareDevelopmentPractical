@@ -29,10 +29,7 @@ export default{
   data () {
     return {
       isHover: '',
-      departments: [
-        {name: 'xxx1', pos: '141,114'},
-        {name: 'xx2', pos: '111,111'}
-      ]
+      departments: []
     }
   },
   computed: {},
@@ -40,7 +37,7 @@ export default{
   created () {},
   mounted () {
     this.$api.getDepartmentList().then(res => {
-      // console.log(res)
+      this.departments = res.data
     })
   },
   methods: {

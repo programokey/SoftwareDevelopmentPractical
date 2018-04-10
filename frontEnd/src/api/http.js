@@ -3,7 +3,8 @@ import qs from 'qs'
 // import { baseUrl } from '@/config/env'
 import router from '@/router'
 // axios.defaults.baseURL = baseUrl
-axios.defaults.baseURL = 'http://106.14.141.233:5000/'
+axios.defaults.baseURL = 'http://172.30.223.139:5000'
+axios.defaults.withCredentials = true
 // http request 拦截器
 axios.interceptors.request.use(
   config => {

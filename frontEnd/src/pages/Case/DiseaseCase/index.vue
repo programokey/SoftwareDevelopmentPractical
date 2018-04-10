@@ -46,7 +46,7 @@
         </el-collapse-item>
       </el-collapse>
 
-      <el-button class='left' type="primary" round @click="getFlow">流程体验</el-button>
+      <el-button v-if="form.flow" class='left' type="primary" round @click="getFlow">流程体验</el-button>
 
     </div>
   </div>
@@ -58,20 +58,6 @@ export default {
   data () {
     return {
       form: {
-        doctor: '',
-        petType: '',
-        petAge: '',
-        petGender: '',
-        department: '',
-        disease: '',
-        symptom: '症状',
-        // examinationResult: '检查结果',
-        diagnosis: '诊断结果',
-        treatment: '治疗结果',
-        // operations: '手术详情',
-        prescription: ['处方1', '处方2'],
-        desc: '',
-        flow: 1
       },
       activeNames: []
     }
@@ -84,7 +70,11 @@ export default {
       return this.$route.params.caseId
     }
   },
-  mounted () {},
+  mounted () {
+    this.$api.getCaseInfo(this.caseId).then(res => {
+      this.form = res.data
+    })
+  },
   methods: {
     getFlow () {
       this.$router.push(`/flow/${this.form.flow}`)

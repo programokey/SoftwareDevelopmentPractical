@@ -29,57 +29,17 @@ export default {
   props: {},
   data () {
     return {
-      data: {
-        'single': [
-          {
-            'problemId': '1',
-            'problem': 'a',
-            'choice': {
-              '1': 'xakhfkagf',
-              '2': 'adjagdkagd'
-            }
-          },
-          {
-            'problemId': '2',
-            'problem': 'bbbb',
-            'choice': {
-              '3': 'xakhfkagf',
-              '4': 'adjagdkagd'
-            }
-          }
-        ],
-        'multiple': [
-          {
-            'problemId': '3',
-            'problem': 'cccccc',
-            'choice': {
-              '5': 'xakhfkagf',
-              '6': 'adjagdkagd'
-            }
-          },
-          {
-            'problemId': '4',
-            'problem': 'dddddddddd',
-            'choice': {
-              '7': 'xakhfkagf',
-              '8': 'adjagdkagd'
-            }
-          }
-        ],
-        'selected': {
-          '1': ['1'],
-          '3': ['5', '6'],
-          '4': ['7']
-        },
-        'remainingTime': 600
-      },
+      data: {},
       selected: {}
     }
   },
   computed: {},
   created () {
-    // 对保存的选项处理
-    this.selected = this.data.selected
+    this.$api.getTestQuestions(this.$route.params.id).then(res => {
+      this.data = res.data
+      // 对保存的选项处理
+      this.selected = this.data.selected
+    })
   },
   mounted () {
 
@@ -93,7 +53,8 @@ export default {
       this.selected[val.problemId] = val.radio
     },
     saveResult () {
-      this.$api.postTestResult({testId: this.$route.params.id, answer: this.selected})
+      let answer = window.JSON.stringify(this.selected)
+      this.$api.postTestResult({testId: this.$route.params.id, answer: answer})
     }
   }
 }

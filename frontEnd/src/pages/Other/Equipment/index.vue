@@ -34,6 +34,9 @@ export default {
     }
   },
   mounted () {
+    this.$api.getEquipment(this.$route.params.id).then(res => {
+      this.data = res.data
+    })
   },
   methods: {}
 }

@@ -7,7 +7,7 @@
     </el-breadcrumb>
     <!-- <div class="descrip">{{data.description}}</div> -->
     <div class="jobs card-container">
-      <m-card v-for="(item,index) in data.jobs" :key="index" :job="item"></m-card>
+      <m-card v-for="(item,index) in jobs" :key="index" :job="item" @clickMethod="gojob" />
     </div>
 
   </div>
@@ -21,10 +21,8 @@ export default {
   props: {},
   data () {
     return {
-      data: {
         // description: 'xxxxxxxxxxxxxxxxxxxxxxxx',
-        jobs: ['a', 'b', 'c', 'd', 'e']
-      }
+      jobs: []
     }
   },
   computed: {
@@ -36,8 +34,15 @@ export default {
     }
   },
   mounted () {
+    this.$api.getDepartmentRoleJob(this.frontUrl, this.currentUrl).then(res => {
+      this.jobs = res.data
+    })
   },
-  methods: {}
+  methods: {
+    gojob (val) {
+      this.$router.push(`/roleplay/${this.currentUrl}/${val.job}`)
+    }
+  }
 }
 </script>
 <style lang="scss">

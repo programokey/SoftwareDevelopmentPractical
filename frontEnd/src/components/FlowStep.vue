@@ -1,7 +1,7 @@
 <template>
   <div class="flowStep">
     <div class="flow-content">
-      <div v-if="step.type==='video'" class="flow-video">
+      <div v-if="step.type==='Video'" class="flow-video">
         <video :src="step.content" controls="controls" width="846px" height="568px"></video>
         <!-- {{step.content}} -->
       </div>

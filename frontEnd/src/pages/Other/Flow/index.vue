@@ -31,8 +31,13 @@ export default {
       return this.data[this.index]
     }
   },
-  mounted () {},
-  methods: {}
+  mounted () {
+    this.$api.getFlow(this.$route.params.flowId).then(res => {
+      this.data = res.data
+    })
+  },
+  methods: {
+  }
 }
 </script>
 <style lang="scss" scoped>

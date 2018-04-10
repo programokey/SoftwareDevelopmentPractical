@@ -23,11 +23,12 @@
             </div>
             <ul class="roles">
               <h2 class="label">角色：</h2>
-              <li class="role info" v-for="(role,index) in info.roles" :key="index" @click="$router.push(`/department/${info.name}/role/${role}`)">{{role}}</li>
+              <li class="role info" v-for="(role,index) in info.roles" :key="index" @click="$router.push(`/department/${name}/role/${role}`)">{{role}}</li>
             </ul>
             <ul class="equipments">
               <h2 class="label">设备：</h2>
-              <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index" @click="$router.push(`/equipment/${index}`)">{{equipment}}</li>
+              <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index">{{equipment}}</li>
+              <!-- @click="$router.push(`/equipment/${index}`)" -->
             </ul>
           </div>
           <span class="arrow"></span>
@@ -54,11 +55,7 @@ export default {
   data () {
     return {
       info: {
-        name: '前台',
-        basicStructure: '爱丽丝电话立刻返回开始的风格的快速改变的疯狂v不',
-        function: '接待客人啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊',
-        roles: ['前台1'],
-        equipments: {'1': '桌子', '2': '椅子'}
+
       }
     }
   },
@@ -68,8 +65,8 @@ export default {
     }
   },
   mounted () {
-    this.$api.getDepartmentInfo(name).then(res => {
-      console.log(res)
+    this.$api.getDepartmentInfo(this.name).then(res => {
+      this.info = res.data
     })
   },
   methods: {}

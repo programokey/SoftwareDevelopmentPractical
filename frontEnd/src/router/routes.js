@@ -103,7 +103,7 @@ const routes = [
     name: 'case',
     component: DiseaseCase
   }, {
-    path: '/flow/:floeId',
+    path: '/flow/:flowId',
     name: 'flow',
     component: Flow
   }, {
