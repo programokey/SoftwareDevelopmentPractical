@@ -13,9 +13,7 @@ class TestTestQuery(TestCase):
              'endTime': '20180404/01/18120000', 'duration': 7200, 'score': '22', 'state': '已结束'},
             {'id': 2, 'name': 'test测试2', 'description': '测试测试的测试', 'startTime': '20180404/01/18120000',
              'endTime': '20180505/01/18120000', 'duration': 5400, 'score': '22', 'state': '已结束'},
-            {'id': 3, 'name': '内出血', 'description': '内出血知识', 'startTime': '20180404/04/18080000',
-             'endTime': '20200505/07/20163000', 'duration': 7200, 'score': '9999', 'state': '进行中'},
-            {'id': 4, 'name': 'test测试3', 'description': '测试测试的测试', 'startTime': '20180505/01/18120000',
+            {'id': 3, 'name': 'test测试3', 'description': '测试测试的测试', 'startTime': '20180505/01/18120000',
              'endTime': '20180606/01/18120000', 'duration': 5400, 'score': '22', 'state': '未开始'}]})
         self.assertEqual(get_all_test(userID), expected_result)
 
@@ -58,7 +56,7 @@ class TestTestQuery(TestCase):
         res = json.loads(get_test(id, userID))
         self.assertEqual(res, expected_result)
 
-        id = 4
+        id = 3
         userID = '1'
         expected_result = {'code': 404, 'data': '你没有权限参加此考试'}
         res = json.loads(get_test(id, userID))

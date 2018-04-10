@@ -37,8 +37,8 @@ def get_all_test(userID):
                     'id': item[0],
                     'name': item[1],
                     'description': item[2],
-                    'startTime': item[3].strftime('%Y%m%D%H%M%S'),
-                    'endTime': item[4].strftime('%Y%m%D%H%M%S'),
+                    'startTime': item[3].strftime('%Y-%m-%d %H:%M:%S'),
+                    'endTime': item[4].strftime('%Y-%m-%d %H:%M:%S'),
                     'duration': int(item[5].total_seconds()),
                     'score': item[6],
                     'state': '未开始' if datetime.now() < item[3] else
@@ -153,8 +153,8 @@ def get_test(id, userID):
 
 def submit(testID, userID, answer):
     assert isinstance(answer, str)
-    assert isinstance(testID, int)
     try:
+        testID = int(testID)
         answer = json.loads(answer)
     except:
         return json.dumps({

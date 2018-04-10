@@ -1,5 +1,5 @@
 from unittest import TestCase
-from Backend.validate import  *
+from Backend.validate import *
 
 class TestValidate(TestCase):
     def test_validate(self):

@@ -10,7 +10,7 @@ import DataLayer.TestQuery as TestQuery
 from threading import Thread
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
-CORS(app)
+CORS(app, supports_credentials=True)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -25,7 +25,6 @@ def get_departments():
         return DBQuery.get_departments()
     else:
         return redirect('/login')
-
 
 @app.route('/department/<departmentName>', methods=['GET', 'POST'])
 def get_department_info(departmentName):
@@ -50,7 +49,7 @@ def get_department_role_job(departmentName, roleName):
         return redirect('/login')
 
 
-@app.route('/roles/<roleName>', methods=['GET', 'POST'])
+@app.route('/role/<roleName>', methods=['GET', 'POST'])
 def get_role_job(roleName):
     '''
     :param roleName:
@@ -64,7 +63,7 @@ def get_role_job(roleName):
 
 
 '''the parameter roleName is Unused'''
-@app.route('/api/role/<roleName>/<jobName>', methods=['GET', 'POST'])
+@app.route('/role/<roleName>/<jobName>', methods=['GET', 'POST'])
 def get_job_detail(roleName, jobName):
     '''
     :param roleName:
@@ -77,7 +76,7 @@ def get_job_detail(roleName, jobName):
     else:
         return redirect('/login')
 
-@app.route('/api/flow/<int:flowId>', methods=['GET', 'POST'])
+@app.route('/flow/<int:flowId>', methods=['GET', 'POST'])
 def get_flow(flowId):
     '''
     :param flowId
@@ -89,7 +88,7 @@ def get_flow(flowId):
     else:
         return redirect('/login')
 
-@app.route('/api/medicine/<approveNumber>', methods=['GET', 'POST'])
+@app.route('/medicine/<approveNumber>', methods=['GET', 'POST'])
 def get_medicine(approveNumber):
     '''
     :param approveNumber
@@ -101,7 +100,7 @@ def get_medicine(approveNumber):
     else:
         return redirect('/login')
 
-@app.route('/api/case', methods=['GET', 'POST'])
+@app.route('/diseases-categories', methods=['GET', 'POST'])
 def get_disease_categories():
     '''
     :return: all disease categories
@@ -112,7 +111,7 @@ def get_disease_categories():
     else:
         return redirect('/login')
 
-@app.route('/api/case/disease/<diseaseName>', methods=['GET', 'POST'])
+@app.route('/case/disease/<diseaseName>', methods=['GET', 'POST'])
 def get_cases(diseaseName):
     '''
     :param diseaseName
@@ -124,11 +123,11 @@ def get_cases(diseaseName):
     else:
         return redirect('/login')
 
-@app.route('/api/examinationResult/<id>', methods=['GET', 'POST'])
+@app.route('/examinationResult/<int:id>', methods=['GET', 'POST'])
 def get_examination_result(id):
     '''
-    :param caseId
-    :return: the detail of the case
+    :param id
+    :return: the detail of the examination result
     '''
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -136,7 +135,7 @@ def get_examination_result(id):
     else:
         return redirect('/login')
 
-@app.route('/api/operation/<operationName>', methods=['GET', 'POST'])
+@app.route('/operation/<operationName>', methods=['GET', 'POST'])
 def get_operation(operationName):
     '''
     :param operationName
@@ -149,7 +148,7 @@ def get_operation(operationName):
         return redirect('/login')
 
 
-@app.route('/api/case/<int:caseId>', methods=['GET', 'POST'])
+@app.route('/case/<int:caseId>', methods=['GET', 'POST'])
 def get_case_detail(caseId):
     '''
     :param caseId
@@ -161,7 +160,7 @@ def get_case_detail(caseId):
     else:
         return redirect('/login')
 
-@app.route('/api/prescription/<id>', methods=['GET', 'POST'])
+@app.route('/prescription/<int:id>', methods=['GET', 'POST'])
 def get_prescription(id):
     '''
     :param id: prescription's id
@@ -173,7 +172,7 @@ def get_prescription(id):
     else:
         return redirect('/login')
 
-@app.route('/api/equipment/<equipmentId>', methods=['GET', 'POST'])
+@app.route('/equipment/<int:equipmentId>', methods=['GET', 'POST'])
 def get_equipment(equipmentId):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -182,34 +181,34 @@ def get_equipment(equipmentId):
     else:
         return redirect('/login')
 
-@app.route('/api/test/id/<id>', methods=['GET', 'POST'])
+@app.route('/test/id/<int:id>', methods=['GET', 'POST'])
 def get_test(id):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
-        user = validate.get_user(token)
+        user = validate.get_user_id(token)
         if user is not None:
             res = TestQuery.get_test(id, user)
             return res
     return redirect('/login')
 
-@app.route('/api/test', methods=['GET', 'POST'])
+@app.route('/test', methods=['GET', 'POST'])
 def get_all_test():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
-        user, userID = validate.get_user(token)
-        if user is not None:
+        userID = validate.get_user_id(token)
+        if userID is not None:
             res = TestQuery.get_all_test(userID)
             return res
     return redirect('/login')
 
-@app.route('/api/submit', methods=['GET', 'POST'])
+@app.route('/test/submit', methods=['GET', 'POST'])
 def submit():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
         testID = request.form['testId']
         answer = request.form['answer']
-        user, userID = validate.get_user(token)
-        if user is not None:
+        userID = validate.get_user_id(token)
+        if userID is not None:
             res = TestQuery.submit(testID, userID, answer)
             return res
     return redirect('/login')
@@ -227,7 +226,6 @@ def login():
         info, token = validate.login(user, hash)
         response = make_response(info)
         response.set_cookie('token', token)
-        print('token', token)
         return response
     else:
         return "Internal Error"

@@ -46,6 +46,8 @@ class TestDBQuery(TestCase):
                                                    'function': '你需要被电一下',
                                                    'roles': ['Professor X', '杨永信'],
                                                    'equipments': {'1': '电击治疗仪', '2': 'CT机', '3': '滑机', '4': '垃机'}}})
+
+        print(json.loads(get_department_info(departmentName)))
         self.assertEqual(get_department_info(departmentName), expected_result)
 
         # test get redis cache
