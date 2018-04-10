@@ -35,7 +35,7 @@ insert into Job value('我觉得你需要被电一下', '判断病患是否需�
 insert into Job value('十万伏特', '释放10万伏特的电压', '注意接地', NULL);
 insert into Job value('精神污染', '污染患者精神', '每天早晚各一次', 0);
 insert into Job value('导诊', '告诉患者去哪个科室', '每天早晚各一次', 0);
-insert into Job value('接待', '告诉患者去其他医院', '每天早晚各一次', NULL);
+insert into Job value('接待', '告诉患者去其他医院', '', NULL);
 
 
 insert into RoleJob value('杨永信', '精神科', '我觉得你需要被电一下');
