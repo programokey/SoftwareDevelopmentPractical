@@ -221,9 +221,9 @@ def static_file(path1, path2):
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
-        user = request.form['name']
+        userID = request.form['name']
         hash = request.form['hash']
-        info, token = validate.login(user, hash)
+        info, token = validate.login(userID, hash)
         response = make_response(info)
         response.set_cookie('token', token)
         return response
