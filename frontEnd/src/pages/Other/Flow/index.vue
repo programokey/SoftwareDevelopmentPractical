@@ -18,10 +18,6 @@ export default {
   data () {
     return {
       data: [
-        {content: './../../../../static/video.mp4', type: 'video', description: '第一步是这样字的'},
-        {content: './../../../../static/plan.png', type: 'pic', description: '第二步是这样字的'},
-        {content: './../../../../static/video.mp4', type: 'video', description: '第三步是这样字的'},
-        {content: './../../../../static/plan.png', type: 'pic', description: '第四步是这样字的'}
       ],
       index: 0
     }
