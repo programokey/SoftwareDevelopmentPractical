@@ -12,50 +12,54 @@ mysql_passwd = cf.get('mysqldb', 'passwd')
 mysql_host = cf.get('mysqldb', 'host')
 redis_conn = redis.Redis()
 def get_all_test(userID):
+    assert  isinstance(userID, str)
     try:
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                              charset='utf8') as cur:
-            cur.execute('select id, name, description, startTime, endTime, duration, creator'
+            cur.execute('select id, name, description, startTime, endTime, duration, creator, score'
                         ' from Test inner join TestParticipation on Test.id = TestParticipation.testID'
                         ' where userID = %s', (userID,))
             res = cur.fetchall()
             all_test = {
                 'code': 0,
-                'data':[]
+                'data': []
             }
             for item in res:
+                id = item[0]
                 cur.execute('select beginTime from TestParticipation where userID = %s and testID = %s', (userID, id))
                 begin_time = cur.fetchone()
                 if begin_time is not None:
                     begin_time = begin_time[0]
-                else:
+                if begin_time is None:
                     begin_time = datetime.now()
+
                 all_test['data'].append({
-                    'id':item[0],
+                    'id': item[0],
                     'name': item[1],
-                    'startTime': item[2].strftime('%Y%m%D%H%M%S'),
-                    'endTime': item[3].strftime('%Y%m%D%H%M%S'),
-                    'duration': int(item[4].total_second()),
-                    'score':item[5],
-                    'description': item[6],
-                    'state': '未开始' if datetime.now() < item[2] else
-                    '进行中'  if datetime.now() < item[3] and begin_time + item[4] > datetime.now() else '已结束'
+                    'description': item[2],
+                    'startTime': item[3].strftime('%Y-%m-%d %H:%M:%S'),
+                    'endTime': item[4].strftime('%Y-%m-%d %H:%M:%S'),
+                    'duration': int(item[5].total_seconds()),
+                    'score': item[6],
+                    'state': '未开始' if datetime.now() < item[3] else
+                    '进行中' if datetime.now() < item[4] and begin_time + item[5] > datetime.now() else '已结束'
                 })
             return json.dumps(all_test)
     except:
         pass
 
 def get_test_problem(id):
+    assert isinstance(id, int)
     try:
         test_problem = {}
-        if redis_conn.exists('test_problem_%d'%id):
-            test_problem = json.loads(redis_conn.get('test_problem_%d'%id).decode('utf8'))
+        if False and redis_conn.exists('test_problem_%d' % id):
+            test_problem = json.loads(redis_conn.get('test_problem_%d' % id).decode('utf8'))
         else:
             with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                                  charset='utf8') as cur:
                 cur.execute('select ProblemID, problem, multipleAnswer, point '
-                            'from TestProblem inner join Problem on TestProblem.problemID = Problem.id'
-                            'where TestProblem.testID = %s',(id))
+                            'from TestProblem inner join Problem on TestProblem.problemID = Problem.id '
+                            'where TestProblem.testID = %s', (id))
                 res = cur.fetchall()
                 if len(res) == 0:
                     return None
@@ -68,31 +72,34 @@ def get_test_problem(id):
                         multiple.append({
                             'problemId': item[0],
                             'problem': item[1],
-                            'choice':choice,
+                            'choice': choice,
                             'ponit': item[3]
                         })
                     else:
                         single.append({
                             'problemId': item[0],
                             'problem': item[1],
-                            'choice':choice,
+                            'choice': choice,
                             'ponit': item[3]
                         })
                     test_problem['single'] = single
                     test_problem['multiple'] = multiple
-                    redis_conn.set('test_problem_%d'%id, value=json.dumps(test_problem))
+                    redis_conn.set('test_problem_%d' % id, value=json.dumps(test_problem))
             return test_problem
     except:
         return None
 
 def get_test(id, userID):
+    assert isinstance(id, int)
+    assert isinstance(userID, str)
+
     test_problem = get_test_problem(id)
     try:
         if test_problem is None:
-            return {
+            return json.dumps({
                 'code': 404,
                 'data': 'No such test'
-            }
+            })
 
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                              charset='utf8') as cur:
@@ -104,11 +111,10 @@ def get_test(id, userID):
             cur.execute('select beginTime from TestParticipation where userID = %s and testID = %s', (userID, id))
             res = cur.fetchone()
             if res is None:
-                # cur.execute('insert into TestParticipation value (%s, %s, %s, %s)', (userID, id, datetime.now(), None))
-                return {
+                return json.dumps({
                     'code': 404,
                     'data': '你没有权限参加此考试'
-                }
+                })
             elif res[0] is None:
                 cur.execute('update TestParticipation set  beginTime = %s where userID = %s and testID = %s',
                             (datetime.now(), userID, id))
@@ -116,11 +122,11 @@ def get_test(id, userID):
             else:
                 begin_time = res[0]
 
-        if datetime.now() > start_time and datetime.now() < end_time and begin_time + duration > datetime.now():
-            return {
+        if datetime.now() < start_time or datetime.now() > end_time or begin_time + duration < datetime.now():
+            return json.dumps({
                 'code': 404,
                 'data': '不在考试时间内'
-            }
+            })
         remaining_time = begin_time + duration - datetime.now()
         remaining_time = int(remaining_time.total_seconds())
         cur.execute('select problemID, choiceID from Answer where userID = %s and testID = %s', (userID, id))
@@ -146,18 +152,27 @@ def get_test(id, userID):
         })
 
 def submit(testID, userID, answer):
+    assert isinstance(answer, str)
+    try:
+        testID = int(testID)
+        answer = json.loads(answer)
+    except:
+        return json.dumps({
+            'code': 404,
+            'data': 'invalid format!'
+        })
     try:
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                              charset='utf8') as cur:
-            cur.execute('delete from Answer where userID = %s and testID = %s',(userID, testID))
+            cur.execute('delete from Answer where userID = %s and testID = %s', (userID, testID))
             for item in answer.items():
                 problem_id = item[0]
                 choices = item[1]
                 for choice_id in choices:
                     cur.execute('insert into Answer value(%s, %s, %s, %s)', (userID, testID, problem_id, choice_id))
         return json.dumps({
-         'code':1000,
-        'data': 'submit answer failed'
+            'code': 1000,
+            'data': 'submit answer succeeded!'
         })
     except:
         return json.dumps({
@@ -170,14 +185,14 @@ def score_calculate():
         try:
             with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                                  charset='utf8') as cur:
-                cur.execute('select userID, testID from TestParticipation'
-                            'where score is NULL and testID in (select id from Test where endTime <= %s) ',
-                            (datetime.now(), ))
+                cur.execute('select userID, testID from TestParticipation '
+                            'where score is NULL and testID in (select id from Test where endTime <= %s); ',
+                            (datetime.now(),))
                 res = cur.fetchall()
-                score = 0
                 for item in res:
                     user_id = item[0]
                     test_id = item[1]
+                    score = 0
                     cur.execute('select problemID, choiceID from Answer where userID = %s and testID = %s',
                                 (user_id, test_id))
                     res = cur.fetchall()
@@ -191,22 +206,22 @@ def score_calculate():
                         cur.execute('select id from Choice where problemID = %s and isAnswer = true',
                                     (problem_id,))
                         res = cur.fetchall()
-
                         answer = {item[0] for item in res}
-
                         cur.execute('select point from TestProblem where testID = %s and problemID = %s',
                                     (test_id, problem_id))
                         point = cur.fetchone()[0]
-
                         correct = set(item[1])
+
                         if answer == correct:
                             score += point
-                        elif answer.issubset(correct):
-                            score += point/2
-
-                    cur.execute('update TestParticipation where userID = %s and testID = %s set score = %s',
-                                (user_id, test_id, score))
-
+                        elif correct.issubset(answer):
+                            score += point / 2
+                    cur.execute('update TestParticipation set score = %s where userID = %s and testID = %s ',
+                                (score, user_id, test_id))
             time.sleep(30)
         except:
-            pass
+            raise ResourceWarning('error in score calculation')
+
+'''
+
+'''

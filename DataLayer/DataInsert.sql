@@ -1,6 +1,7 @@
 use PetHospital;
 insert into User value ('0', 'test', 'test', '2333', 'test@test.com', 'male', 'intern');
 insert into User value ('1', 'test1', '12345677', '021-68512277', 'strongNow@gov.com', 'male', 'intern');
+insert into User value ('22', 'test1', '12345677', '021-68512277', 'strongNow@gov.com', 'female', 'admin');
 
 
 insert into Department value('CT', 'gateway', 'funny', 'CT Scan', 332, 332);
@@ -19,20 +20,29 @@ insert into Equipment value(4, '垃机', '精神科', '用于排除垃圾思想'
 insert into Role value('杨永信', '有一定几率发动闪电攻击');
 insert into Role value('开膛手杰克', '给病患执行腹部手术');
 insert into Role value('Professor X', 'read patients\' mind');
+insert into Role value('前台', '宠物医院前台');
 
 insert into DepartmentRole value('精神科', '杨永信');
 insert into DepartmentRole value('精神科', 'Professor X');
+insert into DepartmentRole value('精神科', '前台');
 
 insert into Flow value(0, 0, '/flow/1.jpg', 'Picture',  '展示Doge图片');
 insert into Flow value(0, 1, '/flow/2.avi', 'Video', '播放Doge视频');
 
+insert into Flow value(1, 0, '/flow/1.jpg', 'Picture',  '展示Doge图片');
+
 insert into Job value('我觉得你需要被电一下', '判断病患是否需要点击', '注意观察', NULL);
 insert into Job value('十万伏特', '释放10万伏特的电压', '注意接地', NULL);
 insert into Job value('精神污染', '污染患者精神', '每天早晚各一次', 0);
+insert into Job value('导诊', '告诉患者去哪个科室', '每天早晚各一次', 0);
+insert into Job value('接待', '告诉患者去其他医院', '', NULL);
+
 
 insert into RoleJob value('杨永信', '精神科', '我觉得你需要被电一下');
 insert into RoleJob value('杨永信', '精神科', '十万伏特');
 insert into RoleJob value('Professor X', '精神科', '精神污染');
+insert into RoleJob value('前台', '精神科','导诊');
+insert into RoleJob value('前台', '精神科','接待');
 
 
 insert into Medicine value('滑稽准字FDA233', '伸腿瞪眼丸', '不论男女老幼,疑难杂症,服用此药后,即刻痊愈,只溶在口,不溶在手', 2.33);
@@ -47,7 +57,7 @@ insert into Disease value('早上睡不醒', '嗜睡', '精神科', '人生从�
 insert into Disease value('上课睡觉', '嗜睡', '精神科', '听取人生经验');
 
 
-insert into `Case` value(1, '杨永信', '哈士奇', '2.333岁', 'unknown', '先天性心眼不足', '时常犯二', '经诊断为典型的先天性缺心眼', '使用脑残片进行药物治疗', 2.333, NULL);
+insert into `Case` value(1, '杨永信', '哈士奇', '2.333岁', 'unknown', '先天性心眼不足', '时常犯二', '经诊断为典型的先天性缺心眼', '使用脑残片进行药物治疗', 2.333, 1);
 insert into `Case` value(2, '杨永信', '阿拉斯加', '3岁', 'unknown', '先天性心眼不足', '雪橇三傻', '典型的先天性缺心眼', '使用脑残片进行药物治疗', 2.333, NULL);
 insert into `Case` value(3, 'Professor X', 'Doge', '15个月', '雌性', '早上睡不醒', '早上睡到12点', '经诊断为典型的嗜睡', '使用精神污染进治疗', 23.33, NULL);
 
@@ -87,11 +97,59 @@ insert into OpeationMedicine value('精神污染术', '滑稽准字FDA233', '伸
 
 insert into CaseOperation value(1, 1, '精神污染术');
 
+insert into Test value(1, 'test测试1', '测试测试的测试', '2018-1-1 12:00:00', '2018-4-1 12:00:00', '2:00', false, '22');
+insert into Test value(2, 'test测试2', '测试测试的测试', '2018-4-1 12:00:00', '2018-5-1 12:00:00', '1:30', false, '22');
+insert into Test value(3, 'test测试3', '测试测试的测试', '2018-5-1 12:00:00', '2018-6-1 12:00:00', '1:30', false, '22');
+
+insert into Problem value(1, '测试测试的问题1', false, '22');
+insert into Problem value(2, '测试测试的问题2', TRUE, '22');
+insert into Problem value(3, '测试测试的问题3', false, '22');
+
+insert into Choice value(1, 1, '测试测试的问题1的答案1', false);
+insert into Choice value(2, 1, '测试测试的问题1的答案2', false);
+insert into Choice value(3, 1, '测试测试的问题1的答案3', true);
+insert into Choice value(4, 1, '测试测试的问题1的答案4', false);
+
+insert into Choice value(5, 2, '测试测试的问题2的答案1', false);
+insert into Choice value(6, 2, '测试测试的问题2的答案2', true);
+insert into Choice value(7, 2, '测试测试的问题2的答案3', true);
+insert into Choice value(8, 2, '测试测试的问题2的答案4', false);
+
+insert into Choice value(9, 3, '测试测试的问题3的答案1', false);
+insert into Choice value(10, 3, '测试测试的问题3的答案2', true);
+insert into Choice value(11, 3, '测试测试的问题3的答案3', false);
+insert into Choice value(12, 3, '测试测试的问题3的答案4', false);
+
+insert into TestProblem value(1, 1, 20);
+insert into TestProblem value(1, 2, 20);
+insert into TestProblem value(1, 3, 20);
+
+insert into TestProblem value(2, 1, 50);
+insert into TestProblem value(2, 2, 50);
+
+insert into TestProblem value(3, 2, 50);
+insert into TestProblem value(3, 3, 50);
+
+insert into TestParticipation value('0', 1, NULL, NULL);
+insert into TestParticipation value('0', 2, '2018-4-1 12:00:00', NULL);
+insert into TestParticipation value('0', 3, NULL, NULL);
+
+insert into TestParticipation value('1', 1, NULL, NULL);
+insert into TestParticipation value('1', 2, NULL, NULL);
+
+insert into Answer value('0', 1, 1, 3);
+insert into Answer value('0', 1, 2, 7);
+insert into Answer value('0', 1, 3, 11);
+
+insert into Answer value('0', 2, 1, 3);
+insert into Answer value('0', 2, 2, 8);
+
+insert into Answer value('1', 1, 1, 3);
+insert into Answer value('1', 1, 2, 7);
+insert into Answer value('1', 1, 2, 6);
+insert into Answer value('1', 1, 3, 10);
 
 
-
-
-
-
-
-
+insert into Answer value('1', 2, 1, 3);
+insert into Answer value('1', 2, 2, 6);
+insert into Answer value('1', 2, 2, 7);
