@@ -6,14 +6,14 @@
       <div class="login-form">
         <el-input class="login-input" v-model="account" placeholder="请输入账号"></el-input>
         <el-input type="password" class="login-input" v-model="password" placeholder="请输入密码"></el-input>
-        <el-button class="login-button" @click="login()">登录</el-button>
+        <el-button class="login-button" type="primary" @click="login()">登录</el-button>
       </div>
     </div>
   </div>
 </template>
 <script>
 import sha1 from 'js-sha1'
-import Cookie from './../../../utils/cookie'
+import cookie from './../../../utils/cookie'
 export default {
   components: {},
   props: {},
@@ -33,9 +33,7 @@ export default {
           if (res.code !== 1000) {
             this.$message({message: '密码或用户名错误', type: 'warning'})
           } else {
-            let cookie = new Cookie('token')
-            cookie.setCookie(res.data.token, 30)
-
+            cookie.set('token', res.data.token, 1000 * 60 * 60 * 24 * 7)
             this.$message({message: '登录成功', type: 'success'})
             this.$router.push('/')
           }

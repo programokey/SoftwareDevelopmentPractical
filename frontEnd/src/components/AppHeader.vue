@@ -8,8 +8,9 @@
         <template slot="title">个人信息</template>
         <el-menu-item index="/personal">修改密码</el-menu-item>
       </el-submenu> -->
-
+      <el-menu-item class="menu-item" index="/login">注销</el-menu-item>
       <el-menu-item class="menu-item" index="/test">在线测试</el-menu-item>
+
       <!-- <el-submenu index="2">
         <template slot="title">角色扮演</template>
         <el-menu-item index="roleplay">前台</el-menu-item>
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+import cookie from './../utils/cookie'
 export default{
   name: '',
   components: {},
@@ -54,6 +56,9 @@ export default{
       let url = keyPath.reduce((url, val) => {
         return url + val
       })
+      if (url === '/login') {
+        cookie.set('token', '', 0)
+      }
       this.$router.push(url)
     }
   }

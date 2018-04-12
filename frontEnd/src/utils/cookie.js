@@ -1,43 +1,33 @@
-class Cookie {
-  constructor(name) {
-    this.name = name;
-  }
-
-  setCookie(value, expiredays) {
-    let cookieValue;
-    if (typeof (value) === 'object') {
-      cookieValue = JSON.stringify(value);
-    } else {
-      cookieValue = value;
+export const cookie = {
+  /**
+   * 设置cookie
+   *
+   * @param {any} key 标识
+   * @param {any} val 值
+   * @param {any} duration 有效时长（持续时长），单位ms
+   */
+  set: function (key, val, duration) {
+    var date = new Date()
+    date.setTime(date.getTime() + duration)
+    var expires = 'expires=' + date.toGMTString()
+    document.cookie = key + '=' + val + '; ' + expires
+  },
+  /**
+   * 获取cookie
+   *
+   * @param {any} key
+   * @returns {String} 如果key存在返回对应的值，否则返回''
+   */
+  get: function (key) {
+    var mKey = key + '='
+    var arrCookie = document.cookie.split(';') // 将cookie根据';'截取到数组中
+    for (var i = 0; i < arrCookie.length; i++) {
+      var itemCookie = arrCookie[i].trim()
+      if (itemCookie.indexOf(mKey) === 0) return itemCookie.substring(mKey.length, itemCookie.length)
     }
-    const data = new Date();
-    data.setDate(data.getDate() + expiredays);
-    document.cookie = `${this.name}=${escape(cookieValue)
-}${(expiredays == null) ? '' : `;expires=${data.toGMTString()}`}path=/`;
-  }
-
-  getCookie() {
-    if (document.cookie.length > 0) {
-      let startIndex = document.cookie.indexOf(`${this.name}=`);
-      if (startIndex !== -1) {
-        startIndex = startIndex + this.name.length + 1;
-        let endIndex = document.cookie.indexOf(';', startIndex);
-        if (endIndex === -1) {
-          endIndex = document.cookie.length;
-        }
-        return unescape(document.cookie.substring(startIndex, endIndex));
-      }
-    }
-    return null;
-  }
-
-  delCookie() {
-    // console.log('delete');
-    const exp = new Date();
-    exp.setTime(exp.getTime() - 1);
-    document.cookie = `${this.name}=0;expires=${new Date(0).toUTCString()}`;
+    return ''
   }
 }
 
-
-export default Cookie;
+/* export */
+export default cookie

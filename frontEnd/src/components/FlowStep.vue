@@ -2,7 +2,7 @@
   <div class="flowStep">
     <div class="flow-content">
       <div v-if="step.type==='Video'" class="flow-video">
-        <video :src="step.content" controls="controls" width="846px" height="568px"></video>
+        <video class="flow-video-player" :src="step.content" controls="controls" width="700px" height="568px"></video>
         <!-- {{step.content}} -->
       </div>
       <div v-else class="flow-pic">
@@ -39,16 +39,24 @@ export default {
     // width: 846px;
     width: 100%;
     height: 100%;
+    justify-content: space-between;
+  }
+  &-video {
+    flex: 1;
+    text-align: center;
+    &-player {
+    }
   }
   &-pic {
+    flex: 1;
     height: 100%;
     img {
-      width: 846px;
+      width: 100%;
       height: 100%;
     }
   }
   &-description {
-    flex: 1;
+    width: 322px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

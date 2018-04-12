@@ -1,5 +1,5 @@
 <template>
-  <div class="hotspot" :style="{left:cX,top:cY}">
+  <div class="hotspot" v-if="pos" :style="{left:cX,top:cY}">
     <i class="el-icon-location" :class="{red:isHover}"></i>
   </div>
 </template>
