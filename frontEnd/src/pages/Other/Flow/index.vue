@@ -4,6 +4,7 @@
       <div class="step-control">
         <div class="left m-button" v-if="index>0" @click="index--">上一步</div>
         <div class="right m-button" v-if="index<data.length-1" @click="index++">下一步</div>
+        <div class="right m-button" v-else-if="index===data.length-1" @click="$router.go(-1)">流程结束</div>
       </div>
     </flow-step>
   </div>
