@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("..")
 
-from flask import Flask, jsonify, request, make_response, abort, send_file, redirect
+from flask import Flask, jsonify, request, make_response, send_file, redirect
 from flask_cors import CORS
 import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
@@ -19,7 +19,7 @@ def index(path):
     return send_file('index.html')
 
 
-@app.route('/department', methods=['GET', 'POST'])
+@app.route('/api/department', methods=['GET', 'POST'])
 def get_departments():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -27,7 +27,7 @@ def get_departments():
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/department/<departmentName>', methods=['GET', 'POST'])
+@app.route('/api/department/<departmentName>', methods=['GET', 'POST'])
 def get_department_info(departmentName):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -36,7 +36,7 @@ def get_department_info(departmentName):
         return json.dumps({'code': 403, 'data': ''})
 
 
-@app.route('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
+@app.route('/api/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
 def get_department_role_job(departmentName, roleName):
     '''
     :param departmentName:
@@ -50,7 +50,7 @@ def get_department_role_job(departmentName, roleName):
         return json.dumps({'code': 403, 'data': ''})
 
 
-@app.route('/role/<roleName>', methods=['GET', 'POST'])
+@app.route('/api/role/<roleName>', methods=['GET', 'POST'])
 def get_role_job(roleName):
     '''
     :param roleName:
@@ -64,7 +64,7 @@ def get_role_job(roleName):
 
 
 '''the parameter roleName is Unused'''
-@app.route('/role/<roleName>/<jobName>', methods=['GET', 'POST'])
+@app.route('/api/role/<roleName>/<jobName>', methods=['GET', 'POST'])
 def get_job_detail(roleName, jobName):
     '''
     :param roleName:
@@ -77,7 +77,7 @@ def get_job_detail(roleName, jobName):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/flow/<int:flowId>', methods=['GET', 'POST'])
+@app.route('/api/flow/<int:flowId>', methods=['GET', 'POST'])
 def get_flow(flowId):
     '''
     :param flowId
@@ -89,7 +89,7 @@ def get_flow(flowId):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/medicine/<approveNumber>', methods=['GET', 'POST'])
+@app.route('/api/medicine/<approveNumber>', methods=['GET', 'POST'])
 def get_medicine(approveNumber):
     '''
     :param approveNumber
@@ -101,7 +101,7 @@ def get_medicine(approveNumber):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/diseases-categories', methods=['GET', 'POST'])
+@app.route('/api/diseases-categories', methods=['GET', 'POST'])
 def get_disease_categories():
     '''
     :return: all disease categories
@@ -112,7 +112,7 @@ def get_disease_categories():
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/case/disease/<diseaseName>', methods=['GET', 'POST'])
+@app.route('/api/case/disease/<diseaseName>', methods=['GET', 'POST'])
 def get_cases(diseaseName):
     '''
     :param diseaseName
@@ -124,7 +124,7 @@ def get_cases(diseaseName):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/examinationResult/<int:id>', methods=['GET', 'POST'])
+@app.route('/api/examinationResult/<int:id>', methods=['GET', 'POST'])
 def get_examination_result(id):
     '''
     :param id
@@ -136,7 +136,7 @@ def get_examination_result(id):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/operation/<operationName>', methods=['GET', 'POST'])
+@app.route('/api/operation/<operationName>', methods=['GET', 'POST'])
 def get_operation(operationName):
     '''
     :param operationName
@@ -149,7 +149,7 @@ def get_operation(operationName):
         return json.dumps({'code': 403, 'data': ''})
 
 
-@app.route('/case/<int:caseId>', methods=['GET', 'POST'])
+@app.route('/api/case/<int:caseId>', methods=['GET', 'POST'])
 def get_case_detail(caseId):
     '''
     :param caseId
@@ -161,7 +161,7 @@ def get_case_detail(caseId):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/prescription/<int:id>', methods=['GET', 'POST'])
+@app.route('/api/prescription/<int:id>', methods=['GET', 'POST'])
 def get_prescription(id):
     '''
     :param id: prescription's id
@@ -173,7 +173,7 @@ def get_prescription(id):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/equipment/<int:equipmentId>', methods=['GET', 'POST'])
+@app.route('/api/equipment/<int:equipmentId>', methods=['GET', 'POST'])
 def get_equipment(equipmentId):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -182,7 +182,7 @@ def get_equipment(equipmentId):
     else:
         return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/test/id/<int:id>', methods=['GET', 'POST'])
+@app.route('/api/test/id/<int:id>', methods=['GET', 'POST'])
 def get_test(id):
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -192,7 +192,7 @@ def get_test(id):
             return res
     return json.dumps({'code': 403, 'data': ''})
 
-@app.route('/test', methods=['GET', 'POST'])
+@app.route('/api/test', methods=['GET', 'POST'])
 def get_all_test():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -203,7 +203,7 @@ def get_all_test():
     return json.dumps({'code': 403, 'data': ''})
     # return redirect('/login')
 
-@app.route('/test/submit', methods=['GET', 'POST'])
+@app.route('/api/test/submit', methods=['GET', 'POST'])
 def submit():
     token = request.cookies.get('token')
     if token is not None and validate.validate(token):
@@ -219,11 +219,11 @@ def submit():
 def static_file(path1, path2):
     return send_file('static/%s/%s' % (path1, path2))
 
-# @app.route('/media/<path1>/<path2>')
-# def static_file(path1, path2):
-#     return send_file('../../media/%s/%s' % (path1, path2))
+@app.route('/media_file/<path1>/<path2>')
+def media_file(path1, path2):
+    return send_file('../../media/%s/%s' % (path1, path2))
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         userID = request.form['name']
@@ -237,16 +237,16 @@ def login():
         return "Internal Error"
 
 
-@app.route('/user/<username>')
-def show_user_profile(username):
-    # show the user profile for that user
-    return 'User %s' % username
-
-
-@app.route('/post=<int:post_id>')
-def show_post(post_id):
-    # show the post with the given id, the id is an integer
-    return 'Post %d' % post_id
+# @app.route('/user/<username>')
+# def show_user_profile(username):
+#     # show the user profile for that user
+#     return 'User %s' % username
+#
+#
+# @app.route('/post=<int:post_id>')
+# def show_post(post_id):
+#     # show the post with the given id, the id is an integer
+#     return 'Post %d' % post_id
 
 
 if __name__ == '__main__':
