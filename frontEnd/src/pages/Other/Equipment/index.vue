@@ -20,11 +20,6 @@ export default {
   data () {
     return {
       data: {
-        name: 'a',
-        description: 'xx',
-        operateMethod: 'xx',
-        location: 'xx',
-        flow: 1
       }
     }
   },
