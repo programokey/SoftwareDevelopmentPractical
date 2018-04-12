@@ -8,6 +8,7 @@ cf.read('pethospital.conf')
 mysql_user = cf.get('mysqldb', 'user')
 mysql_passwd = cf.get('mysqldb', 'passwd')
 mysql_host = cf.get('mysqldb', 'host')
+DATA_EXPIRE_TIME = int(cf.get('cache', 'DATA_EXPIRE_TIME'))
 redis_conn = redis.Redis()
 
 def get_user(user):
@@ -37,9 +38,11 @@ def get_departments():
                 "data": []
             }
             for item in res:
+                if item[1] is None or item[2] is None:
+                    continue
                 departments["data"].append({'name': item[0], 'pos': '%d, %d' % (item[1], item[2])})
             departments = json.dumps(departments)
-            redis_conn.set('departments', value=departments)
+            redis_conn.set('departments', value=departments, ex=DATA_EXPIRE_TIME)
             return departments
     except:
         return json.dumps({
@@ -81,7 +84,7 @@ def get_department_info(departmentName):
                 department_info["data"]["equipments"][item[0]] = item[1]
 
             department_info = json.dumps(department_info)
-            redis_conn.set('department_info_%s'%departmentName, value=department_info)
+            redis_conn.set('department_info_%s'%departmentName, value=department_info, ex=DATA_EXPIRE_TIME)
             return department_info
     except:
         return json.dumps({
@@ -104,7 +107,7 @@ def get_equipment(equipmentId):
                                     })
 
             equipment_info = {
-                                 "error_code": 1000,
+                                 "code": 1000,
                                 "data": {
                                       "name":res[0],
                                      "description":res[1],
@@ -117,10 +120,13 @@ def get_equipment(equipmentId):
                 equipment_info['data']['flow'] = res[4]
 
             equipment_info = json.dumps(equipment_info)
-            redis_conn.set('equipment_info_%s'%equipmentId, value=equipment_info)
+            redis_conn.set('equipment_info_%s'%equipmentId, value=equipment_info, ex=DATA_EXPIRE_TIME)
             return equipment_info
     except:
-        raise Warning('Error during retrieving equipment %s\'s information'%equipmentId)
+        return json.dumps({
+            "code": 404,
+            "data": 'Error during retrieving equipment %s\'s information'%equipmentId
+        })
 
 def get_department_role_job(departmentName, roleName):
     assert isinstance(departmentName, str)
@@ -140,7 +146,7 @@ def get_department_role_job(departmentName, roleName):
             for item in res:
                 jobs["data"].append(item[0])
             jobs = json.dumps(jobs)
-            redis_conn.set('department_role_job_%s_%s'%(departmentName, roleName), value=jobs)
+            redis_conn.set('department_role_job_%s_%s'%(departmentName, roleName), value=jobs, ex=DATA_EXPIRE_TIME)
             return jobs
     except:
         return json.dumps({
@@ -164,7 +170,7 @@ def get_role_job(roleName):
             for item in res:
                 jobs["data"].append(item[0])
             jobs = json.dumps(jobs)
-            redis_conn.set('role_job_%s'%roleName, value=jobs)
+            redis_conn.set('role_job_%s'%roleName, value=jobs, ex=DATA_EXPIRE_TIME)
             return jobs
     except:
         return json.dumps({
@@ -197,7 +203,7 @@ def get_job_detail(jobName):
             if res[2] is not None:
                 detail['data']['jobflow'] = res[2]
             detail = json.dumps(detail)
-            redis_conn.set('job_%s' % jobName, value=detail)
+            redis_conn.set('job_%s' % jobName, value=detail, ex=DATA_EXPIRE_TIME)
             return detail
     except:
         return json.dumps({
@@ -230,7 +236,7 @@ def get_flow(flowId):
                     'description': item[2]
                 })
             flow = json.dumps(flow)
-            redis_conn.set('flow_%d' % flowId, value=flow)
+            redis_conn.set('flow_%d' % flowId, value=flow, ex=DATA_EXPIRE_TIME)
             return flow
     except:
         return json.dumps({
@@ -262,7 +268,7 @@ def get_medicine(approveNumber):
                 }
             }
             medicine = json.dumps(medicine)
-            redis_conn.set('medicine_%s' % approveNumber, value=medicine)
+            redis_conn.set('medicine_%s' % approveNumber, value=medicine, ex=DATA_EXPIRE_TIME)
             return medicine
     except:
         return json.dumps({
@@ -289,7 +295,7 @@ def get_disease_categories():
                 data[item[0]].append(item[1])
             disease_categories['data'] = data
             disease_categories = json.dumps(disease_categories)
-            redis_conn.set('disease_categories', value=disease_categories)
+            redis_conn.set('disease_categories', value=disease_categories, ex=DATA_EXPIRE_TIME)
             return disease_categories
     except:
         return json.dumps({
@@ -322,7 +328,7 @@ def get_cases(diseaseName):
                 })
             cases['data'] = data
             cases = json.dumps(cases)
-            redis_conn.set('cases_%s'%diseaseName, value=cases)
+            redis_conn.set('cases_%s'%diseaseName, value=cases, ex=DATA_EXPIRE_TIME)
             return cases
     except:
         return json.dumps({
@@ -382,7 +388,7 @@ def get_examination_result(id):
             data['numercalResult'] = numerical_result
             examination_result['data'] = data
             examination_result = json.dumps(examination_result)
-            redis_conn.set('examination_result_%d' % id, value=examination_result)
+            redis_conn.set('examination_result_%d' % id, value=examination_result, ex=DATA_EXPIRE_TIME)
             return examination_result
     except:
         return json.dumps({
@@ -425,7 +431,7 @@ def get_prescription(id):
             data['medicine'] = medicine
             prescription['data'] = data
             prescription = json.dumps(prescription)
-            redis_conn.set('prescription_%d'%id, value=prescription)
+            redis_conn.set('prescription_%d'%id, value=prescription, ex=DATA_EXPIRE_TIME)
             return prescription
     except:
         return json.dumps({
@@ -476,7 +482,7 @@ def get_operation(operationName):
             operation['data']['medicines'] = medicines
             operation['data']['equipments'] = equipments
             operation = json.dumps(operation)
-            redis_conn.set('operation_%s' % operationName, value=operation)
+            redis_conn.set('operation_%s' % operationName, value=operation, ex=DATA_EXPIRE_TIME)
             return operation
 
     except:
@@ -542,7 +548,7 @@ def get_case_detail(caseId):
             case['data']['prescriptions'] = prescriptions
 
             case = json.dumps(case)
-            redis_conn.set('case_%d' % caseId, value=case)
+            redis_conn.set('case_%d' % caseId, value=case, ex=DATA_EXPIRE_TIME)
             return case
     except:
         return json.dumps({

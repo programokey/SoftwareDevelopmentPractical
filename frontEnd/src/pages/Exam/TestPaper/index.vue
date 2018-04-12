@@ -2,19 +2,22 @@
   <div class="paper">
     <div class=paper-wrap>
       <!-- <div>剩余时间{{data.remainingTime/60}}分钟</div> -->
-      <div class="single">
+      <div class="single" v-if="data.single && data.single.length!==0">
         <h3>单选题</h3>
         <div class="question-wrap">
           <single-card v-for="(subject, index) in data.single" :key="index" :subject="subject" :order="index+1" @selectOpration="selectOperation" :selected="selected[subject.problemId]" />
         </div>
       </div>
-      <div class="multiple">
+      <div class="multiple" v-if="data.multiple && data.multiple.length!==0">
         <h3>多选题</h3>
         <div class="question-wrap">
           <multiple-card v-for="(subject, index) in data.multiple" :key="index" :subject="subject" :order="index+1" @selectOpration="selectOperation" :selected="selected[subject.problemId]" />
         </div>
       </div>
-      <el-button @click="saveResult">保存</el-button>
+      <div class="button-wrap">
+        <el-button @click="saveResult">保存</el-button>
+        <el-button @click="submit" type="primary" class="primary-button">提交</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -47,14 +50,24 @@ export default {
   methods: {
     selectOperation (val) {
       if (val.radio.constructor !== Array) {
-        console.log(1)
         val.radio = [val.radio]
       }
       this.selected[val.problemId] = val.radio
     },
     saveResult () {
       let answer = window.JSON.stringify(this.selected)
-      this.$api.postTestResult({testId: this.$route.params.id, answer: answer})
+      this.$api.postTestResult({testId: this.$route.params.id, answer: answer}).then(res => {
+        this.$message({message: '保存成功'})
+      })
+    },
+    submit () {
+      let answer = window.JSON.stringify(this.selected)
+      this.$api.postTestResult({testId: this.$route.params.id, answer: answer}).then(res => {
+        if (res.code === 1000) {
+          this.$message({message: '试卷提交成功'})
+          this.$router.push('/test')
+        }
+      })
     }
   }
 }
@@ -62,6 +75,7 @@ export default {
 <style lang="scss">
 .paper {
   &-wrap {
+    padding-top: 30px;
     width: 800px;
     margin: 0 auto;
   }
@@ -73,6 +87,22 @@ export default {
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 40px;
+  }
+  .el-radio {
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .el-checkbox {
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .button-wrap {
+    margin-bottom: 30px;
+  }
+}
+.primary-button {
+  span {
+    color: #fff;
   }
 }
 </style>

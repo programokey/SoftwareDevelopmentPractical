@@ -8,7 +8,7 @@
       <el-table-column prop="endTime" label="结束时间">
       </el-table-column>
       <el-table-column prop="duration" label="考试时间"></el-table-column>
-      <el-table-column prop="state" label="状态" :filters="[{ text: '正在进行', value: '正在进行' }, { text: '即将进行', value: '即将进行' },{text:'已结束',value:'已结束'}]" :filter-method="filterTag" filter-placement="bottom-start"></el-table-column>
+      <el-table-column prop="state" label="状态" :filters="[{ text: '进行中', value: '进行中' }, { text: '即将进行', value: '即将进行' },{text:'已结束',value:'已结束'}]" :filter-method="filterTag" filter-placement="bottom-start"></el-table-column>
       <el-table-column>
         <template slot-scope="scope">
           <el-button v-if="scope.row.state ==='进行中'" @click.native.prevent="startTest(scope.row)" type="button" size="mini">
@@ -40,7 +40,9 @@ export default {
   mounted () {
     this.$api.getTest().then(res => {
       this.tableData = res.data
-      this.computeData(this.tableData)
+      if (this.tableData) {
+        this.computeData(this.tableData)
+      }
     })
   },
   methods: {
