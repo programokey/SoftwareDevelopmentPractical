@@ -8,6 +8,7 @@ import Backend.validate as validate
 import DataLayer.DBQuery as DBQuery
 import DataLayer.TestQuery as TestQuery
 from threading import Thread
+import json
 
 app = Flask(__name__, root_path='../frontEnd/dist/')
 CORS(app, supports_credentials=True)
@@ -24,7 +25,7 @@ def get_departments():
     if token is not None and validate.validate(token):
         return DBQuery.get_departments()
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/department/<departmentName>', methods=['GET', 'POST'])
 def get_department_info(departmentName):
@@ -32,7 +33,7 @@ def get_department_info(departmentName):
     if token is not None and validate.validate(token):
         return DBQuery.get_department_info(departmentName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 
 @app.route('/department/<departmentName>/roles/<roleName>', methods=['GET', 'POST'])
@@ -46,7 +47,7 @@ def get_department_role_job(departmentName, roleName):
     if token is not None and validate.validate(token):
         return DBQuery.get_department_role_job(departmentName, roleName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 
 @app.route('/role/<roleName>', methods=['GET', 'POST'])
@@ -59,7 +60,7 @@ def get_role_job(roleName):
     if token is not None and validate.validate(token):
         return DBQuery.get_role_job(roleName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 
 '''the parameter roleName is Unused'''
@@ -74,7 +75,7 @@ def get_job_detail(roleName, jobName):
     if token is not None and validate.validate(token):
         return DBQuery.get_job_detail(jobName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/flow/<int:flowId>', methods=['GET', 'POST'])
 def get_flow(flowId):
@@ -86,7 +87,7 @@ def get_flow(flowId):
     if token is not None and validate.validate(token):
         return DBQuery.get_flow(flowId)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/medicine/<approveNumber>', methods=['GET', 'POST'])
 def get_medicine(approveNumber):
@@ -98,7 +99,7 @@ def get_medicine(approveNumber):
     if token is not None and validate.validate(token):
         return DBQuery.get_medicine(approveNumber)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/diseases-categories', methods=['GET', 'POST'])
 def get_disease_categories():
@@ -109,7 +110,7 @@ def get_disease_categories():
     if token is not None and validate.validate(token):
         return DBQuery.get_disease_categories()
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/case/disease/<diseaseName>', methods=['GET', 'POST'])
 def get_cases(diseaseName):
@@ -121,7 +122,7 @@ def get_cases(diseaseName):
     if token is not None and validate.validate(token):
         return DBQuery.get_cases(diseaseName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/examinationResult/<int:id>', methods=['GET', 'POST'])
 def get_examination_result(id):
@@ -133,7 +134,7 @@ def get_examination_result(id):
     if token is not None and validate.validate(token):
         return DBQuery.get_examination_result(id)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/operation/<operationName>', methods=['GET', 'POST'])
 def get_operation(operationName):
@@ -145,7 +146,7 @@ def get_operation(operationName):
     if token is not None and validate.validate(token):
         return DBQuery.get_operation(operationName)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 
 @app.route('/case/<int:caseId>', methods=['GET', 'POST'])
@@ -158,7 +159,7 @@ def get_case_detail(caseId):
     if token is not None and validate.validate(token):
         return DBQuery.get_case_detail(caseId)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/prescription/<int:id>', methods=['GET', 'POST'])
 def get_prescription(id):
@@ -170,7 +171,7 @@ def get_prescription(id):
     if token is not None and validate.validate(token):
         return DBQuery.get_prescription(id)
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/equipment/<int:equipmentId>', methods=['GET', 'POST'])
 def get_equipment(equipmentId):
@@ -179,7 +180,7 @@ def get_equipment(equipmentId):
         res = DBQuery.get_equipment(equipmentId)
         return res
     else:
-        return redirect('/login')
+        return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/test/id/<int:id>', methods=['GET', 'POST'])
 def get_test(id):
@@ -189,7 +190,7 @@ def get_test(id):
         if user is not None:
             res = TestQuery.get_test(id, user)
             return res
-    return redirect('/login')
+    return json.dumps({'code': 403, 'data': ''})
 
 @app.route('/test', methods=['GET', 'POST'])
 def get_all_test():
@@ -199,7 +200,8 @@ def get_all_test():
         if userID is not None:
             res = TestQuery.get_all_test(userID)
             return res
-    return redirect('/login')
+    return json.dumps({'code': 403, 'data': ''})
+    # return redirect('/login')
 
 @app.route('/test/submit', methods=['GET', 'POST'])
 def submit():
