@@ -7,13 +7,11 @@
       <el-breadcrumb-item>{{workType}}</el-breadcrumb-item>
     </el-breadcrumb>
 
-    <div class="head">
-      <h5>{{workType}}</h5>
-    </div>
     <!--新加入样式-->
     <div class="top-box">
       <div class="wrap">
         <div class="content-top">
+          <h1>{{workType}}</h1>
 
           <div class="grid_6">
             <div class="box-4 clearfix">
@@ -102,6 +100,9 @@ export default {
 }
 .content-top {
   padding: 6% 0 6%;
+  h1 {
+    margin-bottom: 30px;
+  }
 }
 /*--about--*/
 .box-4 .inside {

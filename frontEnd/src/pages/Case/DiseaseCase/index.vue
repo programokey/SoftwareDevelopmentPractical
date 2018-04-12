@@ -84,6 +84,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .case {
+  overflow-y: auto;
+
   &-content {
     width: 500px;
 

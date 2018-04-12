@@ -77,6 +77,7 @@ export default {
       })
     },
     startTest (row) {
+      console.log(row)
       this.$router.push(`/test/${row.id}`)
     }
   }

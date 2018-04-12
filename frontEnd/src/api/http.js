@@ -2,8 +2,9 @@ import axios from 'axios'
 import qs from 'qs'
 // import { baseUrl } from '@/config/env'
 import router from '@/router'
+import { Message } from 'element-ui'
 // axios.defaults.baseURL = baseUrl
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'http://172.30.223.139:5000'
 axios.defaults.withCredentials = true
 // http request 拦截器
 axios.interceptors.request.use(
@@ -18,8 +19,8 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
   response => {
-    console.log(response)
-    if (response.status === 302) {
+    if (response.data.code === 403) {
+      Message({message: '请先登录'})
       router.push('/login')
     }
     return response.data

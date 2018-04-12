@@ -34,7 +34,7 @@ export default {
             this.$message({message: '密码或用户名错误', type: 'warning'})
           } else {
             let cookie = new Cookie('token')
-            cookie.setCookie(res.data.token, 2)
+            cookie.setCookie(res.data.token, 30)
 
             this.$message({message: '登录成功', type: 'success'})
             this.$router.push('/')
