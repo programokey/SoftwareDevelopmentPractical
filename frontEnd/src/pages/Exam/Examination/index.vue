@@ -40,7 +40,9 @@ export default {
   mounted () {
     this.$api.getTest().then(res => {
       this.tableData = res.data
-      this.computeData(this.tableData)
+      if (this.tableData) {
+        this.computeData(this.tableData)
+      }
     })
   },
   methods: {
