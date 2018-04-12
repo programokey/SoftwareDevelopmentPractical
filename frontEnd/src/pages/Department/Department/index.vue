@@ -27,9 +27,24 @@
             </ul>
             <ul class="equipments">
               <h2 class="label">设备：</h2>
-              <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index">{{equipment}}</li>
+              <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index" @click="chooseEquipment(index)">{{equipment}}</li>
               <!-- @click="$router.push(`/equipment/${index}`)" -->
             </ul>
+            <el-dialog
+              :title="facility.name"
+              :visible.sync="centerDialogVisible"
+              width="30%"
+              center>
+              <span>
+                <div>描述信息：  {{facility.description}}</div>
+                <div>操作方法：  {{facility.operateMethod}}</div>
+                <div>位置：     {{facility.location}}</div>
+              </span>
+              <span slot="footer" class="dialog-footer">
+                <!-- <el-button @click="centerDialogVisible = false">取 消</el-button> -->
+                <el-button v-if="facility.flow" type="primary" @click="skipFlow">流程体验</el-button>
+              </span>
+            </el-dialog>
           </div>
           <span class="arrow"></span>
 
@@ -54,7 +69,11 @@ export default {
   props: {},
   data () {
     return {
+      centerDialogVisible: false,
       info: {
+
+      },
+      facility: {
 
       }
     }
@@ -69,7 +88,18 @@ export default {
       this.info = res.data
     })
   },
-  methods: {}
+  methods: {
+    chooseEquipment (val) {
+      this.centerDialogVisible = true
+      this.$api.getEquipment(val).then(res => {
+        this.facility = res.data
+      })
+    },
+    skipFlow () {
+      this.centerDialogVisible = false
+      this.$router.push(`/flow/${this.facility.flow}`)
+    }
+  }
 }
 </script>
 

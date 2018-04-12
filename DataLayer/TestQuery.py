@@ -4,12 +4,12 @@ import json
 import pymysql, redis
 import time
 from datetime import datetime, timedelta
-
 cf = configparser.ConfigParser()
 cf.read('pethospital.conf')
 mysql_user = cf.get('mysqldb', 'user')
 mysql_passwd = cf.get('mysqldb', 'passwd')
 mysql_host = cf.get('mysqldb', 'host')
+DATA_EXPIRE_TIME = int(cf.get('cache', 'DATA_EXPIRE_TIME'))
 redis_conn = redis.Redis()
 def get_all_test(userID):
     assert  isinstance(userID, str)
@@ -84,7 +84,7 @@ def get_test_problem(id):
                         })
                     test_problem['single'] = single
                     test_problem['multiple'] = multiple
-                    redis_conn.set('test_problem_%d' % id, value=json.dumps(test_problem))
+                    redis_conn.set('test_problem_%d' % id, value=json.dumps(test_problem), ex=DATA_EXPIRE_TIME)
             return test_problem
     except:
         return None
@@ -219,8 +219,9 @@ def score_calculate():
                     cur.execute('update TestParticipation set score = %s where userID = %s and testID = %s ',
                                 (score, user_id, test_id))
             time.sleep(30)
-        except:
-            raise ResourceWarning('error in score calculation')
+        except Exception as e:
+            print(e)
+            # raise ResourceWarning('error in score calculation')
 
 '''
 
