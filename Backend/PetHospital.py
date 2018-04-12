@@ -217,6 +217,9 @@ def submit():
 def static_file(path1, path2):
     return send_file('static/%s/%s' % (path1, path2))
 
+# @app.route('/media/<path1>/<path2>')
+# def static_file(path1, path2):
+#     return send_file('../../media/%s/%s' % (path1, path2))
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -225,7 +228,8 @@ def login():
         hash = request.form['hash']
         info, token = validate.login(userID, hash)
         response = make_response(info)
-        response.set_cookie('token', token)
+        if token is not None:
+            response.set_cookie('token', token)
         return response
     else:
         return "Internal Error"
