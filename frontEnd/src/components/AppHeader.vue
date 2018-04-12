@@ -9,6 +9,7 @@
         <el-menu-item index="/personal">修改密码</el-menu-item>
       </el-submenu> -->
 
+      <el-menu-item class="menu-item" index="/login">注销</el-menu-item>
       <el-menu-item class="menu-item" index="/test">在线测试</el-menu-item>
       <!-- <el-submenu index="2">
         <template slot="title">角色扮演</template>
@@ -54,6 +55,9 @@ export default{
       let url = keyPath.reduce((url, val) => {
         return url + val
       })
+      if (url === '/login') {
+
+      }
       this.$router.push(url)
     }
   }
