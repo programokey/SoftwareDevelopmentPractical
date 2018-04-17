@@ -4,6 +4,7 @@ import redis
 import json, random
 
 redis_conn = redis.Redis()
+LOGIN_EXPIRE_TIME = 60*60
 
 def login(userID, hash):
     token = ''
@@ -26,11 +27,11 @@ def login(userID, hash):
                 (str(random.getrandbits(64)) + user_info['name'] + '_' + user_info['passwd']).encode('utf8')
             ).hexdigest()
 
-            redis_conn.set('token_%s'%token, value=userID, ex=60*30) # expired after 30 min without any request
+            redis_conn.set('token_%s'%token, value=userID, ex=LOGIN_EXPIRE_TIME) # expired after LOGIN_EXPIRE_TIME seconds  without any request
             if redis_conn.exists('user_token_%s' % userID):
                 old_token = redis_conn.get('user_token_%s' % userID).decode('utf8')
                 redis_conn.delete('token_%s'%old_token)
-            redis_conn.set('user_token_%s' % userID, value=token, ex=60 * 30)  # expired after 30 min without any request
+            redis_conn.set('user_token_%s' % userID, value=token, ex=LOGIN_EXPIRE_TIME)  # expired after 30 min without any request
 
             return json.dumps({'code': 1000, 'data': {'result': True, 'token': token}}), token
         else:
@@ -38,9 +39,9 @@ def login(userID, hash):
 
 def validate(token):
     if redis_conn.exists('token_%s'%token):
-        redis_conn.expire('token_%s'%token, 30*60)
+        redis_conn.expire('token_%s'%token, LOGIN_EXPIRE_TIME)
         userID = redis_conn.get('token_%s'%token).decode('utf8')
-        redis_conn.expire('user_token_%s' % userID, 30*60)
+        redis_conn.expire('user_token_%s' % userID, LOGIN_EXPIRE_TIME)
         return True
     return False
 

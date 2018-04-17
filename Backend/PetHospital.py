@@ -1,6 +1,9 @@
 import sys
-
 sys.path.append("..")
+
+from gevent import monkey
+monkey.patch_all()
+from gevent import pywsgi
 
 from flask import Flask, jsonify, request, make_response, send_file, redirect
 from flask_cors import CORS
@@ -252,9 +255,15 @@ def login():
 if __name__ == '__main__':
     score_calculation = Thread(target=TestQuery.score_calculate)
     score_calculation.start()
-    app.run(host='0.0.0.0')
+    # app.run(host='0.0.0.0')
+
+    server = pywsgi.WSGIServer(('0.0.0.0', 5000), app)
+    server.serve_forever()
 
 '''
 $env:FLASK_APP="main.py"
 python -m flask run
+
+
+gevent
 '''
