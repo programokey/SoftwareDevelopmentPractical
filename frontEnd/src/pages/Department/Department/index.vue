@@ -5,7 +5,7 @@
       <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-container>
-      <el-aside width="400px"><img class="department-image" src="./../../../../static/images/4.png" alt=""></el-aside>
+      <!-- <el-aside width="400px"><img class="department-image" src="./../../../../static/images/4.png" alt=""></el-aside> -->
       <el-main>
         <div class="inside">
           <div class="content">

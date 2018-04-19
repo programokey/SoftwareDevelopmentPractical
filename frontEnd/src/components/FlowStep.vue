@@ -1,13 +1,13 @@
 <template>
   <div class="flowStep">
     <div class="flow-content" v-if="step">
-      <div v-if="step.type==='Video'" class="flow-video">
+      <div v-if="step.type==='Video' && step.content" class="flow-video">
         <video class="flow-video-player" :src="step.content" controls="controls" width="700px" height="568px"></video>
       </div>
-      <div v-else class="flow-pic" :style="{'background-image':`url(${step.content})`, 'background-size':'contain'}">
+      <div v-if="step.type==='Picture' && step.content" class="flow-pic" :style="{'background-image':`url(${step.content})`, 'background-size':'contain','background-repeat':'no-repeat'}">
 
       </div>
-      <div class="flow-description">
+      <div class="flow-description" :class="step.content?'':'flow-cover'">
         <p class="flow-word">{{step.description}}</p>
         <slot></slot>
       </div>
@@ -58,6 +58,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &-cover {
+    width: 100%;
   }
   &-word {
     margin: 20px 0 0 10px;
