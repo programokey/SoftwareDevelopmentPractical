@@ -87,8 +87,8 @@ export default {
   margin-bottom: 30px;
 }
 .top-box {
-  background: url(./../../../../static/images/bg1.jpg);
-  box-shadow: inset 0px 10px 60px 0px rgba(0, 0, 0, 0.15);
+  // background: url(./../../../../static/images/bg1.jpg);
+  // box-shadow: inset 0px 10px 60px 0px rgba(0, 0, 0, 0.15);
 }
 .wrap {
   width: 80%;
