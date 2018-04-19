@@ -1,6 +1,7 @@
 <template>
   <div class="paper">
     <div class=paper-wrap>
+      <time-count :time="data.remainingTime" class="count" @submit="submit" />
       <!-- <div>剩余时间{{data.remainingTime/60}}分钟</div> -->
       <div class="single" v-if="data.single && data.single.length!==0">
         <h3>单选题</h3>
@@ -22,12 +23,14 @@
   </div>
 </template>
 <script>
+import TimeCount from '@/components/TimeCount'
 import SingleCard from './children/singleCard'
 import MultipleCard from './children/multipleCard'
 export default {
   components: {
     SingleCard,
-    MultipleCard
+    MultipleCard,
+    TimeCount
   },
   props: {},
   data () {

@@ -4,7 +4,7 @@ import qs from 'qs'
 import router from '@/router'
 import { Message } from 'element-ui'
 // axios.defaults.baseURL = baseUrl
-axios.defaults.baseURL = 'http://172.30.223.139:5000/api'
+axios.defaults.baseURL = 'http://106.14.141.233:5000/api'
 axios.defaults.withCredentials = true
 // http request 拦截器
 axios.interceptors.request.use(

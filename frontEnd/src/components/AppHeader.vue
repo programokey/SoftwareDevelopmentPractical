@@ -57,9 +57,17 @@ export default{
         return url + val
       })
       if (url === '/login') {
-        cookie.set('token', '', 0)
+        this.$confirm('将退出当前账户, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          cookie.set('token', 1, 1)
+          this.$router.push(url)
+        }).catch(() => {
+
+        })
       }
-      this.$router.push(url)
     }
   }
 }

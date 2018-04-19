@@ -5,8 +5,8 @@
         <video class="flow-video-player" :src="step.content" controls="controls" width="700px" height="568px"></video>
         <!-- {{step.content}} -->
       </div>
-      <div v-else class="flow-pic">
-        <img :src="step.content" alt="">
+      <div v-else class="flow-pic" :style="{'background-image':step.content, 'background-size':'contain'}">
+        <!-- <img :src="step.content" alt=""> -->
         <!-- {{step.content}} -->
       </div>
       <div class="flow-description">
