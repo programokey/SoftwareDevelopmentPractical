@@ -67,7 +67,7 @@ export default{
         }).catch(() => {
 
         })
-      }
+      } else { this.$router.push(url) }
     }
   }
 }
