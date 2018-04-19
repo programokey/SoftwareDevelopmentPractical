@@ -1,13 +1,11 @@
 <template>
   <div class="flowStep">
-    <div class="flow-content">
+    <div class="flow-content" v-if="step">
       <div v-if="step.type==='Video'" class="flow-video">
         <video class="flow-video-player" :src="step.content" controls="controls" width="700px" height="568px"></video>
-        <!-- {{step.content}} -->
       </div>
-      <div v-else class="flow-pic" :style="{'background-image':step.content, 'background-size':'contain'}">
-        <!-- <img :src="step.content" alt=""> -->
-        <!-- {{step.content}} -->
+      <div v-else class="flow-pic" :style="{'background-image':`url(${step.content})`, 'background-size':'contain'}">
+
       </div>
       <div class="flow-description">
         <p class="flow-word">{{step.description}}</p>
