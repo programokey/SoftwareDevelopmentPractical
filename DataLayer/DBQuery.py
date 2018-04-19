@@ -559,12 +559,22 @@ def get_case_detail(caseId):
 if __name__ == '__main__':
     with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                          charset='utf8') as cur:
-        cur.execute("insert into Role value('前台', '宠物医院前台');")
-        cur.execute("insert into Job value('导诊', '告诉患者去哪个科室', '每天早晚各一次', 0);")
-        cur.execute("insert into Job value('接待', '告诉患者去其他医院', '每天早晚各一次', NULL);")
-        cur.execute("insert into DepartmentRole value('精神科', '前台');")
-        cur.execute("insert into RoleJob value('前台', '精神科','导诊');")
-        cur.execute("insert into RoleJob value('前台', '精神科','接待');")
+        cur.execute("select * from User")
+        for item in cur.fetchall():
+            print(item)
+        '''
+        used to insert user
+        for i in range(1000):
+            cur.execute("insert into User VALUE (%s, %s, %s, %s, %s, %s, %s)",
+                        ('test_%d'%i, 'name_%d'%i, '123456', '233333%3d'%i, 'email_%d@mail.com'%i,
+                         ['male', 'female', 'unknown'][i % 3], 'intern'))
+        '''
+        # cur.execute("insert into Role value('前台', '宠物医院前台');")
+        # cur.execute("insert into Job value('导诊', '告诉患者去哪个科室', '每天早晚各一次', 0);")
+        # cur.execute("insert into Job value('接待', '告诉患者去其他医院', '每天早晚各一次', NULL);")
+        # cur.execute("insert into DepartmentRole value('精神科', '前台');")
+        # cur.execute("insert into RoleJob value('前台', '精神科','导诊');")
+        # cur.execute("insert into RoleJob value('前台', '精神科','接待');")
 
     '''
     insert into Role value('前台', '宠物医院前台');

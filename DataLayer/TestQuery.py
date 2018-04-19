@@ -133,7 +133,7 @@ def get_test(id, userID):
         res = cur.fetchall()
         selected = {}
         for item in res:
-            if item[0] not  in selected:
+            if item[0] not in selected:
                 selected[item[0]] = []
             selected[item[0]].append(item[1])
         test = {
@@ -164,6 +164,26 @@ def submit(testID, userID, answer):
     try:
         with pymysql.connect(host=mysql_host, user=mysql_user, passwd=mysql_passwd, db='PetHospital',
                              charset='utf8') as cur:
+            cur.execute('select beginTime from TestParticipation where userID = %s and testID = %s',
+                        (userID, testID))
+            begin_time = cur.fetchone()
+            if begin_time is not None:
+                begin_time = begin_time[0]
+
+
+            cur.execute('select startTime, endTime, duration from Test where id = %s', (testID,))
+            res = cur.fetchone()
+            if res is not None:
+                start_time = res[0]
+                end_time = res[1]
+                duration = res[2]
+            if begin_time is None or res is None \
+                    or datetime.now() < start_time or datetime.now() > end_time \
+                    or begin_time + duration < datetime.now():
+                return json.dumps({
+                    'code': 404,
+                    'data': '不在考试时间内'
+                })
             cur.execute('delete from Answer where userID = %s and testID = %s', (userID, testID))
             for item in answer.items():
                 problem_id = item[0]
