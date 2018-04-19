@@ -10,7 +10,7 @@
         <!-- {{step.content}} -->
       </div>
       <div class="flow-description">
-        <p>{{step.description}}</p>
+        <p class="flow-word">{{step.description}}</p>
         <slot></slot>
       </div>
     </div>
@@ -60,6 +60,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &-word {
+    margin: 20px 0 0 10px;
   }
 }
 </style>

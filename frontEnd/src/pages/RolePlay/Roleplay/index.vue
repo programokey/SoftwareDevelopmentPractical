@@ -120,7 +120,10 @@ export default {
   -webkit-transform: translate3d(0, 200%, 0);
   transform: translate3d(0, 200%, 0);
 }
-
+.work-box {
+  display: block;
+  line-height: 0;
+}
 .work-box:hover img {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);

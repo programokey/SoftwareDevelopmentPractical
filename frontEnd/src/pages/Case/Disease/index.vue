@@ -7,7 +7,7 @@
     <div class="disease-cases card-container">
       <m-card class="disease-cases-item " v-for="(item,index) in cases" :key="index" :info="item" :index="index+1" @clickMethod="findCase"></m-card>
     </div>
-    <div v-if="cases.length===0">暂无病例</div>
+    <span class="disease-default" v-if="cases.length===0">暂无病例</span>
   </div>
 </template>
 <script>
@@ -44,6 +44,9 @@ export default {
 .disease {
   &-cases {
     margin-top: 30px;
+  }
+  &-default {
+    padding-left: 10px;
   }
 }
 </style>
