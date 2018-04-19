@@ -82,7 +82,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .case {
   overflow-y: auto;
 
@@ -91,8 +91,7 @@ export default {
 
     margin: 0 auto;
   }
-}
-.pres {
+  .pres {
   margin-right: 10px;
   cursor: pointer;
 }
@@ -102,4 +101,12 @@ export default {
 .left {
   float: right;
 }
+.el-input.is-disabled .el-input__inner {
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #303133;
+    cursor: not-allowed;
+}
+}
+
 </style>

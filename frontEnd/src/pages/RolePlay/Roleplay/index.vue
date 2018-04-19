@@ -39,9 +39,9 @@ export default {
   data () {
     return {
       roles: [
-        {name: '前台', imgUrl: 'static/images/doctor.jpeg'},
+        {name: '前台', imgUrl: 'static/images/test.png'},
         {name: '医助', imgUrl: 'static/images/doctor.jpeg'},
-        {name: '医师', imgUrl: 'static/images/doctor.jpeg'}
+        {name: '医师', imgUrl: 'static/images/assistant_doctor.jpeg'}
       ]
     }
   },
@@ -68,7 +68,7 @@ export default {
 }
 .work img {
   width: 100%;
-  height: 100%;
+  height: 420px;
 }
 .work .overlay {
   background: $green;
