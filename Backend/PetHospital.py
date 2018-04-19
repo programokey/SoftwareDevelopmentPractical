@@ -1,6 +1,10 @@
 import sys
-
+import base64, re
 sys.path.append("..")
+
+from gevent import monkey
+monkey.patch_all()
+from gevent import pywsgi
 
 from flask import Flask, jsonify, request, make_response, send_file, redirect
 from flask_cors import CORS
@@ -237,24 +241,40 @@ def login():
         return "Internal Error"
 
 
-# @app.route('/user/<username>')
-# def show_user_profile(username):
-#     # show the user profile for that user
-#     return 'User %s' % username
-#
-#
-# @app.route('/post=<int:post_id>')
-# def show_post(post_id):
-#     # show the post with the given id, the id is an integer
-#     return 'Post %d' % post_id
-
+@app.route('/api/upload', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        try:
+            token = request.form['token']
+            if token != '12345677':
+                return "Unauthorized"
+            path = request.form['path']
+            if path[:len('/media_file')] != '/media_file':
+                return "Invalid Path"
+            path = path[len('/media_file/'):]
+            data = request.form['data']
+            data = base64.b64decode(data)
+            f = open('../media/%s' % path, 'wb')
+            f.write(data)
+            f.close()
+            return "Succeed"
+        except:
+            return "Internal Error"
+    else:
+        return "Internal Error"
 
 if __name__ == '__main__':
     score_calculation = Thread(target=TestQuery.score_calculate)
     score_calculation.start()
-    app.run(host='0.0.0.0')
+    # app.run(host='0.0.0.0')
+
+    server = pywsgi.WSGIServer(('0.0.0.0', 5000), app)
+    server.serve_forever()
 
 '''
 $env:FLASK_APP="main.py"
 python -m flask run
+
+
+gevent
 '''

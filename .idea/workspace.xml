@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82e46fb5-87f8-42e4-a82b-d9cc513dbf26" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Backend/TestUpload.py" />
+      <change beforePath="$PROJECT_DIR$/Backend/PetHospital.py" afterPath="$PROJECT_DIR$/Backend/PetHospital.py" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/DBQuery.py" afterPath="$PROJECT_DIR$/DataLayer/DBQuery.py" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/MediaReceive.py" afterPath="$PROJECT_DIR$/DataLayer/MediaReceive.py" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/TestQuery.py" afterPath="$PROJECT_DIR$/DataLayer/TestQuery.py" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/pethospital.conf" afterPath="$PROJECT_DIR$/DataLayer/pethospital.conf" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery.coverage" NAME="py.test for test_DBQuery.TestDBQuery Coverage Results" MODIFIED="1523251040111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_in_test_TestQuery_py.coverage" NAME="py.test in test_TestQuery.py Coverage Results" MODIFIED="1523281179225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$TestQuery.coverage" NAME="TestQuery Coverage Results" MODIFIED="1523267823572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_user.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_user Coverage Results" MODIFIED="1523273481184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_departments.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_departments Coverage Results" MODIFIED="1523273485605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_medicine.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_medicine Coverage Results" MODIFIED="1523246502076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$FlaskTest.coverage" NAME="FlaskTest Coverage Results" MODIFIED="1521705797537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$TestUpload.coverage" NAME="TestUpload Coverage Results" MODIFIED="1524100179540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_job_detail.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_job_detail Coverage Results" MODIFIED="1523245772119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_examination_result.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_examination_result Coverage Results" MODIFIED="1523250933202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$PetHospital.coverage" NAME="PetHospital Coverage Results" MODIFIED="1524100178320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_operation.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_operation Coverage Results" MODIFIED="1523249812539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$validate.coverage" NAME="validate Coverage Results" MODIFIED="1523272747812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery_test_get_all_test.coverage" NAME="py.test for test_TestQuery.TestTestQuery.test_get_all_test Coverage Results" MODIFIED="1523281162636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_flow.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_flow Coverage Results" MODIFIED="1523246294183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery_test_score_calculate.coverage" NAME="py.test for test_TestQuery.TestTestQuery.test_score_calculate Coverage Results" MODIFIED="1523268134384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_Test_get_departments_test_get_departments.coverage" NAME="py.test for test_DBQuery.Test_get_departments.test_get_departments Coverage Results" MODIFIED="1522315118497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery_test_get_test.coverage" NAME="py.test for test_TestQuery.TestTestQuery.test_get_test Coverage Results" MODIFIED="1523275467175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_department_info.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_department_info Coverage Results" MODIFIED="1523273837417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery_test_get_test_problem.coverage" NAME="py.test for test_TestQuery.TestTestQuery.test_get_test_problem Coverage Results" MODIFIED="1523275360111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_role_job.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_role_job Coverage Results" MODIFIED="1523246098001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_in_test_DBQuery_py.coverage" NAME="py.test in test_DBQuery.py Coverage Results" MODIFIED="1523275680455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_equipment.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_equipment Coverage Results" MODIFIED="1523273888684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$DBQuery.coverage" NAME="DBQuery Coverage Results" MODIFIED="1523974922153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_department_role_job.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_department_role_job Coverage Results" MODIFIED="1523273927153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_validate_TestValidate_test_validate.coverage" NAME="py.test for test_validate.TestValidate.test_validate Coverage Results" MODIFIED="1523272984359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_prescription.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_prescription Coverage Results" MODIFIED="1523249631078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery.coverage" NAME="py.test for test_TestQuery.TestTestQuery Coverage Results" MODIFIED="1523258399425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_in_test_validate_py.coverage" NAME="py.test in test_validate.py Coverage Results" MODIFIED="1523275728768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_disease_categories.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_disease_categories Coverage Results" MODIFIED="1523246620538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_cases.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_cases Coverage Results" MODIFIED="1523246964474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_DBQuery_TestDBQuery_test_get_case_detail.coverage" NAME="py.test for test_DBQuery.TestDBQuery.test_get_case_detail Coverage Results" MODIFIED="1523250514987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+    <SUITE FILE_PATH="coverage/SoftwareDevelopmentPractical$py_test_for_test_TestQuery_TestTestQuery_test_submit.coverage" NAME="py.test for test_TestQuery.TestTestQuery.test_submit Coverage Results" MODIFIED="1523265861154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataLayer" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myAutoScrollFromSource" value="true" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="D:\虚拟宠物医院\SoftwareDevelopmentPractical\Document\CoverageReport\test_TestQuery\" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PetHospital.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="248" column="35" lean-forward="true" selection-start-line="248" selection-start-column="35" selection-end-line="248" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestUpload.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/TestUpload.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestQuery.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataLayer/TestQuery.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="40" />
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
+                <marker date="1523516021571" expanded="true" signature="647:870" ph="select id, n... Test" />
+                <marker date="1523516021571" expanded="true" signature="1097:1170" ph="select begin... TestParticipation" />
+                <marker date="1523516021571" expanded="true" signature="2524:2738" ph="select Probl... TestProblem" />
+                <marker date="1523516021571" expanded="true" signature="2974:3024" ph="select id, c... Choice" />
+                <marker date="1523516021571" expanded="true" signature="4442:4501" ph="select start... Test" />
+                <marker date="1523516021571" expanded="true" signature="4662:4735" ph="select begin... TestParticipation" />
+                <marker date="1523516021571" expanded="true" signature="5004:5082" ph="update TestParticipation... " />
+                <marker date="1523516021571" expanded="true" signature="5609:5681" ph="select probl... Answer" />
+                <marker date="1523516021571" expanded="true" signature="6744:6817" ph="select begin... TestParticipation" />
+                <marker date="1523516021571" expanded="true" signature="6760:6817" ph="update TestParticipation... " />
+                <marker date="1523516021571" expanded="true" signature="7011:7070" ph="select start... Test" />
+                <marker date="1523516021571" expanded="true" signature="7600:7652" ph="delete from Answer... " />
+                <marker date="1523516021571" expanded="true" signature="7859:7899" ph="insert into Answer... " />
+                <marker date="1523516021571" expanded="true" signature="8411:8562" ph="select userI... TestParticipation" />
+                <marker date="1523516021571" expanded="true" signature="8522:8561" ph="select id fr... Test" />
+                <marker date="1523516021571" expanded="true" signature="8823:8895" ph="select probl... Answer" />
+                <marker date="1523516021571" expanded="true" signature="9355:9417" ph="select id fr... Choice" />
+                <marker date="1523516021571" expanded="true" signature="9612:9678" ph="select point... TestProblem" />
+                <marker date="1523516021571" expanded="true" signature="10062:10135" ph="update TestParticipation... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pethospital.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataLayer/pethospital.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBQuery.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="569" column="38" lean-forward="false" selection-start-line="569" selection-start-column="38" selection-end-line="569" selection-end-column="38" />
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
+                <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+                <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+                <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+                <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+                <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+                <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+                <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+                <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+                <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+                <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+                <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+                <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+                <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+                <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+                <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+                <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+                <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+                <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+                <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+                <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+                <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+                <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+                <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+                <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+                <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+                <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+                <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+                <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+                <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+                <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+                <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+                <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+                <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+                <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+                <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+                <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+                <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+                <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+                <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+                <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+                <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+                <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+                <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+                <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+                <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_validate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/test_validate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_DBQuery.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_TestQuery.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataLayer/test_TestQuery.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1523281175624" expanded="true" signature="3590:3672" ph="update TestParticipation... " />
+                <marker date="1523281175624" expanded="true" signature="3700:3782" ph="update TestParticipation... " />
+                <marker date="1523281175624" expanded="true" signature="5455:5528" ph="select probl... Answer" />
+                <marker date="1523281175624" expanded="true" signature="6104:6179" ph="update TestParticipation... " />
+                <marker date="1523281175624" expanded="true" signature="6207:6282" ph="update TestParticipation... " />
+                <marker date="1523281175624" expanded="true" signature="6660:6730" ph="select score... TestParticipation" />
+                <marker date="1523281175624" expanded="true" signature="6867:6937" ph="select score... TestParticipation" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get_disease</find>
+      <find>/api</find>
+      <find>ID</find>
+      <find>id</find>
+      <find>get_equipment</find>
+      <find>get_flow</find>
+      <find>get_prescription</find>
+      <find>get_case_detail</find>
+      <find>int</find>
+      <find>get_cases</find>
+      <find>#</find>
+      <find>get_examination_result</find>
+      <find>role+_jon</find>
+      <find>/role</find>
+      <find>get_role_job</find>
+      <find>strf</find>
+      <find>submii</find>
+      <find>print</find>
+      <find>/login</find>
+      <find>code</find>
+      <find>make_re</find>
+      <find>erro</find>
+      <find>raise</find>
+      <find>, ex=DATA_EXPIRE_TIME</find>
+      <find>login</find>
+      <find>sub</find>
+      <find>depa</find>
+      <find>redis_conn.set</find>
+      <find>cache</find>
+      <find>chunk</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DataLayer/__init__.py" />
+        <option value="$PROJECT_DIR$/Backend/index.html" />
+        <option value="$PROJECT_DIR$/Backend/FlaskTest.py" />
+        <option value="$PROJECT_DIR$/DataLayer/TestDBQuery.py" />
+        <option value="$PROJECT_DIR$/Backend/__init__.py" />
+        <option value="$PROJECT_DIR$/DataLayer/test_DBQuery.py" />
+        <option value="$PROJECT_DIR$/Backend/test_validate.py" />
+        <option value="$PROJECT_DIR$/DataLayer/test_TestQuery.py" />
+        <option value="$PROJECT_DIR$/frontEnd/src/api/http.js" />
+        <option value="$PROJECT_DIR$/Backend/pethospital.conf" />
+        <option value="$PROJECT_DIR$/Backend/validate.py" />
+        <option value="$PROJECT_DIR$/DataLayer/TestQuery.py" />
+        <option value="$PROJECT_DIR$/DataLayer/MediaReceive.py" />
+        <option value="$PROJECT_DIR$/DataLayer/pethospital.conf" />
+        <option value="$PROJECT_DIR$/DataLayer/DBQuery.py" />
+        <option value="$PROJECT_DIR$/Backend/TestUpload.py" />
+        <option value="$PROJECT_DIR$/Backend/PetHospital.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-5" />
+    <option name="y" value="2" />
+    <option name="width" value="1609" />
+    <option name="height" value="865" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SoftwareDevelopmentPractical" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftwareDevelopmentPractical" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftwareDevelopmentPractical" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftwareDevelopmentPractical" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftwareDevelopmentPractical" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoftwareDevelopmentPractical" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Document/CoverageReport" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/虚拟宠物医院/SoftwareDevelopmentPractical/Backend/PetHospital.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\虚拟宠物医院\SoftwareDevelopmentPractical\DataLayer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\虚拟宠物医院\SoftwareDevelopmentPractical\DataLayer" />
+      <recent name="D:\虚拟宠物医院\SoftwareDevelopmentPractical\Backend" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.TestUpload">
+    <configuration name="DBQuery" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataLayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftwareDevelopmentPractical" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataLayer/DBQuery.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="PetHospital" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftwareDevelopmentPractical" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Backend/PetHospital.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="TestUpload" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftwareDevelopmentPractical" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Backend/TestUpload.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="py.test for test_TestQuery.TestTestQuery.test_get_all_test" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataLayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftwareDevelopmentPractical" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_TestQuery.TestTestQuery.test_get_all_test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="py.test in test_TestQuery.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataLayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SoftwareDevelopmentPractical" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/DataLayer/test_TestQuery.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_TestQuery.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.py.test for test_TestQuery.TestTestQuery.test_get_all_test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.PetHospital" />
+      <item index="3" class="java.lang.String" itemvalue="Python.DBQuery" />
+      <item index="4" class="java.lang.String" itemvalue="Python.TestUpload" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.TestUpload" />
+        <item index="1" class="java.lang.String" itemvalue="Python.PetHospital" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DBQuery" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_TestQuery.py" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.py.test for test_TestQuery.TestTestQuery.test_get_all_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82e46fb5-87f8-42e4-a82b-d9cc513dbf26" name="Default" comment="" />
+      <created>1521698185782</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521698185782</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="py_test_for_test_TestQuery_TestTestQuery_test_get_all_test - 2018.04.09 at 21h 39m 24s.xml">
+      <configuration name="py.test for test_TestQuery.TestTestQuery.test_get_all_test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_TestQuery_TestTestQuery_test_get_test - 2018.04.09 at 20h 04m 18s.xml">
+      <configuration name="py.test for test_TestQuery.TestTestQuery.test_get_test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_TestQuery_TestTestQuery_test_get_test - 2018.04.09 at 20h 04m 30s.xml">
+      <configuration name="py.test for test_TestQuery.TestTestQuery.test_get_test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_DBQuery_py - 2018.04.09 at 20h 06m 58s.xml">
+      <configuration name="py.test in test_DBQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_DBQuery_py - 2018.04.09 at 20h 08m 19s.xml">
+      <configuration name="py.test in test_DBQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_TestQuery_py - 2018.04.09 at 20h 05m 13s.xml">
+      <configuration name="py.test in test_TestQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_TestQuery_py - 2018.04.09 at 20h 05m 42s.xml">
+      <configuration name="py.test in test_TestQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_TestQuery_py - 2018.04.09 at 21h 38m 42s.xml">
+      <configuration name="py.test in test_TestQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_TestQuery_py - 2018.04.09 at 21h 40m 04s.xml">
+      <configuration name="py.test in test_TestQuery.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_validate_py - 2018.04.09 at 20h 08m 51s.xml">
+      <configuration name="py.test in test_validate.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-5" y="2" width="1609" height="865" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2930923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989071" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32730794" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32989025" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27114266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989071" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2166">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5947">
+          <caret line="315" column="67" lean-forward="false" selection-start-line="315" selection-start-column="67" selection-end-line="315" selection-end-column="67" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2109">
+          <caret line="111" column="45" lean-forward="false" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2166">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5947">
+          <caret line="315" column="67" lean-forward="true" selection-start-line="315" selection-start-column="67" selection-end-line="315" selection-end-column="67" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="26" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2869">
+          <caret line="153" column="38" lean-forward="false" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="48" column="73" lean-forward="false" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="26" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2869">
+          <caret line="153" column="38" lean-forward="false" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/FlaskTest.py" />
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/FlaskTest.py" />
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/Classes.py" />
+    <entry file="file://$PROJECT_DIR$/Backend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/TestDBQuery.py" />
+    <entry file="file://D:/Anaconda3/Lib/site-packages/werkzeug/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="922" column="0" lean-forward="false" selection-start-line="922" selection-start-column="0" selection-end-line="922" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="1981" column="0" lean-forward="false" selection-start-line="1981" selection-start-column="0" selection-end-line="1981" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/PetHospital.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数据库.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/dist/static/js/login.a28853b182aa9ea06c29.js" />
+    <entry file="file://$PROJECT_DIR$/Backend/FlaskTest.py" />
+    <entry file="file://$PROJECT_DIR$/Backend/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_TestQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1523281175624" expanded="true" signature="3590:3672" ph="update TestParticipation... " />
+            <marker date="1523281175624" expanded="true" signature="3700:3782" ph="update TestParticipation... " />
+            <marker date="1523281175624" expanded="true" signature="5455:5528" ph="select probl... Answer" />
+            <marker date="1523281175624" expanded="true" signature="6104:6179" ph="update TestParticipation... " />
+            <marker date="1523281175624" expanded="true" signature="6207:6282" ph="update TestParticipation... " />
+            <marker date="1523281175624" expanded="true" signature="6660:6730" ph="select score... TestParticipation" />
+            <marker date="1523281175624" expanded="true" signature="6867:6937" ph="select score... TestParticipation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/TestData.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/api/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/test_DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/test_validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/pethospital.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/validate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/MediaReceive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/pethospital.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/DBQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="569" column="38" lean-forward="false" selection-start-line="569" selection-start-column="38" selection-end-line="569" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523974920827" expanded="true" signature="558:602" ph="select * fro... User" />
+            <marker date="1523974920827" expanded="true" signature="1235:1276" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2380" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="2317:2396" ph="select name,... Department" />
+            <marker date="1523974920827" expanded="true" signature="3261:3292" ph="select name,... DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3261:3314" ph="select role DepartmentRole" />
+            <marker date="1523974920827" expanded="true" signature="3468:3520" ph="select id, n... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="4401:4493" ph="select name,... Equipment" />
+            <marker date="1523974920827" expanded="true" signature="6180:6239" ph="select job f... Department" />
+            <marker date="1523974920827" expanded="true" signature="7214:7253" ph="select job f... RoleJob" />
+            <marker date="1523974920827" expanded="true" signature="8132:8200" ph="select descr... Job" />
+            <marker date="1523974920827" expanded="true" signature="9408:9467" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="9408:9484" ph="select conte... Flow" />
+            <marker date="1523974920827" expanded="true" signature="10690:10761" ph="select name,... Medicine" />
+            <marker date="1523974920827" expanded="true" signature="11887:11928" ph="select disea... Disease" />
+            <marker date="1523974920827" expanded="true" signature="11887:11930" ph="select name,... Disease" />
+            <marker date="1523974920827" expanded="true" signature="12989:13045" ph="select docto... " />
+            <marker date="1523974920827" expanded="true" signature="12989:13062" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="12989:13065" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="14191:14256" ph="select exami... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="14722:14815" ph="select pictu... GraphicMedicalExaminationResult" />
+            <marker date="1523974920827" expanded="true" signature="15088:15390" ph="select name,... " />
+            <marker date="1523974920827" expanded="true" signature="16660:16710" ph="select descr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="16996:17097" ph="select medic... PrescriptionMedicine" />
+            <marker date="1523974920827" expanded="true" signature="18325:18401" ph="select name,... Operation" />
+            <marker date="1523974920827" expanded="true" signature="18943:19032" ph="select medic... OpeationMedicine" />
+            <marker date="1523974920827" expanded="true" signature="19264:19496" ph="select Equip... OpeationEquipment" />
+            <marker date="1523974920827" expanded="true" signature="20460:20637" ph="select docto... Case" />
+            <marker date="1523974920827" expanded="true" signature="21440:21501" ph="select id, e... CaseExamination" />
+            <marker date="1523974920827" expanded="true" signature="21702:21759" ph="select id, o... CaseOperation" />
+            <marker date="1523974920827" expanded="true" signature="21959:22004" ph="select id fr... Prescription" />
+            <marker date="1523974920827" expanded="true" signature="22782:22800" ph="select * fro... user" />
+            <marker date="1523974920827" expanded="true" signature="22958:23009" ph="insert into User... " />
+            <marker date="1523974920827" expanded="true" signature="23220:23258" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23285:23339" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23366:23423" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23450:23495" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23522:23565" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23592:23635" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23652:23690" ph="insert into Role... " />
+            <marker date="1523974920827" expanded="true" signature="23696:23750" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23756:23813" ph="insert into Job... " />
+            <marker date="1523974920827" expanded="true" signature="23819:23864" ph="insert into DepartmentRole... " />
+            <marker date="1523974920827" expanded="true" signature="23870:23913" ph="insert into RoleJob... " />
+            <marker date="1523974920827" expanded="true" signature="23919:23962" ph="insert into RoleJob... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3/Lib/http/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="1062" column="73" lean-forward="false" selection-start-line="1062" selection-start-column="68" selection-end-line="1062" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataLayer/TestQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+            <marker date="1523516021571" expanded="true" signature="647:870" ph="select id, n... Test" />
+            <marker date="1523516021571" expanded="true" signature="1097:1170" ph="select begin... TestParticipation" />
+            <marker date="1523516021571" expanded="true" signature="2524:2738" ph="select Probl... TestProblem" />
+            <marker date="1523516021571" expanded="true" signature="2974:3024" ph="select id, c... Choice" />
+            <marker date="1523516021571" expanded="true" signature="4442:4501" ph="select start... Test" />
+            <marker date="1523516021571" expanded="true" signature="4662:4735" ph="select begin... TestParticipation" />
+            <marker date="1523516021571" expanded="true" signature="5004:5082" ph="update TestParticipation... " />
+            <marker date="1523516021571" expanded="true" signature="5609:5681" ph="select probl... Answer" />
+            <marker date="1523516021571" expanded="true" signature="6744:6817" ph="select begin... TestParticipation" />
+            <marker date="1523516021571" expanded="true" signature="6760:6817" ph="update TestParticipation... " />
+            <marker date="1523516021571" expanded="true" signature="7011:7070" ph="select start... Test" />
+            <marker date="1523516021571" expanded="true" signature="7600:7652" ph="delete from Answer... " />
+            <marker date="1523516021571" expanded="true" signature="7859:7899" ph="insert into Answer... " />
+            <marker date="1523516021571" expanded="true" signature="8411:8562" ph="select userI... TestParticipation" />
+            <marker date="1523516021571" expanded="true" signature="8522:8561" ph="select id fr... Test" />
+            <marker date="1523516021571" expanded="true" signature="8823:8895" ph="select probl... Answer" />
+            <marker date="1523516021571" expanded="true" signature="9355:9417" ph="select id fr... Choice" />
+            <marker date="1523516021571" expanded="true" signature="9612:9678" ph="select point... TestProblem" />
+            <marker date="1523516021571" expanded="true" signature="10062:10135" ph="update TestParticipation... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/TestUpload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/PetHospital.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="248" column="35" lean-forward="true" selection-start-line="248" selection-start-column="35" selection-end-line="248" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
