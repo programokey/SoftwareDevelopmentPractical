@@ -34,6 +34,9 @@ export default {
   margin-bottom: 20px;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
+  .el-checkbox + .el-checkbox {
+    margin-left: 0;
+  }
   &-title {
     font-size: 18px;
     margin-bottom: 10px;
