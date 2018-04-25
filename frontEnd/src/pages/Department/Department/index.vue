@@ -30,14 +30,13 @@
               <li class="equipment info" v-for="(equipment,index) in info.equipments" :key="index" @click="chooseEquipment(index)">{{equipment}}</li>
               <!-- @click="$router.push(`/equipment/${index}`)" -->
             </ul>
-            <el-dialog :title="facility.name" :visible.sync="centerDialogVisible" width="30%" center>
+            <el-dialog :title="facility.name" :visible.sync="centerDialogVisible" width="30%" center :modal-append-to-body="false">
               <div>
                 <p>描述信息： {{facility.description}}</p>
                 <p>操作方法： {{facility.operateMethod}}</p>
                 <p>位置： {{facility.location}}</p>
               </div>
               <span slot="footer" class="dialog-footer">
-                <!-- <el-button @click="centerDialogVisible = false">取 消</el-button> -->
                 <el-button v-if="facility.flow" type="primary" @click="skipFlow">流程体验</el-button>
               </span>
             </el-dialog>

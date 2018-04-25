@@ -79,7 +79,14 @@ export default {
       })
     },
     startTest (row) {
-      this.$router.push(`/test/${row.id}`)
+      this.$confirm('是否确认开始考试？', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$router.push(`/test/${row.id}`)
+      }).catch(() => {
+      })
     }
   }
 }

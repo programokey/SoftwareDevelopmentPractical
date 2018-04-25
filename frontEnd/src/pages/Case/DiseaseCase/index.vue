@@ -21,9 +21,9 @@
         <el-form-item label="宠物性别">
           <el-input v-model="form.petGender"></el-input>
         </el-form-item>
-        <el-form-item label="医院部门">
+        <!-- <el-form-item label="医院部门">
           <el-input v-model="form.department"></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item label="病种">
           <el-input v-model="form.disease"></el-input>
         </el-form-item>
@@ -31,19 +31,22 @@
       </el-form>
       <el-collapse class='info' v-model="activeNames">
         <el-collapse-item title="症状" name="1">
-          <div>{{form.symptom}}</div>
+          <div>{{form.symptoms}}</div>
         </el-collapse-item>
         <el-collapse-item title="诊断结果" name="2">
           <div>{{form.diagnosis}}</div>
         </el-collapse-item>
-        <el-collapse-item title="治疗结果" name="3">
+        <el-collapse-item title="治疗方式" name="3">
           <div>{{form.treatment}}</div>
         </el-collapse-item>
-        <el-collapse-item title="处方" name="4">
+        <el-collapse-item title="费用" name="4">
+          <div>{{form.expense}}</div>
+        </el-collapse-item>
+        <!-- <el-collapse-item title="处方" name="4">
           <div>
             <span class="pres" v-for="(item,index) in form.prescription" :key="index" @click="$router.push(`/prescription/${item}`)">{{item}}</span>
           </div>
-        </el-collapse-item>
+        </el-collapse-item> -->
       </el-collapse>
 
       <el-button v-if="form.flow" class='left' type="primary" round @click="getFlow">流程体验</el-button>
@@ -92,21 +95,20 @@ export default {
     margin: 0 auto;
   }
   .pres {
-  margin-right: 10px;
-  cursor: pointer;
-}
-.info {
-  margin-bottom: 20px;
-}
-.left {
-  float: right;
-}
-.el-input.is-disabled .el-input__inner {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .info {
+    margin-bottom: 20px;
+  }
+  .left {
+    float: right;
+  }
+  .el-input.is-disabled .el-input__inner {
     background-color: #f5f7fa;
     border-color: #e4e7ed;
     color: #303133;
     cursor: not-allowed;
+  }
 }
-}
-
 </style>
